@@ -1,12 +1,21 @@
 @import "tailwindcss";
 
-@theme {
-  --color-bgdark: #0f172a;
-  --color-bglight: #f9fafb;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-bgdark: #1e1e1e;
+  --color-bglight: #fafafa;
+
   --color-textdark: #f8fafc;
   --color-textlight: #111827;
+
   --color-primary: #10b981;
+  --color-primarydark: #059669;
+
   --color-secondary: #22c55e;
-  --color-primarydark: #34d399;
   --color-secondarydark: #86efac;
+
+  --font-main: var(--font-inter);
+  --font-logo: var(--font-caveat);
+  --font-logoalt: var(--font-playfair);
 }

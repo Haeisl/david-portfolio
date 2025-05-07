@@ -1,0 +1,19 @@
+{
+  "NavbarLinks": {
+    "about": "Über Mich",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "HomePage": {
+    "title": "Startseite"
+  },
+  "AboutPage": {
+    "title": "Über Mich Seite"
+  },
+  "ProjectsPage": {
+    "title": "Projekte Seite"
+  },
+  "ContactPage": {
+    "title": "Kontakt Seite"
+  }
+}
