@@ -2,18 +2,42 @@
   "NavbarLinks": {
     "about": "About Me",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "impressum": "Legal Notice"
   },
   "HomePage": {
     "title": "Landing Page"
   },
   "AboutPage": {
-    "title": "About Page"
+    "title": "About Me"
   },
   "ProjectsPage": {
-    "title": "Projects Page"
+    "title": "Projects"
   },
   "ContactPage": {
-    "title": "Contact Page"
+    "title": "Contact",
+    "tagline": "Let's build something great together.",
+    "cta": "Contact me",
+    "mailSubject": "Message via portfolio website",
+    "resume": "Résumé (PDF)",
+    "vcard": "vCard",
+    "facts": {
+      "location": "Location",
+      "locationValue": "Heidelberg",
+      "languages": "Languages",
+      "languagesValue": "German, English\n(French, Japanese)",
+      "timezone": "Timezone",
+      "timezoneValue": "CET/CEST\n(UTC+1/UTC+2)",
+      "openTo": "Available for",
+      "openValue": "Full-time"
+    }
+  },
+  "Imprint": {
+    "title": "Legal notice (Imprint)",
+    "intro": "Information pursuant to Section 5 German Digital Services Act (DDG)",
+    "name": "David Hasse",
+    "address": "Pleikartsförsterstraße 1\n69124 Heidelberg\nGermany",
+    "contact": "Phone: +49 (0) 1575 3357790\nE-mail: david.h.hasse@proton.me",
+    "disclaimer": "We are neither willing nor obliged to participate in dispute-resolution proceedings before a consumer arbitration board.\nThe operators of linked pages are solely responsible for their content."
   }
 }

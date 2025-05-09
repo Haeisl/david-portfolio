@@ -49,9 +49,11 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages} locale={locale}>
-            <Header locale={locale} />
-            <main className="h-[200vh]">{children}</main>
-            <Footer />
+            <div className="flex flex-col min-h-screen">
+              <Header locale={locale} />
+              <main className="flex-1">{children}</main>
+              <Footer locale={locale} />
+            </div>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

@@ -2,18 +2,42 @@
   "NavbarLinks": {
     "about": "Über Mich",
     "projects": "Projekte",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "impressum": "Impressum"
   },
   "HomePage": {
     "title": "Startseite"
   },
   "AboutPage": {
-    "title": "Über Mich Seite"
+    "title": "Über Mich"
   },
   "ProjectsPage": {
-    "title": "Projekte Seite"
+    "title": "Projekte"
   },
   "ContactPage": {
-    "title": "Kontakt Seite"
+    "title": "Kontakt",
+    "tagline": "Lass uns gemeinsam Großartiges bauen.",
+    "cta": "Kontakt aufnehmen",
+    "mailSubject": "Anfrage über Portfolio-Website",
+    "resume": "Lebenslauf (PDF)",
+    "vcard": "vCard",
+    "facts": {
+      "location": "Ort",
+      "locationValue": "Heidelberg",
+      "languages": "Sprachen",
+      "languagesValue": "Deutsch, Englisch\n(Französisch, Japanisch)",
+      "timezone": "Zeitzone",
+      "timezoneValue": "CET/CEST\n(UTC+1/UTC+2)",
+      "openTo": "Verfügbar für",
+      "openValue": "Festanstellung"
+    }
+  },
+  "Imprint": {
+    "title": "Impressum",
+    "intro": "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)",
+    "name": "David Hasse",
+    "address": "Pleikartsförsterstraße 1\n69124 Heidelberg\nDeutschland",
+    "contact": "Telefon: +49 (0) 1575 3357790\nE-Mail: david.h.hasse@proton.me",
+    "disclaimer": "Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.\nFür die Inhalte verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich."
   }
 }

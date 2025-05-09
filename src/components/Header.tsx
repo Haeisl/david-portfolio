@@ -16,6 +16,8 @@ export default function Header({ locale }: { locale: string }) {
   const pathname = usePathname();
   const router = useRouter();
 
+  const isActive = (href: string) => pathname.endsWith(href);
+
   const navigation = useMemo(
     () => [
       { name: t("about"), href: `/${locale}/about` },
@@ -31,43 +33,58 @@ export default function Header({ locale }: { locale: string }) {
   };
 
   return (
-    <header className="sticky top-0 my-8 mx-5 rounded-2xl py-2 pl-2 pr-5 text-2xl text-textlight dark:text-textdark bg-primary dark:bg-primarydark ">
-      <nav className="flex justify-around" aria-label="Main navigation">
+    <header className="sticky top-0 mb-8 py-2 px-4 text-2xl text-textlight dark:text-textdark bg-bgaccentlight dark:bg-bgaccentdark shadow-xl">
+      <nav
+        className="w-full flex items-center justify-between px-4"
+        aria-label="Main navigation"
+      >
         {/* logo */}
-        <div>
+        <div className="flex-1 flex justify-start font-logo">
           <Link href={`/${locale}/`}>
-            <h1 className="font-logo text-2xl">David Hasse</h1>
+            <h1>David Hasse</h1>
           </Link>
         </div>
 
         {/* links */}
-        {navigation.map((item: NavigationType) => (
-          <div key={item.name}>
-            <Link href={item.href}>{item.name}</Link>
-          </div>
-        ))}
+        <div className="flex-2 flex justify-between space-x-14 mx-14">
+          {navigation.map((item: NavigationType) => (
+            <div
+              key={item.name}
+              className={`p-2 hover:text-primary hover:dark:text-primarydark transition-colors duration-200
+                ${
+                  isActive(item.href) &&
+                  "text-primary dark:text-primarydark underline"
+                }`}
+            >
+              <Link href={item.href}>{item.name}</Link>
+            </div>
+          ))}
+        </div>
 
-        {/* darkmode toggle */}
-
-        {/* language toggle */}
-        <div className="flex items-center gap-3">
-          <ThemeToggle />
+        <div className="flex-1 flex justify-end items-center space-x-2">
+          {/* language toggle */}
           <button
-            className={`border p-2 font-bold rounded-md text-sm ${
-              locale === "de" && "bg-white text-black"
+            className={`border border- p-2 font-bold rounded-md text-sm cursor-pointer ${
+              locale === "de" &&
+              "bg-bgaccentdark dark:bg-bgaccentlight text-textdark dark:text-textlight"
             }`}
             onClick={() => handleLanguageChange("de")}
           >
             DE
           </button>
+
           <button
-            className={`border p-2 font-bold rounded-md text-sm ${
-              locale === "en" && "bg-white text-black"
+            className={`border p-2 font-bold rounded-md text-sm mr-12 cursor-pointer ${
+              locale === "en" &&
+              "bg-bgaccentdark dark:bg-bgaccentlight text-textdark dark:text-textlight"
             }`}
             onClick={() => handleLanguageChange("en")}
           >
             EN
           </button>
+
+          {/* darkmode toggle */}
+          <ThemeToggle />
         </div>
       </nav>
     </header>

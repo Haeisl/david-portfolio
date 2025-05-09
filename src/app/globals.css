@@ -3,14 +3,21 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-bgdark: #1e1e1e;
+  /* --color-bgdark: #171717; */
+  --color-bgdark: #212121;
   --color-bglight: #fafafa;
+
+  --color-bgaccentdark: #171717;
+  --color-bgaccentlight: #f9f9f9;
+
+  --color-bgselecteddark: #2f2f2f;
+  --color-bgselectedlight: #e3e3e3;
 
   --color-textdark: #f8fafc;
   --color-textlight: #111827;
 
   --color-primary: #10b981;
-  --color-primarydark: #059669;
+  --color-primarydark: #34d399;
 
   --color-secondary: #22c55e;
   --color-secondarydark: #86efac;
