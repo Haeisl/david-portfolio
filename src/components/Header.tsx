@@ -4,8 +4,9 @@ import Link from "next/link";
 import ThemeToggle from "@/theme/theme-toggle";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useLocale } from "next-intl";
+import { Menu, X } from "lucide-react";
 
 type NavigationType = {
   name: string;
@@ -17,6 +18,7 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const locale = useLocale();
+  const [isOpen, setIsOpen] = useState(false);
 
   const isActive = (href: string) => pathname.endsWith(href);
 
@@ -41,28 +43,37 @@ export default function Header() {
         aria-label="Main navigation"
       >
         {/* logo */}
-        <div className="flex-1 flex justify-start font-logo">
-          <Link href={`/${locale}/`}>
-            <h1>David Hasse</h1>
-          </Link>
-        </div>
+        <Link className="flex-1 font-logo text-4xl" href={`/${locale}/`}>
+          David Hasse
+        </Link>
 
-        {/* links */}
-        <div className="flex-2 flex justify-between space-x-14 mx-14">
+        {/* desktop links */}
+        <div className="hidden sm:flex flex-2 justify-between">
           {navigation.map((item: NavigationType) => (
-            <div
+            <Link
               key={item.name}
-              className={`p-2 hover:text-primary hover:dark:text-primarydark transition-colors duration-200
+              className={`p-2 hover:text-primary hover:dark:text-primarydark transition-colors duration-300
                 ${
                   isActive(item.href) &&
-                  "text-primary dark:text-primarydark underline"
+                  "text-primary dark:text-primarydark border rounded-lg border-primary dark:border-primarydark"
                 }`}
+              href={item.href}
             >
-              <Link href={item.href}>{item.name}</Link>
-            </div>
+              {item.name}
+            </Link>
           ))}
         </div>
 
+        {/* mobile hamburger */}
+        <button
+          className="sm:hidden p-2"
+          onClick={() => setIsOpen((o) => !o)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* right side (lang + theme) */}
         <div className="flex-1 flex justify-end items-center space-x-2">
           {/* language toggle */}
           <button
@@ -76,7 +87,7 @@ export default function Header() {
           </button>
 
           <button
-            className={`border p-2 font-bold rounded-md text-sm mr-12 cursor-pointer ${
+            className={`border p-2 font-bold rounded-md text-sm mr-4 cursor-pointer ${
               locale === "en" &&
               "bg-bgaccentdark dark:bg-bgaccentlight text-textdark dark:text-textlight"
             }`}
@@ -89,6 +100,29 @@ export default function Header() {
           <ThemeToggle />
         </div>
       </nav>
+      {isOpen && (
+        <div className="sm:hidden mt-2 px-4">
+          <div className="flex flex-col my-2 bg-bgaccentlight dark:bg-bgaccentdark border rounded-lg shadow-md">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className={`
+                  block px-4 py-2 hover:text-primary hover:dark:text-primarydark transition-colors duration-300
+                  ${
+                    isActive(item.href)
+                      ? "text-primary dark:text-primarydark"
+                      : ""
+                  }
+                `}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
