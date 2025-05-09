@@ -14,6 +14,29 @@
   "ProjectsPage": {
     "title": "Projects"
   },
+  "Projects": {
+    "epilepsy-planning-tool": {
+      "title": "Epilepsy Planning Tool",
+      "description": "Optimization of an interactive simulation tool for planning epilepsy therapies; enhanced platform independence, improved data visualization, and significantly increased stability of FEM-based electrical field simulations."
+    },
+    "portfolio-website": {
+      "title": "Portfolio Website",
+      "description": "A personal portfolio website built with NextJS and TailwindCSS to showcase projects and experiences."
+    },
+    "virtual-patient-cohorts": {
+      "title": "Virtual Patient Cohorts",
+      "description": "Development of a Python application for adapting mathematical models to real medical data; enables efficient analysis of therapy effects and generation of virtual patient data for simulation-based research."
+    },
+    "field-consistent-glyphs": {
+      "title": "Field-Consistent Glyphs",
+      "description": "Implementation of a ParaView plugin for field-consistent visualization of vector and tensor fields; improves the expressiveness of scientific visualizations by correctly representing local field patterns in complex data structures."
+    },
+    "types": {
+      "thesis": "Bachelor's Thesis",
+      "practical": "Software Practical",
+      "private": "Private Project"
+    }
+  },
   "ContactPage": {
     "title": "Contact",
     "tagline": "Let's build something great together.",
@@ -37,7 +60,7 @@
     "intro": "Information pursuant to Section 5 German Digital Services Act (DDG)",
     "name": "David Hasse",
     "address": "Pleikartsförsterstraße 1\n69124 Heidelberg\nGermany",
-    "contact": "Phone: +49 (0) 1575 3357790\nE-mail: david.h.hasse@proton.me",
+    "contact": "Phone: +49 1575 3357790\nE-mail: david.h.hasse@proton.me",
     "disclaimer": "We are neither willing nor obliged to participate in dispute-resolution proceedings before a consumer arbitration board.\nThe operators of linked pages are solely responsible for their content."
   }
 }

@@ -14,6 +14,29 @@
   "ProjectsPage": {
     "title": "Projekte"
   },
+  "Projects": {
+    "epilepsy-planning-tool": {
+      "title": "Epilepsie-Planungstool",
+      "description": "Optimierung eines interaktiven Simulationswerkzeugs zur Planung epileptischer Therapien; erhöhte Plattformunabhängigkeit, verbesserte Datenvisualisierung und deutlich gesteigerte Stabilität FEM-basierter elektrischer Feldsimulationen."
+    },
+    "portfolio-website": {
+      "title": "Portfolio Webseite",
+      "description": "Eine persönliche Portfolio-Webseite, gebaut mit NextJS und TailwindCSS, um Projekte und Erfahrungen zu präsentieren."
+    },
+    "virtual-patient-cohorts": {
+      "title": "Virtuelle Patientenkohorten",
+      "description": "Entwicklung einer Python-Anwendung zur Anpassung mathematischer Modelle an medizinische Echtdaten; ermöglicht effiziente Analyse von Therapieeffekten und Generierung virtueller Patientendaten für simulationsbasierte Forschung."
+    },
+    "field-consistent-glyphs": {
+      "title": "Feldkonsistente Glyphen",
+      "description": "Implementierung eines ParaView-Plugins zur feldkonsistenten Visualisierung von Vektor- und Tensorfeldern; verbessert die Aussagekraft wissenschaftlicher Visualisierungen durch korrekte Darstellung lokaler Feldverläufe in komplexen Datenstrukturen."
+    },
+    "types": {
+      "thesis": "Bachelorarbeit",
+      "practical": "Studentisches Softwarepraktikum",
+      "private": "Persönliches Projekt"
+    }
+  },
   "ContactPage": {
     "title": "Kontakt",
     "tagline": "Lass uns gemeinsam Großartiges bauen.",
@@ -27,7 +50,7 @@
       "languages": "Sprachen",
       "languagesValue": "Deutsch, Englisch\n(Französisch, Japanisch)",
       "timezone": "Zeitzone",
-      "timezoneValue": "CET/CEST\n(UTC+1/UTC+2)",
+      "timezoneValue": "CET / CEST\nUTC+1 / UTC+2",
       "openTo": "Verfügbar für",
       "openValue": "Festanstellung"
     }
@@ -37,7 +60,7 @@
     "intro": "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)",
     "name": "David Hasse",
     "address": "Pleikartsförsterstraße 1\n69124 Heidelberg\nDeutschland",
-    "contact": "Telefon: +49 (0) 1575 3357790\nE-Mail: david.h.hasse@proton.me",
+    "contact": "Telefon: +49 1575 3357790\nE-Mail: david.h.hasse@proton.me",
     "disclaimer": "Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.\nFür die Inhalte verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich."
   }
 }

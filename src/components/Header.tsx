@@ -5,16 +5,18 @@ import ThemeToggle from "@/theme/theme-toggle";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { useMemo } from "react";
+import { useLocale } from "next-intl";
 
 type NavigationType = {
   name: string;
   href: string;
 };
 
-export default function Header({ locale }: { locale: string }) {
+export default function Header() {
   const t = useTranslations("NavbarLinks");
   const pathname = usePathname();
   const router = useRouter();
+  const locale = useLocale();
 
   const isActive = (href: string) => pathname.endsWith(href);
 
@@ -33,7 +35,7 @@ export default function Header({ locale }: { locale: string }) {
   };
 
   return (
-    <header className="sticky top-0 mb-8 py-2 px-4 text-2xl text-textlight dark:text-textdark bg-bgaccentlight dark:bg-bgaccentdark shadow-xl">
+    <header className="sticky top-0 z-100 mb-8 py-2 px-4 text-2xl text-textlight dark:text-textdark bg-bgaccentlight dark:bg-bgaccentdark shadow-xl">
       <nav
         className="w-full flex items-center justify-between px-4"
         aria-label="Main navigation"

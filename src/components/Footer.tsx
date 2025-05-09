@@ -1,7 +1,9 @@
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
-export default function Footer({ locale }: { locale: string }) {
+export default function Footer() {
   const t = useTranslations("NavbarLinks");
+  const locale = useLocale();
 
   return (
     <footer className="w-full border-t mt-16 py-4 text-center text-sm text-gray-500 dark:text-gray-400">

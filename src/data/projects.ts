@@ -1,35 +1,38 @@
+// data/projects.ts
+export enum ProjectType {
+  THESIS = "thesis",
+  PRACTICAL = "practical",
+  PRIVATE = "private",
+}
+
 const projects = [
   {
-    id: "bachelor-thesis",
-    title: "My Bachelor Thesis",
-    description: "A deep exploration of machine learning methods.",
-    type: "thesis",
-    techStack: ["Python", "PyTorch", "NumPy"],
-    imageUrl: "/images/thesis.png",
+    id: "epilepsy-planning-tool",
+    type: ProjectType.THESIS,
+    techStack: ["Python", "Unreal Engine", "Docker", "Visualization"],
+    // imageUrl: "/images/epilepsy-tool.png",
+    imageUrl: "https://fakeimg.pl/600x400?text=placeholder",
   },
   {
-    id: "advanced-software-practical",
-    title: "Software Practical: Web App",
-    description: "A full-stack application built with NextJS and Prisma.",
-    type: "practical",
-    techStack: ["NextJS", "TypeScript", "Prisma"],
-    imageUrl: "/images/practical.png",
+    id: "portfolio-website",
+    type: ProjectType.PRIVATE,
+    techStack: ["NextJS", "TailwindCSS", "TypeScript"],
+    // imageUrl: "/images/portfolio.png",
+    imageUrl: "https://fakeimg.pl/600x400?text=placeholder",
   },
   {
-    id: "beginner-software-practical",
-    title: "Software Practical: Web App",
-    description: "A full-stack application built with NextJS and Prisma.",
-    type: "practical",
-    techStack: ["NextJS", "TypeScript", "Prisma"],
-    imageUrl: "/images/practical.png",
+    id: "field-consistent-glyphs",
+    type: ProjectType.PRACTICAL,
+    techStack: ["ParaView", "Python", "Visualization"],
+    // imageUrl: "/images/field-glyphs.png",
+    imageUrl: "https://fakeimg.pl/600x400?text=placeholder",
   },
   {
-    id: "private-project",
-    title: "Personal Portfolio",
-    description: "The very website you are browsing now!",
-    type: "private",
-    techStack: ["NextJS", "TailwindCSS"],
-    imageUrl: "/images/portfolio.png",
+    id: "virtual-patient-cohorts",
+    type: ProjectType.PRACTICAL,
+    techStack: ["Python", "NumPy", "SciPy", "TkInter"],
+    // imageUrl: "/images/virtual-patients.png",
+    imageUrl: "https://fakeimg.pl/600x400?text=placeholder",
   },
 ];
 
