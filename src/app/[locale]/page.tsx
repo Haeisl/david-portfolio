@@ -5,7 +5,9 @@ export default function Home() {
 
   return (
     <>
-      <h1 className="text-9xl">{t("title")}</h1>
+      <h1 className="flex justify-center items-center text-5xl">
+        {t("title")}
+      </h1>
     </>
   );
 }

@@ -6,10 +6,73 @@
     "impressum": "Legal Notice"
   },
   "HomePage": {
-    "title": "Landing Page"
+    "title": "Coming Soon"
   },
-  "AboutPage": {
-    "title": "About Me"
+  "ProfileHeader": {
+    "description": "Curious by nature, driven by learning and problem-solving - whether through code, design, or collaboration."
+  },
+  "Skills": {
+    "description": "A rough self-assessment of selected technologies I've worked with."
+  },
+  "ThisOrThat": {
+    "title": "This or That",
+    "description": "A quick glimpse into my developer preferences. Hover over the cards to see my pick and why!",
+    "pairs": [
+      {
+        "left": "VS Code",
+        "right": "Vim",
+        "preferred": "left",
+        "explanation": "Powerful, extensible, yet easy to get started with - hard not to love it."
+      },
+      {
+        "left": "Light Mode",
+        "right": "Dark Mode",
+        "preferred": "right",
+        "explanation": "Easier on the eyes - and just cooler, let's be honest."
+      },
+      {
+        "left": "Tabs",
+        "right": "Spaces",
+        "preferred": "right",
+        "explanation": "Just configure your tab key to insert spaces like a normal human being."
+      },
+      {
+        "left": "Morning Coding",
+        "right": "Night Owl Dev",
+        "preferred": "right",
+        "explanation": "I'm most productive when the world is quiet and dark."
+      },
+      {
+        "left": "Coffee",
+        "right": "Tea",
+        "preferred": "left",
+        "explanation": "The essential fuel to turn thoughts into code."
+      },
+      {
+        "left": "Music While Coding",
+        "right": "Silence, Please",
+        "preferred": "left",
+        "explanation": "The right playlist puts me in the zone."
+      },
+      {
+        "left": "Terminal",
+        "right": "GUI",
+        "preferred": "right",
+        "explanation": "I love visualizations - turning data into insight through intuitive design."
+      },
+      {
+        "left": "Hoodie",
+        "right": "Button-up",
+        "preferred": "left",
+        "explanation": "I like dressing up, but hoodies are home base."
+      },
+      {
+        "left": "Games",
+        "right": "Movies",
+        "preferred": "left",
+        "explanation": "A lifelong hobby and a huge influence on how I think."
+      }
+    ]
   },
   "ProjectsPage": {
     "title": "Projects"
@@ -60,7 +123,7 @@
     "intro": "Information pursuant to Section 5 German Digital Services Act (DDG)",
     "name": "David Hasse",
     "address": "Pleikartsförsterstraße 1\n69124 Heidelberg\nGermany",
-    "contact": "Phone: +49 1575 3357790\nE-mail: david.h.hasse@proton.me",
+    "contact": "Phone: +49 1575 3357790\nE-mail: contact@david-hasse.de",
     "disclaimer": "We are neither willing nor obliged to participate in dispute-resolution proceedings before a consumer arbitration board.\nThe operators of linked pages are solely responsible for their content."
   }
 }

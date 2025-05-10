@@ -80,7 +80,8 @@ export default function ContactPage() {
           GitHub
         </a>
         <a
-          href="/cv.pdf"
+          href="/test.txt"
+          download
           target="_blank"
           rel="noopener"
           className="flex items-center gap-2 hover:underline"
@@ -99,8 +100,18 @@ export default function ContactPage() {
       </section>
       {/* Conditionally render the QR Code */}
       {showQRCode && (
-        <section className="flex justify-center">
+        <section className="flex flex-col items-center space-y-4">
           <VCardQRCode />
+          <a
+            href="/david-hasse.vcf"
+            download
+            target="_blank"
+            rel="noopener"
+            className="flex items-center text-center hover:underline gap-2"
+          >
+            <FileText size={28} />
+            vCard
+          </a>
         </section>
       )}
     </main>

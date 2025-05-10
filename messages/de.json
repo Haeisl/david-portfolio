@@ -6,10 +6,73 @@
     "impressum": "Impressum"
   },
   "HomePage": {
-    "title": "Startseite"
+    "title": "Startseite - bald auch hier im Kino"
   },
-  "AboutPage": {
-    "title": "Über Mich"
+  "ProfileHeader": {
+    "description": "Von Natur aus neugierig, motiviert durch Lernen und Problemlösen - ob durch Code, Design oder Zusammenarbeit."
+  },
+  "Skills": {
+    "description": "Eine grobe Selbsteinschätzung ausgewählter Technologien, mit denen ich gearbeitet habe."
+  },
+  "ThisOrThat": {
+    "title": "Dies oder Das",
+    "description": "Ein kurzer Einblick in meine Vorlieben als Entwickler. Fahre mit der Maus über die Karten, um meine Wahl und den Grund zu sehen!",
+    "pairs": [
+      {
+        "left": "VS Code",
+        "right": "Vim",
+        "preferred": "left",
+        "explanation": "Mächtig, erweiterbar und trotzdem einsteigerfreundlich - was will man mehr?"
+      },
+      {
+        "left": "Heller Modus",
+        "right": "Dunkler Modus",
+        "preferred": "right",
+        "explanation": "Schonender für die Augen - und einfach cooler, sind wir ehrlich."
+      },
+      {
+        "left": "Tabs",
+        "right": "Leerzeichen",
+        "preferred": "right",
+        "explanation": "Stell deinen Tab-Key auf Leerzeichen um - wie ein normaler Mensch."
+      },
+      {
+        "left": "Morgens Coden",
+        "right": "Nachteulen-Dev",
+        "preferred": "right",
+        "explanation": "Ich bin am produktivsten, wenn es draußen ruhig und dunkel ist."
+      },
+      {
+        "left": "Kaffee",
+        "right": "Tee",
+        "preferred": "left",
+        "explanation": "Der Treibstoff, der Gedanken in Code verwandelt."
+      },
+      {
+        "left": "Musik beim Coden",
+        "right": "Ruhe, bitte",
+        "preferred": "left",
+        "explanation": "Die richtige Playlist bringt mich in den Flow."
+      },
+      {
+        "left": "Terminal",
+        "right": "GUI",
+        "preferred": "right",
+        "explanation": "Ich liebe Visualisierungen - Daten durch Design verständlich machen fasziniert mich."
+      },
+      {
+        "left": "Kapuze",
+        "right": "Hemd",
+        "preferred": "left",
+        "explanation": "Ich mag's, mich schick zu machen - aber Hoodies sind mein Zuhause."
+      },
+      {
+        "left": "Spiele",
+        "right": "Filme",
+        "preferred": "left",
+        "explanation": "Ein Hobby fürs Leben – und eine große Inspiration für mein Denken."
+      }
+    ]
   },
   "ProjectsPage": {
     "title": "Projekte"
@@ -60,7 +123,7 @@
     "intro": "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)",
     "name": "David Hasse",
     "address": "Pleikartsförsterstraße 1\n69124 Heidelberg\nDeutschland",
-    "contact": "Telefon: +49 1575 3357790\nE-Mail: david.h.hasse@proton.me",
+    "contact": "Telefon: +49 1575 3357790\nE-Mail: contact@david-hasse.de",
     "disclaimer": "Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.\nFür die Inhalte verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich."
   }
 }

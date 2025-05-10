@@ -1,4 +1,3 @@
-export const vCardString = `
 BEGIN:VCARD
 VERSION:3.0
 FN:David Hasse
@@ -8,4 +7,3 @@ TEL;TYPE=CELL:+4915753357790
 EMAIL:contact@david-hasse.de
 URL:http://www.david-hasse.de
 END:VCARD
-`;
