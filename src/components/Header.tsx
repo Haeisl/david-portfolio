@@ -51,7 +51,7 @@ export default function Header() {
         </Link>
 
         {/* desktop links */}
-        <div className="hidden sm:flex flex-2 justify-self-center justify-between">
+        <div className="hidden sm:flex md:space-x-10 lg:space-x-18 xl:space-x-48 justify-self-center justify-between">
           {navigation.map((item: NavigationType) => (
             <Link
               key={item.name}
