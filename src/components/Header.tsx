@@ -39,16 +39,19 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-100 mb-8 py-2 px-4 text-2xl text-textlight dark:text-textdark bg-bgaccentlight dark:bg-bgaccentdark shadow-xl">
       <nav
-        className="w-full flex items-center justify-between px-4"
+        className="grid grid-cols-3 items-center w-full px-2"
         aria-label="Main navigation"
       >
         {/* logo */}
-        <Link className="flex-1 font-logo text-4xl" href={`/${locale}/`}>
+        <Link
+          className="justify-self-start font-logo text-3xl sm:text-4xl whitespace-nowrap"
+          href={`/${locale}/`}
+        >
           David Hasse
         </Link>
 
         {/* desktop links */}
-        <div className="hidden sm:flex flex-2 justify-between">
+        <div className="hidden sm:flex flex-2 justify-self-center justify-between">
           {navigation.map((item: NavigationType) => (
             <Link
               key={item.name}
@@ -66,7 +69,7 @@ export default function Header() {
 
         {/* mobile hamburger */}
         <button
-          className="sm:hidden p-2"
+          className="justify-self-center sm:hidden p-2 cursor-pointer"
           onClick={() => setIsOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -74,10 +77,10 @@ export default function Header() {
         </button>
 
         {/* right side (lang + theme) */}
-        <div className="flex-1 flex justify-end items-center space-x-2">
+        <div className="flex justify-end items-center space-x-2">
           {/* language toggle */}
           <button
-            className={`border border- p-2 font-bold rounded-md text-sm cursor-pointer ${
+            className={`border p-2 font-bold rounded-md text-sm cursor-pointer ${
               locale === "de" &&
               "bg-bgaccentdark dark:bg-bgaccentlight text-textdark dark:text-textlight"
             }`}
