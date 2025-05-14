@@ -44,7 +44,7 @@ export default function Header() {
       >
         {/* Left: Logo */}
         <Link
-          className={`pr-3 flex-1 font-logo font-bold text-2xl sm:text-2xl xl:text-4xl whitespace-nowrap hover:text-primary hover:dark:text-primarydark transition-colors duration-300
+          className={`pr-3 flex-1 font-logoalt font-bold text-2xl sm:text-2xl xl:text-4xl whitespace-nowrap hover:text-primary hover:dark:text-primarydark transition-colors duration-300
         ${isActive(`/${locale}`) ? "text-primary dark:text-primarydark" : ""}`}
           href={`/${locale}/`}
         >
