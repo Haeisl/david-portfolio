@@ -25,11 +25,7 @@
   --color-secondarydark: #86efac;
 
   --font-main: var(--font-inter);
-  /* --font-logo: var(--font-caveat); */
-  --font-logoalt: var(--font-major-mono-display);
-  /* --font-logo: var(--font-julius-sans-one); */
   --font-logo: var(--font-doto);
-  /* --font-logoalt: var(--font-playfair); */
   --font-courier: var(--font-courier-prime);
 }
 

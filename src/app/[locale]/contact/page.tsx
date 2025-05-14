@@ -1,14 +1,24 @@
 "use client";
 
 import { nl2br } from "@/app/utils/nlToBr";
-import { Mail, Linkedin, Github, FileText, QrCode } from "lucide-react";
+import {
+  Mail,
+  Linkedin,
+  Github,
+  FileText,
+  QrCode,
+  MapPinHouse,
+  Earth,
+  Languages,
+  Briefcase,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
 const VCardQRCode = dynamic(() => import("@/components/contact/VCardQRCode"), {
-  loading: () => <p className="mt-4">Loading QR Code...</p>,
-  ssr: false, // Disable server side rendering for this dynamic component
+  loading: () => <p className="mt-4">Loading QR Code…</p>,
+  ssr: false,
 });
 
 export default function ContactPage() {
@@ -21,114 +31,206 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-14 space-y-24 text-lg sm:text-xl">
-      {/* ── Hero ───────────────────────────────────── */}
-      <section className="text-center space-y-4">
-        <h1 className="text-5xl font-semibold tracking-tight">{t("title")}</h1>
-        <p className="text-lg font-medium text-neutral-600 dark:text-neutral-400">
-          {t("tagline")}
-        </p>
+    <main className="mx-auto max-w-6xl px-4 py-14">
+      {/* ── Section header ───────────────────────────────────── */}
+      <div className="flex items-center gap-3 mb-6">
+        <h2 className="text-3xl font-semibold tracking-wide uppercase text-textlight dark:text-textdark">
+          {t("factsToContact")}
+        </h2>
+        <div className="hidden sm:block flex-grow h-px bg-gradient-to-r from-textlight/40 dark:from-textdark/40 to-transparent" />
+      </div>
 
-        <a
-          href={`mailto:contact@david-hasse.de?subject=${encodeURIComponent(
-            t("mailSubject")
-          )}`}
-          className="inline-flex items-center gap-2 mt-2 rounded-xl border border-bgaccentdark bg-accentlight
-          dark:border-bgaccentlight dark:bg-bgaccentdark px-5 py-3 text-textlight dark:text-textdark shadow-md transition
-          hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-neutral-400
-          duration-200 hover:scale-105"
-        >
-          <Mail size={20} />
-          {t("cta")}
-        </a>
-      </section>
-
-      {/* ── Fast facts grid ────────────────────────── */}
-      <section className="grid grid-cols-2 text-center gap-6 text-textlight dark:text-textdark">
-        <Fact label={t("facts.location")} value={t("facts.locationValue")} />
-        <Fact label={t("facts.openTo")} value={t("facts.openValue")} />
-        <Fact
+      <section
+        className="
+          grid auto-rows-[minmax(140px,auto)] gap-6
+          sm:grid-cols-6
+          lg:grid-cols-12
+        "
+      >
+        {/* ── Mini fact cards ─────────────────────────── */}
+        <FactCard
+          className="sm:col-span-3 lg:col-span-3"
+          label={t("facts.location")}
+          value={t("facts.locationValue")}
+          icon={<MapPinHouse size={22} />}
+        />
+        <FactCard
+          className="sm:col-span-3 lg:col-span-3"
+          label={t("facts.openTo")}
+          value={t("facts.openValue")}
+          icon={<Briefcase size={22} />}
+        />
+        <FactCard
+          className="sm:col-span-3 lg:col-span-3"
           label={t("facts.timezone")}
           value={nl2br(t("facts.timezoneValue"))}
+          icon={<Earth size={22} />}
         />
-        <Fact
+        <FactCard
+          className="sm:col-span-3 lg:col-span-3"
           label={t("facts.languages")}
           value={nl2br(t("facts.languagesValue"))}
+          icon={<Languages size={22} />}
         />
-      </section>
 
-      {/* ── Links row ──────────────────────────────── */}
-      <section className="flex flex-wrap items-center justify-center gap-6">
-        <a
-          href="https://www.linkedin.com/in/david-hasse-ab0bb11a9"
-          target="_blank"
-          rel="noopener"
-          aria-label="LinkedIn"
-          className="flex items-center gap-2 hover:underline"
-        >
-          <Linkedin size={28} />
-          LinkedIn
-        </a>
-        <a
-          href="https://github.com/haeisl"
-          target="_blank"
-          rel="noopener"
-          aria-label="GitHub"
-          className="flex items-center gap-2 hover:underline"
-        >
-          <Github size={28} />
-          GitHub
-        </a>
-        <a
-          href="/test.txt"
-          download
-          target="_blank"
-          rel="noopener"
-          className="flex items-center gap-2 hover:underline"
-        >
-          <FileText size={28} />
-          {t("resume")}
-        </a>
-        <a
-          href="#"
-          onClick={handleQRClick}
-          className="flex items-center gap-2 hover:underline"
-        >
-          <QrCode size={28} />
-          {t("vcard")}
-        </a>
-      </section>
-      {/* Conditionally render the QR Code */}
-      {showQRCode && (
-        <section className="flex flex-col items-center space-y-4">
-          <VCardQRCode />
+        {/* ── Hero + CTA ───────────────────────────────── */}
+        <Tile className="sm:col-span-6 lg:col-span-8 row-span-2 flex flex-col items-center justify-center text-center space-y-6">
+          <h1 className="text-5xl font-semibold tracking-tight">
+            {t("title")}
+          </h1>
+          <p className="text-lg font-medium text-neutral-600 dark:text-neutral-400">
+            {t("tagline")}
+          </p>
+
           <a
-            href="/david-hasse.vcf"
-            download
-            target="_blank"
-            rel="noopener"
-            className="flex items-center text-center hover:underline gap-2"
+            href={`mailto:contact@david-hasse.de?subject=${encodeURIComponent(
+              t("mailSubject")
+            )}`}
+            className="group inline-flex items-center gap-2 rounded-2xl border hover:text-textdark dark:hover:text-textlight border-slate-400/50 bg-transparent px-8 py-4 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark focus-visible:ring-2 focus-visible:ring-slate-300"
           >
-            <FileText size={28} />
-            vCard
+            <Mail
+              size={30}
+              className="text-primary dark:text-primarydark group-hover:text-textdark group-hover:dark:text-textlight"
+            />
+            {t("cta")}
           </a>
-        </section>
-      )}
+        </Tile>
+
+        {/* ── vCard / QR code ─────────────────────────── */}
+        <Tile className="sm:col-span-6 lg:col-span-4 row-span-2 flex flex-col items-center justify-center space-y-4">
+          {showQRCode ? (
+            <>
+              <VCardQRCode />
+              <a
+                href="/david-hasse.vcf"
+                download
+                className="flex items-center mt-2 gap-2 hover:text-primary dark:hover:text-primarydark"
+              >
+                <FileText
+                  size={24}
+                  className="text-primary dark:text-primarydark"
+                />
+                vCard
+              </a>
+            </>
+          ) : (
+            <button
+              className="flex items-center gap-2 font-medium hover:text-primary dark:hover:text-primarydark hover:cursor-pointer"
+              onClick={handleQRClick}
+            >
+              <QrCode
+                size={28}
+                className="text-primary dark:text-primarydark"
+              />
+              {t("vcard")}
+            </button>
+          )}
+        </Tile>
+
+        {/* ── Social links + CV ───────────────────────── */}
+        <Tile className="sm:col-span-6 lg:col-span-12 row-span-1 flex flex-wrap items-center justify-center gap-10">
+          <SocialLink
+            href="https://www.linkedin.com/in/david-hasse-ab0bb11a9"
+            icon={<Linkedin size={28} />}
+            label="LinkedIn"
+          />
+          <SocialLink
+            href="https://github.com/haeisl"
+            icon={<Github size={28} />}
+            label="GitHub"
+          />
+          {/* Add CV back in when ready */}
+        </Tile>
+      </section>
     </main>
   );
 }
 
-function Fact({
-  label,
-  value,
+/*──────── shared helpers ───────*/
+
+function Tile({
+  className = "",
+  children,
 }: {
-  label: string;
-  value: string | React.JSX.Element[];
+  className?: string;
+  children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col py-6">
-      <span className="text-textaltlight dark:text-textaltdark">{label}</span>
-      <span className="font-medium">{value}</span>
+    <div
+      className={`tile rounded-2xl bg-neutral-100/60 dark:bg-neutral-900/60 backdrop-blur-sm shadow-md p-6 ${className}`}
+    >
+      {children}
     </div>
   );
 }
+
+function FactCard({
+  className = "",
+  label,
+  value,
+  icon,
+}: {
+  className?: string;
+  label: string;
+  value: string | React.JSX.Element[];
+  icon?: React.ReactNode;
+}) {
+  return (
+    <Tile
+      className={`${className} flex flex-col justify-center text-center space-y-1`}
+    >
+      <span className="flex justify-center text-primary dark:text-primarydark">
+        {icon}
+      </span>
+      <span className="text-md text-textaltlight dark:text-textaltdark">
+        {label}
+      </span>
+      <span className="font-medium text-lg mt-1">{value}</span>
+    </Tile>
+  );
+}
+
+function SocialLink({
+  href,
+  icon,
+  label,
+  download,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+  download?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      download={download}
+      target="_blank"
+      rel="noopener"
+      className="group relative inline-flex items-center gap-3 rounded-2xl border border-slate-400/50 bg-transparent
+      px-6 py-3 text-base font-semibold  outline-none transition duration-300
+      hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark hover:text-surface
+      hover:text-textdark dark:hover:text-textlight
+      dark:hover:text-surface focus-visible:ring-2 focus-visible:ring-slate-300"
+    >
+      {/* icon — inherits currentColor by default, swaps to surface on hover */}
+      <span className="w-6 h-6 flex-shrink-0 transition-colors text-primary dark:text-primarydark group-hover:text-textdark dark:group-hover:text-textlight">
+        {icon}
+      </span>
+      {label}
+    </a>
+  );
+}
+
+/*
+    <a
+      href={href}
+      download={download}
+      target="_blank"
+      rel="noopener"
+      className="flex items-center gap-3 text-lg text-textlight dark:text-textdark hover:text-primary dark:hover:text-primarydark transition-colors"
+    >
+      {icon}
+      {label}
+    </a>
+*/

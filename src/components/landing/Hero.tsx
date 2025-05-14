@@ -106,13 +106,13 @@ export function HeroTypewriter() {
       <div className="z-1 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
         <Link
           href={`/${locale}/projects`}
-          className="inline-flex items-center gap-2 rounded-2xl border border-slate-400/50 bg-transparent px-6 py-3 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark focus-visible:ring-2 focus-visible:ring-slate-300"
+          className="inline-flex items-center gap-2 hover:text-textdark dark:hover:text-textlight rounded-2xl border border-slate-400/50 bg-transparent px-6 py-3 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark focus-visible:ring-2 focus-visible:ring-slate-300"
         >
           {t("links.projects")} <ArrowRight size={18} />
         </Link>
         <Link
           href={`/${locale}/about`}
-          className="inline-flex items-center gap-2 rounded-2xl border border-slate-400/50 bg-transparent px-6 py-3 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark focus-visible:ring-2 focus-visible:ring-slate-300"
+          className="inline-flex items-center gap-2 hover:text-textdark dark:hover:text-textlight rounded-2xl border border-slate-400/50 bg-transparent px-6 py-3 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark focus-visible:ring-2 focus-visible:ring-slate-300"
         >
           {t("links.about")} <ArrowRight size={18} />
         </Link>

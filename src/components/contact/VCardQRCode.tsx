@@ -15,7 +15,7 @@ export default function VCardQRCode() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center w-[250px] h-[250px] p-5 border border-bgaccentlight dark:border-bgaccentdark rounded-2xl shadow-md bg-white">
+    <div className="flex items-center justify-center w-[200px] h-[200px] mt-2 p-2 border border-bgaccentlight dark:border-bgaccentdark rounded-2xl shadow-md bg-white">
       {qrCodeUrl ? (
         <Image src={qrCodeUrl} alt="vCard QR Code" width={200} height={200} />
       ) : (

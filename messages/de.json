@@ -117,6 +117,7 @@
     }
   },
   "ContactPage": {
+    "factsToContact": "Infos, um mich zu kontaktieren",
     "title": "Kontakt",
     "tagline": "Lass uns gemeinsam Großartiges bauen.",
     "cta": "Kontakt aufnehmen",
