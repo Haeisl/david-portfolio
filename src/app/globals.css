@@ -25,8 +25,12 @@
   --color-secondarydark: #86efac;
 
   --font-main: var(--font-inter);
-  --font-logo: var(--font-caveat);
-  --font-logoalt: var(--font-playfair);
+  /* --font-logo: var(--font-caveat); */
+  /* --font-logo: var(--font-major-mono-display); */
+  /* --font-logo: var(--font-julius-sans-one); */
+  --font-logo: var(--font-doto);
+  /* --font-logoalt: var(--font-playfair); */
+  --font-courier: var(--font-courier-prime);
 }
 
 @keyframes breath {
@@ -36,5 +40,33 @@
   }
   50% {
     filter: hue-rotate(15deg);
+  }
+}
+
+@layer utilities {
+  @media (min-width: 640px) {
+    .responsive-gap {
+      gap: 1.5rem; /* md */
+    }
+  }
+  @media (min-width: 768px) {
+    .responsive-gap {
+      gap: 4rem; /* md */
+    }
+  }
+  @media (min-width: 1024px) {
+    .responsive-gap {
+      gap: 8rem; /* lg */
+    }
+  }
+  @media (min-width: 1280px) {
+    .responsive-gap {
+      gap: 8rem; /* xl */
+    }
+  }
+  @media (min-width: 1536px) {
+    .responsive-gap {
+      gap: 14rem; /* 2xl */
+    }
   }
 }

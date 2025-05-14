@@ -1,13 +1,19 @@
 {
   "NavbarLinks": {
-    "about": "Profile",
+    "about": "About me",
     "projects": "Projects",
     "contact": "Contact",
     "impressum": "Legal Notice"
   },
   "Landing": {
     "title": "Hi, I'm ",
-    "subtitle": "Computer Science graduate",
+    "subtitle": "I am a",
+    "personaldescriptions": [
+      { "title": "software developer" },
+      { "title": "problem solver" },
+      { "title": "Bachelor of Science" },
+      { "title": "Coffee Lover" }
+    ],
     "links": {
       "projects": "View Projects",
       "about": "More about Me"

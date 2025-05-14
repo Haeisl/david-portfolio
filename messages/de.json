@@ -1,13 +1,19 @@
 {
   "NavbarLinks": {
-    "about": "Profil",
+    "about": "Über mich",
     "projects": "Projekte",
     "contact": "Kontakt",
     "impressum": "Impressum"
   },
   "Landing": {
-    "title": "Hi, ich bin ",
-    "subtitle": "Informatik Absolvent",
+    "title": "Hi, ich heiße ",
+    "subtitle": "Ich bin",
+    "personaldescriptions": [
+      { "title": "Softwareentwickler" },
+      { "title": "Problemlöser" },
+      { "title": "Bachelor of Science" },
+      { "title": "Kaffeeliebhaber" }
+    ],
     "links": {
       "projects": "Projekte anschauen",
       "about": "Mehr über mich"
@@ -80,7 +86,7 @@
         "left": "Spiele",
         "right": "Filme",
         "preferred": "left",
-        "explanation": "Ein Hobby fürs Leben – und eine große Inspiration für mein Denken."
+        "explanation": "Ein Hobby fürs Leben - und eine große Inspiration für mein Denken."
       }
     ]
   },

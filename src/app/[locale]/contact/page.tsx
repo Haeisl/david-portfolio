@@ -21,19 +21,19 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-14 space-y-14">
+    <main className="mx-auto max-w-6xl px-4 py-14 space-y-24 text-lg sm:text-xl">
       {/* ── Hero ───────────────────────────────────── */}
       <section className="text-center space-y-4">
-        <h1 className="text-4xl font-semibold tracking-tight">{t("title")}</h1>
+        <h1 className="text-5xl font-semibold tracking-tight">{t("title")}</h1>
         <p className="text-lg font-medium text-neutral-600 dark:text-neutral-400">
           {t("tagline")}
         </p>
 
         <a
-          href={`mailto:me@example.com?subject=${encodeURIComponent(
+          href={`mailto:contact@david-hasse.de?subject=${encodeURIComponent(
             t("mailSubject")
           )}`}
-          className="inline-flex items-center gap-2 rounded-xl border border-bgaccentdark bg-accentlight
+          className="inline-flex items-center gap-2 mt-2 rounded-xl border border-bgaccentdark bg-accentlight
           dark:border-bgaccentlight dark:bg-bgaccentdark px-5 py-3 text-textlight dark:text-textdark shadow-md transition
           hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-neutral-400
           duration-200 hover:scale-105"
@@ -126,8 +126,8 @@ function Fact({
   value: string | React.JSX.Element[];
 }) {
   return (
-    <div className="flex flex-col">
-      <span className="text-neutral-600 dark:text-neutral-400">{label}</span>
+    <div className="flex flex-col py-6">
+      <span className="text-textaltlight dark:text-textaltdark">{label}</span>
       <span className="font-medium">{value}</span>
     </div>
   );

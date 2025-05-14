@@ -37,45 +37,44 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-100 mb-8 py-2 px-4 sm:text-xl md:text-2xl lg:text-4xl text-textlight dark:text-textdark bg-bgaccentlight dark:bg-bgaccentdark shadow-xl">
+    <header className="sticky top-0 z-100 mb-8 py-4 px-2 sm:px-4 md:px-6 sm:text-xl xl:text-3xl text-textlight dark:text-textdark bg-bgaccentlight dark:bg-bgaccentdark shadow-xl">
       <nav
-        className="grid grid-cols-3 items-center w-full px-2"
+        className="flex items-center w-full px-2"
         aria-label="Main navigation"
       >
-        {/* logo */}
+        {/* Left: Logo */}
         <Link
-          className="justify-self-start font-logo text-3xl sm:text-4xl lg:text-5xl whitespace-nowrap"
+          className={`pr-3 flex-1 font-logo font-bold text-2xl sm:text-2xl xl:text-4xl whitespace-nowrap hover:text-primary hover:dark:text-primarydark transition-colors duration-300
+        ${isActive(`/${locale}`) ? "text-primary dark:text-primarydark" : ""}`}
           href={`/${locale}/`}
         >
           David Hasse
         </Link>
 
-        {/* desktop links */}
-        <div className="hidden sm:flex md:space-x-10 lg:space-x-18 xl:space-x-48 2xl:space-x-64 justify-self-center justify-between">
+        {/* Center: Nav Links (desktop only) */}
+        <div className="hidden sm:flex justify-center whitespace-nowrap transition-all duration-500 ease-in-out responsive-gap ">
           {navigation.map((item: NavigationType) => (
             <Link
               key={item.name}
-              className={`p-2 hover:text-primary hover:dark:text-primarydark transition-colors duration-300
-                ${isActive(item.href) && "text-primary dark:text-primarydark"}`}
+              className={`hover:text-primary hover:dark:text-primarydark transition-colors duration-300
+          ${isActive(item.href) ? "text-primary dark:text-primarydark" : ""}`}
               href={item.href}
             >
               {item.name}
             </Link>
           ))}
         </div>
-
-        {/* mobile hamburger */}
+        {/* Mobile Hamburger */}
         <button
-          className="justify-self-center sm:hidden p-2 cursor-pointer"
+          className="pl-2 sm:hidden"
           onClick={() => setIsOpen((o) => !o)}
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* right side (lang + theme) */}
-        <div className="flex justify-end items-center space-x-2">
-          {/* language toggle */}
+        {/* Right: Toggles */}
+        <div className="flex-1 flex items-center justify-end space-x-2">
           <button
             className={`border p-2 font-bold rounded-md text-sm cursor-pointer ${
               locale === "de" &&
@@ -85,9 +84,8 @@ export default function Header() {
           >
             DE
           </button>
-
           <button
-            className={`border p-2 font-bold rounded-md text-sm mr-4 cursor-pointer ${
+            className={`border p-2 font-bold rounded-md text-sm cursor-pointer ${
               locale === "en" &&
               "bg-bgaccentdark dark:bg-bgaccentlight text-textdark dark:text-textlight"
             }`}
@@ -95,8 +93,6 @@ export default function Header() {
           >
             EN
           </button>
-
-          {/* darkmode toggle */}
           <ThemeToggle />
         </div>
       </nav>
