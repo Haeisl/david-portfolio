@@ -1,6 +1,7 @@
 "use client";
 
 import { nl2br } from "@/app/utils/nlToBr";
+import FadeInSection from "@/components/general/FadeInSection";
 import {
   Mail,
   Linkedin,
@@ -31,118 +32,120 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-14">
-      {/* ── Section header ───────────────────────────────────── */}
-      <div className="flex items-center gap-3 mb-6">
-        <h2 className="text-3xl font-semibold tracking-wide uppercase text-textlight dark:text-textdark">
-          {t("factsToContact")}
-        </h2>
-        <div className="hidden sm:block flex-grow h-px bg-gradient-to-r from-textlight/40 dark:from-textdark/40 to-transparent" />
-      </div>
+    <FadeInSection>
+      <main className="mx-auto max-w-6xl px-4 py-14">
+        {/* ── Section header ───────────────────────────────────── */}
+        <div className="flex items-center gap-3 mb-6">
+          <h2 className="text-3xl font-semibold tracking-wide uppercase text-textlight dark:text-textdark">
+            {t("factsToContact")}
+          </h2>
+          <div className="hidden sm:block flex-grow h-px bg-gradient-to-r from-textlight/40 dark:from-textdark/40 to-transparent" />
+        </div>
 
-      <section
-        className="
+        <section
+          className="
           grid auto-rows-[minmax(140px,auto)] gap-6
           sm:grid-cols-6
           lg:grid-cols-12
         "
-      >
-        {/* ── Mini fact cards ─────────────────────────── */}
-        <FactCard
-          className="sm:col-span-3 lg:col-span-3"
-          label={t("facts.location")}
-          value={t("facts.locationValue")}
-          icon={<MapPinHouse size={22} />}
-        />
-        <FactCard
-          className="sm:col-span-3 lg:col-span-3"
-          label={t("facts.openTo")}
-          value={t("facts.openValue")}
-          icon={<Briefcase size={22} />}
-        />
-        <FactCard
-          className="sm:col-span-3 lg:col-span-3"
-          label={t("facts.timezone")}
-          value={nl2br(t("facts.timezoneValue"))}
-          icon={<Earth size={22} />}
-        />
-        <FactCard
-          className="sm:col-span-3 lg:col-span-3"
-          label={t("facts.languages")}
-          value={nl2br(t("facts.languagesValue"))}
-          icon={<Languages size={22} />}
-        />
+        >
+          {/* ── Mini fact cards ─────────────────────────── */}
+          <FactCard
+            className="sm:col-span-3 lg:col-span-3"
+            label={t("facts.location")}
+            value={t("facts.locationValue")}
+            icon={<MapPinHouse size={22} />}
+          />
+          <FactCard
+            className="sm:col-span-3 lg:col-span-3"
+            label={t("facts.openTo")}
+            value={t("facts.openValue")}
+            icon={<Briefcase size={22} />}
+          />
+          <FactCard
+            className="sm:col-span-3 lg:col-span-3"
+            label={t("facts.timezone")}
+            value={nl2br(t("facts.timezoneValue"))}
+            icon={<Earth size={22} />}
+          />
+          <FactCard
+            className="sm:col-span-3 lg:col-span-3"
+            label={t("facts.languages")}
+            value={nl2br(t("facts.languagesValue"))}
+            icon={<Languages size={22} />}
+          />
 
-        {/* ── Hero + CTA ───────────────────────────────── */}
-        <Tile className="sm:col-span-6 lg:col-span-8 row-span-2 flex flex-col items-center justify-center text-center space-y-6">
-          <h1 className="text-5xl font-semibold tracking-tight">
-            {t("title")}
-          </h1>
-          <p className="text-lg font-medium text-neutral-600 dark:text-neutral-400">
-            {t("tagline")}
-          </p>
+          {/* ── Hero + CTA ───────────────────────────────── */}
+          <Tile className="sm:col-span-6 lg:col-span-8 row-span-2 flex flex-col items-center justify-center text-center space-y-6">
+            <h1 className="text-5xl font-semibold tracking-tight">
+              {t("title")}
+            </h1>
+            <p className="text-lg font-medium text-neutral-600 dark:text-neutral-400">
+              {t("tagline")}
+            </p>
 
-          <a
-            href={`mailto:contact@david-hasse.de?subject=${encodeURIComponent(
-              t("mailSubject")
-            )}`}
-            className="group inline-flex items-center gap-2 rounded-2xl border hover:text-textdark dark:hover:text-textlight border-slate-400/50 bg-transparent px-8 py-4 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark focus-visible:ring-2 focus-visible:ring-slate-300"
-          >
-            <Mail
-              size={30}
-              className="text-primary dark:text-primarydark group-hover:text-textdark group-hover:dark:text-textlight"
-            />
-            {t("cta")}
-          </a>
-        </Tile>
+            <a
+              href={`mailto:contact@david-hasse.de?subject=${encodeURIComponent(
+                t("mailSubject")
+              )}`}
+              className="group inline-flex items-center gap-2 rounded-2xl border hover:text-textdark dark:hover:text-textlight border-slate-400/50 bg-transparent px-8 py-4 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark focus-visible:ring-2 focus-visible:ring-slate-300"
+            >
+              <Mail
+                size={30}
+                className="text-primary dark:text-primarydark group-hover:text-textdark group-hover:dark:text-textlight"
+              />
+              {t("cta")}
+            </a>
+          </Tile>
 
-        {/* ── vCard / QR code ─────────────────────────── */}
-        <Tile className="sm:col-span-6 lg:col-span-4 row-span-2 flex flex-col items-center justify-center space-y-4">
-          {showQRCode ? (
-            <>
-              <VCardQRCode />
-              <a
-                href="/david-hasse.vcf"
-                download
-                className="flex items-center mt-2 gap-2 hover:text-primary dark:hover:text-primarydark"
+          {/* ── vCard / QR code ─────────────────────────── */}
+          <Tile className="sm:col-span-6 lg:col-span-4 row-span-2 flex flex-col items-center justify-center space-y-4">
+            {showQRCode ? (
+              <>
+                <VCardQRCode />
+                <a
+                  href="/david-hasse.vcf"
+                  download
+                  className="flex items-center mt-2 gap-2 hover:text-primary dark:hover:text-primarydark"
+                >
+                  <FileText
+                    size={24}
+                    className="text-primary dark:text-primarydark"
+                  />
+                  vCard
+                </a>
+              </>
+            ) : (
+              <button
+                className="flex items-center gap-2 font-medium hover:text-primary dark:hover:text-primarydark hover:cursor-pointer"
+                onClick={handleQRClick}
               >
-                <FileText
-                  size={24}
+                <QrCode
+                  size={28}
                   className="text-primary dark:text-primarydark"
                 />
-                vCard
-              </a>
-            </>
-          ) : (
-            <button
-              className="flex items-center gap-2 font-medium hover:text-primary dark:hover:text-primarydark hover:cursor-pointer"
-              onClick={handleQRClick}
-            >
-              <QrCode
-                size={28}
-                className="text-primary dark:text-primarydark"
-              />
-              {t("vcard")}
-            </button>
-          )}
-        </Tile>
+                {t("vcard")}
+              </button>
+            )}
+          </Tile>
 
-        {/* ── Social links + CV ───────────────────────── */}
-        <Tile className="sm:col-span-6 lg:col-span-12 row-span-1 flex flex-wrap items-center justify-center gap-10">
-          <SocialLink
-            href="https://www.linkedin.com/in/david-hasse-ab0bb11a9"
-            icon={<Linkedin size={28} />}
-            label="LinkedIn"
-          />
-          <SocialLink
-            href="https://github.com/haeisl"
-            icon={<Github size={28} />}
-            label="GitHub"
-          />
-          {/* Add CV back in when ready */}
-        </Tile>
-      </section>
-    </main>
+          {/* ── Social links + CV ───────────────────────── */}
+          <Tile className="sm:col-span-6 lg:col-span-12 row-span-1 flex flex-wrap items-center justify-center gap-10">
+            <SocialLink
+              href="https://www.linkedin.com/in/david-hasse-ab0bb11a9"
+              icon={<Linkedin size={28} />}
+              label="LinkedIn"
+            />
+            <SocialLink
+              href="https://github.com/haeisl"
+              icon={<Github size={28} />}
+              label="GitHub"
+            />
+            {/* Add CV back in when ready */}
+          </Tile>
+        </section>
+      </main>
+    </FadeInSection>
   );
 }
 
