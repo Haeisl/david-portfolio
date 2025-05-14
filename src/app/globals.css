@@ -3,7 +3,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  /* --color-bgdark: #171717; */
   --color-bgdark: #212121;
   --color-bglight: #fafafa;
 
@@ -28,4 +27,14 @@
   --font-main: var(--font-inter);
   --font-logo: var(--font-caveat);
   --font-logoalt: var(--font-playfair);
+}
+
+@keyframes breath {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(15deg);
+  }
 }

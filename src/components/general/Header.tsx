@@ -37,29 +37,26 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-100 mb-8 py-2 px-4 text-2xl text-textlight dark:text-textdark bg-bgaccentlight dark:bg-bgaccentdark shadow-xl">
+    <header className="sticky top-0 z-100 mb-8 py-2 px-4 sm:text-xl md:text-2xl lg:text-4xl text-textlight dark:text-textdark bg-bgaccentlight dark:bg-bgaccentdark shadow-xl">
       <nav
         className="grid grid-cols-3 items-center w-full px-2"
         aria-label="Main navigation"
       >
         {/* logo */}
         <Link
-          className="justify-self-start font-logo text-3xl sm:text-4xl whitespace-nowrap"
+          className="justify-self-start font-logo text-3xl sm:text-4xl lg:text-5xl whitespace-nowrap"
           href={`/${locale}/`}
         >
           David Hasse
         </Link>
 
         {/* desktop links */}
-        <div className="hidden sm:flex md:space-x-10 lg:space-x-18 xl:space-x-48 justify-self-center justify-between">
+        <div className="hidden sm:flex md:space-x-10 lg:space-x-18 xl:space-x-48 2xl:space-x-64 justify-self-center justify-between">
           {navigation.map((item: NavigationType) => (
             <Link
               key={item.name}
               className={`p-2 hover:text-primary hover:dark:text-primarydark transition-colors duration-300
-                ${
-                  isActive(item.href) &&
-                  "text-primary dark:text-primarydark border rounded-lg border-primary dark:border-primarydark"
-                }`}
+                ${isActive(item.href) && "text-primary dark:text-primarydark"}`}
               href={item.href}
             >
               {item.name}

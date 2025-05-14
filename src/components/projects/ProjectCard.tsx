@@ -25,6 +25,7 @@ const ProjectCard = ({ id, type, techStack, imageUrl }: ProjectCardProps) => {
   const title = t(`${id}.title`);
   const description = t(`${id}.description`);
   const locale = useLocale();
+
   return (
     <Link href={`/${locale}/projects/${id}`} className="h-full block">
       {/* <div className="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col md:flex-row-reverse"> */}

@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
-const VCardQRCode = dynamic(() => import("@/components/VCardQRCode"), {
+const VCardQRCode = dynamic(() => import("@/components/contact/VCardQRCode"), {
   loading: () => <p className="mt-4">Loading QR Code...</p>,
   ssr: false, // Disable server side rendering for this dynamic component
 });

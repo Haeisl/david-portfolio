@@ -5,8 +5,18 @@
     "contact": "Kontakt",
     "impressum": "Impressum"
   },
-  "HomePage": {
-    "title": "Startseite - bald auch hier im Kino"
+  "Landing": {
+    "title": "Hi, ich bin ",
+    "subtitle": "Informatik Absolvent",
+    "links": {
+      "projects": "Projekte anschauen",
+      "about": "Mehr über mich"
+    },
+    "cta": {
+      "title": "Lass uns gemeinsam etwas aufbauen",
+      "subtitle": "Ich bin derzeit offen für Junior-Entwicklerstellen, Praktika oder freiberufliche Projekte. Wenn dir gefällt, was du siehst, zögere nicht, dich bei mir zu melden!",
+      "contact": "Kontakt aufnehmen"
+    }
   },
   "ProfileHeader": {
     "description": "Von Natur aus neugierig, motiviert durch Lernen und Problemlösen - ob durch Code, Design oder Zusammenarbeit."
@@ -61,7 +71,7 @@
         "explanation": "Ich liebe Visualisierungen - Daten durch Design verständlich machen fasziniert mich."
       },
       {
-        "left": "Kapuze",
+        "left": "Kapuzenpullover",
         "right": "Hemd",
         "preferred": "left",
         "explanation": "Ich mag's, mich schick zu machen - aber Hoodies sind mein Zuhause."

@@ -5,8 +5,18 @@
     "contact": "Contact",
     "impressum": "Legal Notice"
   },
-  "HomePage": {
-    "title": "Coming Soon"
+  "Landing": {
+    "title": "Hi, I'm ",
+    "subtitle": "Computer Science graduate",
+    "links": {
+      "projects": "View Projects",
+      "about": "More about Me"
+    },
+    "cta": {
+      "title": "Let's Build Something Together",
+      "subtitle": "I'm currently open to junior developer roles, internships or freelance gigs. If you like what you see, feel free to reach out!",
+      "contact": "Get in Touch"
+    }
   },
   "ProfileHeader": {
     "description": "Curious by nature, driven by learning and problem-solving - whether through code, design, or collaboration."

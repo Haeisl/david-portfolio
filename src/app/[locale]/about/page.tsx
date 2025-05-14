@@ -1,9 +1,9 @@
-import ProfileHeader from "@/components/ProfileHeader";
-import SkillBar from "@/components/SkillBar";
-import ThisOrThat from "@/components/ThisOrThat";
-import Timeline from "@/components/Timeline";
-import Interests from "@/components/Interests";
-import FadeInSection from "@/components/FadeInSection";
+import ProfileHeader from "@/components/profile/ProfileHeader";
+import SkillBar from "@/components/profile/SkillBar";
+import ThisOrThat from "@/components/profile/ThisOrThat";
+import Timeline from "@/components/profile/Timeline";
+import Interests from "@/components/profile/Interests";
+import FadeInSection from "@/components/general/FadeInSection";
 import { useTranslations } from "next-intl";
 
 export default function ProfilePage() {

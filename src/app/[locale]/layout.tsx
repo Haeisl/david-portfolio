@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, Caveat } from "next/font/google";
 import "../globals.css";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../components/general/Header";
+import Footer from "../../components/general/Footer";
 import ThemeProvider from "@/theme/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";

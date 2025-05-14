@@ -1,13 +1,11 @@
-import { useTranslations } from "next-intl";
+import CallToAction from "@/components/landing/CallToAction";
+import Hero from "@/components/landing/Hero";
 
 export default function Home() {
-  const t = useTranslations("HomePage");
-
   return (
     <>
-      <h1 className="flex justify-center items-center text-5xl">
-        {t("title")}
-      </h1>
+      <Hero />
+      <CallToAction />
     </>
   );
 }
