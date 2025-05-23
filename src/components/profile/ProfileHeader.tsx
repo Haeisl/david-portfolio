@@ -6,7 +6,7 @@ export default function ProfileHeader() {
   return (
     <section className="text-center">
       <Image
-        src="https://fakeimg.pl/800x600?text=placeholder"
+        src="/images/selfie.jpg"
         alt="Profile photo"
         width={200}
         height={200}

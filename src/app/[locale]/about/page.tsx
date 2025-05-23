@@ -3,45 +3,100 @@ import ThisOrThat from "@/components/profile/ThisOrThat";
 import { Timeline, TimelineItem } from "@/components/profile/Timeline";
 import FadeInSection from "@/components/general/FadeInSection";
 import { Skill, SkillsSection } from "@/components/profile/SkillsSection";
+import { useTranslations } from "next-intl";
 
 export default function ProfilePage() {
+  const t = useTranslations("Profile");
   const sample: TimelineItem[] = [
     {
       id: "bsc",
       type: "education",
-      title: "B.Sc. Computer Science",
-      subtitle: "TUM",
-      start: "2017-10",
-      end: "2021-03",
+      title: t("bsctitle"),
+      subtitle: "Uni Heidelberg",
+      start: "2018-10",
+      end: "2025-03",
       description: "Graduated with distinction.",
     },
     {
-      id: "intern",
-      type: "work",
-      title: "Frontend Intern",
-      subtitle: "Example GmbH",
-      start: "2020-04",
-      end: "2020-09",
-      description: "Built internal tooling in React.",
+      id: "abi",
+      type: "education",
+      title: "Abitur",
+      subtitle: "Hölderlin-Gymnasium Heidelberg",
+      start: "2009-09",
+      end: "2017-09",
+      description: t("abiturdescription"),
     },
     {
-      id: "msc",
-      type: "education",
-      title: "M.Sc. Data Science",
-      subtitle: "TUM",
-      start: "2021-10",
+      id: "schoolinternship",
+      type: "work",
+      title: t("schoolinternshiptitle"),
+      subtitle: t("schoolinternshipsubtitle"),
+      start: "2015-06",
+      end: "2015-07",
+    },
+    {
+      id: "jobsearch",
+      type: "work",
+      title: t("jobsearchtitle"),
+      subtitle: t("jobsearchsubtitle"),
+      start: "2025-04",
     },
   ];
 
-  const skills2: Skill[] = [
+  const skills: Skill[] = [
+    // Frontend
     { id: "js", name: "JavaScript", level: 90, category: "Frontend" },
     { id: "ts", name: "TypeScript", level: 85, category: "Frontend" },
     { id: "react", name: "React", level: 88, category: "Frontend" },
     { id: "next", name: "Next.js", level: 80, category: "Frontend" },
     { id: "tailwind", name: "Tailwind CSS", level: 75, category: "Frontend" },
-    { id: "node", name: "Node.js", level: 70, category: "Backend" },
+
+    // Backend
     { id: "postgres", name: "PostgreSQL", level: 65, category: "Backend" },
+    { id: "java", name: "Java", level: 80, category: "Backend" },
+    { id: "sql", name: "SQL", level: 75, category: "Backend" },
+    { id: "python", name: "Python", level: 70, category: "Backend" },
+    { id: "cpp", name: "C++", level: 75, category: "Backend" },
+
+    // DevOps / Tools
     { id: "docker", name: "Docker", level: 60, category: "DevOps" },
+    { id: "linux", name: "Linux", level: 70, category: "DevOps" },
+    { id: "bash", name: "Bash/Shell Scripting", level: 65, category: "DevOps" },
+    { id: "git", name: "Git", level: 80, category: "DevOps" },
+
+    // Visualization & Simulation
+    {
+      id: "unreal",
+      name: "Unreal Engine",
+      level: 70,
+      category: "Visualization",
+    },
+    { id: "paraview", name: "ParaView", level: 65, category: "Visualization" },
+    { id: "opengl", name: "OpenGL", level: 60, category: "Visualization" },
+
+    // Scientific & Academic
+    {
+      id: "matplotlib",
+      name: "Matplotlib",
+      level: 75,
+      category: "Data Science",
+    },
+    {
+      id: "numpy",
+      name: "NumPy",
+      level: 80,
+      category: "Data Science",
+    },
+    {
+      id: "scipy",
+      name: "SciPy",
+      level: 70,
+      category: "Data Science",
+    },
+
+    // Tools
+    { id: "vscode", name: "VSCode", level: 90, category: "Tools" },
+    { id: "latex", name: "LaTeX", level: 85, category: "Tools" },
   ];
 
   return (
@@ -52,8 +107,8 @@ export default function ProfilePage() {
 
       <FadeInSection>
         <SkillsSection
-          skills={skills2}
-          defaultOpen="Frontend" // accordion panel that’s open on first render
+          skills={skills}
+          defaultOpen="" // accordion panel that’s open on first render
         />
       </FadeInSection>
 

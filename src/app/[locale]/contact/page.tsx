@@ -33,7 +33,7 @@ export default function ContactPage() {
 
   return (
     <FadeInSection>
-      <main className="mx-auto max-w-6xl px-4 py-14">
+      <main className="mx-auto max-w-6xl px-4 py-14 min-h-[85vh]">
         {/* ── Section header ───────────────────────────────────── */}
         <div className="flex items-center gap-3 mb-6">
           <h2 className="text-3xl font-semibold tracking-wide uppercase text-textlight dark:text-textdark">
@@ -80,7 +80,7 @@ export default function ContactPage() {
             <h1 className="text-5xl font-semibold tracking-tight">
               {t("title")}
             </h1>
-            <p className="text-lg font-medium text-neutral-600 dark:text-neutral-400">
+            <p className="text-lg font-medium text-textaltlight dark:text-textaltdark">
               {t("tagline")}
             </p>
 
@@ -88,7 +88,7 @@ export default function ContactPage() {
               href={`mailto:contact@david-hasse.de?subject=${encodeURIComponent(
                 t("mailSubject")
               )}`}
-              className="group inline-flex items-center gap-2 rounded-2xl border hover:text-textdark dark:hover:text-textlight border-slate-400/50 bg-transparent px-8 py-4 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-[var(--color-primary)] dark:hover:bg-[var(--color-primarydark)] focus-visible:ring-2 focus-visible:ring-slate-300"
+              className="group inline-flex items-center gap-2 rounded-2xl border hover:text-textdark dark:hover:text-textlight border-slate-400/50 bg-transparent px-8 py-4 font-semibold transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-[var(--color-primary)] dark:hover:bg-[var(--color-primarydark)] focus-visible:ring-2 focus-visible:ring-slate-300"
             >
               <Mail
                 size={30}
@@ -160,7 +160,7 @@ function Tile({
 }) {
   return (
     <div
-      className={`tile rounded-2xl bg-neutral-100/60 dark:bg-neutral-900/60 backdrop-blur-sm shadow-md p-6 ${className}`}
+      className={`rounded-2xl bg-bgaccentlight dark:bg-bgaccentdark backdrop-blur-sm shadow-md p-6 ${className}`}
     >
       {children}
     </div>

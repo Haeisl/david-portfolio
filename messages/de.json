@@ -27,13 +27,22 @@
   "ProfileHeader": {
     "description": "Von Natur aus neugierig, motiviert durch Lernen und Problemlösen - ob durch Code, Design oder Zusammenarbeit."
   },
+  "Profile": {
+    "abiturdescription": "Gymnasium mit Schwerpunkt auf Naturwissenschaften.",
+    "bsctitle": "B.Sc. Informatik",
+    "jobsearchtitle": "Jobsuche",
+    "jobsearchsubtitle": "Softwareentwickler",
+    "schoolinternshiptitle": "Schulpraktikum",
+    "schoolinternshipsubtitle": "SAP"
+  },
   "Skills": {
     "title": "Kenntnisse",
     "description": "Eine grobe Selbsteinschätzung ausgewählter Technologien, mit denen ich gearbeitet habe."
   },
   "Timeline": {
     "title": "Lebenslauf",
-    "description": "Ein kurzer Überblick über mein Studium und meine Arbeit."
+    "description": "Ein kurzer Überblick über mein Studium und meine Arbeit.",
+    "present": "Heute"
   },
   "ThisOrThat": {
     "title": "Dies oder Das",

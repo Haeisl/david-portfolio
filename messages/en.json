@@ -27,13 +27,22 @@
   "ProfileHeader": {
     "description": "Curious by nature, driven by learning and problem-solving - whether through code, design, or collaboration."
   },
+  "Profile": {
+    "abiturdescription": "High school focused on science.",
+    "bsctitle": "B.Sc. Computer Science",
+    "jobsearchtitle": "Jobsearch",
+    "jobsearchsubtitle": "Software Developer",
+    "schoolinternshiptitle": "School internship",
+    "schoolinternshipsubtitle": "SAP"
+  },
   "Skills": {
     "title": "Skills",
     "description": "A rough self-assessment of selected technologies I've worked with."
   },
   "Timeline": {
     "title": "Experience",
-    "description": "A quick overview of my studies and work."
+    "description": "A quick overview of my studies and work.",
+    "present": "Present"
   },
   "ThisOrThat": {
     "title": "This or That",
