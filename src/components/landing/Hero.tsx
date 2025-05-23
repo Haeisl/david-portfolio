@@ -77,42 +77,42 @@ export function HeroTypewriter() {
   const typed = useTypewriter(WORDS_A, { holdDuration: 3000 });
 
   return (
-    <section className="flex min-h-[90svh] flex-col items-center justify-center text-center">
+    <section className="relative flex min-h-[95svh] flex-col items-center justify-center text-center overflow-y-visible overflow-x-hidden">
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 2, opacity: 0.25 }}
         transition={{ duration: 8, repeat: Infinity, repeatType: "mirror" }}
-        className="z-0 absolute inset-auto h-96 w-96 rounded-full bg-gradient-to-r bg-primary dark:bg-primarydark blur-3xl"
+        className="z-0 absolute left-1/2 top-1/2 h-72 w-72 sm:h-96 sm:w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r bg-[var(--color-primary)] dark:bg-[var(--color-primarydark)] blur-3xl overflow-hidden"
       />
 
-      <h1 className="z-1 text-balance text-5xl font-extrabold sm:text-6xl">
+      <h1 className="z-10 text-balance text-5xl font-extrabold sm:text-6xl">
         {t("title")}
-        <span className="z-1 text-primary dark:text-primarydark">
+        <span className="z-1 text-[var(--color-primary)] dark:text-[var(--color-primarydark)]drk">
           David Hasse
         </span>
       </h1>
 
       {/* Static line */}
-      <p className="z-1 mt-6 text-2xl text-slate-400">{t("subtitle")}</p>
+      <p className="z-10 mt-6 text-2xl text-slate-400">{t("subtitle")}</p>
 
       {/* Dynamic typewriter line — fixed width so nothing shifts */}
       <p
-        className="z-1 text-3xl font-semibold font-courier"
+        className="z-10 text-3xl font-semibold font-courier"
         style={{ width: `${MAX_LEN_A}ch` }}
       >
         {typed}
-        <span className="z-1 animate-caret">|</span>
+        <span className="z-10 animate-caret">|</span>
       </p>
-      <div className="z-1 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <div className="z-10 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
         <Link
           href={`/${locale}/projects`}
-          className="inline-flex items-center gap-2 hover:text-textdark dark:hover:text-textlight rounded-2xl border border-slate-400/50 bg-transparent px-6 py-3 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark focus-visible:ring-2 focus-visible:ring-slate-300"
+          className="inline-flex items-center gap-2 hover:text-textdark dark:hover:text-textlight rounded-2xl border border-slate-400/50 bg-transparent px-6 py-3 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-[var(--color-primary)] dark:hover:bg-[var(--color-primarydark)] focus-visible:ring-2 focus-visible:ring-slate-300"
         >
           {t("links.projects")} <ArrowRight size={18} />
         </Link>
         <Link
           href={`/${locale}/about`}
-          className="inline-flex items-center gap-2 hover:text-textdark dark:hover:text-textlight rounded-2xl border border-slate-400/50 bg-transparent px-6 py-3 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark focus-visible:ring-2 focus-visible:ring-slate-300"
+          className="inline-flex items-center gap-2 hover:text-textdark dark:hover:text-textlight rounded-2xl border border-slate-400/50 bg-transparent px-6 py-3 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-[var(--color-primary)] dark:hover:bg-[var(--color-primarydark)] focus-visible:ring-2 focus-visible:ring-slate-300"
         >
           {t("links.about")} <ArrowRight size={18} />
         </Link>

@@ -28,11 +28,16 @@
     "description": "Curious by nature, driven by learning and problem-solving - whether through code, design, or collaboration."
   },
   "Skills": {
+    "title": "Skills",
     "description": "A rough self-assessment of selected technologies I've worked with."
+  },
+  "Timeline": {
+    "title": "Experience",
+    "description": "A quick overview of my studies and work."
   },
   "ThisOrThat": {
     "title": "This or That",
-    "description": "A quick glimpse into my developer preferences. Hover over the cards to see my pick and why!",
+    "description": "A quick glimpse into my developer preferences. Click on the cards to see my pick and why!",
     "pairs": [
       {
         "left": "VS Code",

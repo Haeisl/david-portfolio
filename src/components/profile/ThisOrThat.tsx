@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import HeadingWithLines from "./HeadingWithLines";
 
 type Pair = {
   left: string;
@@ -12,42 +13,30 @@ type Pair = {
 
 export default function ThisOrThat() {
   const t = useTranslations("ThisOrThat");
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  let timeoutId: NodeJS.Timeout;
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
 
   const pairs = t.raw("pairs") as Pair[];
 
-  const handleMouseEnter = (index: number) => {
-    clearTimeout(timeoutId);
-    setActiveIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutId = setTimeout(() => {
-      setActiveIndex(null);
-    }, 400); // delay before fading out
+  const handleCardClick = (index: number) => {
+    setFlippedIndex((prev) => (prev === index ? null : index));
   };
 
   return (
     <section className="py-12">
-      <h2 className="text-2xl font-semibold mb-2 text-center">{t("title")}</h2>
-      <h3 className="text-lg mb-6 text-textaltlight dark:text-textaltdark text-center">
-        {t("description")}
-      </h3>
+      <HeadingWithLines title={t("title")} description={t("description")} />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {pairs.map((p, i) => {
-          const isActive = activeIndex === i;
+          const isFlipped = flippedIndex === i;
           return (
             <div
               key={i}
-              className="relative border rounded-lg p-4 text-center h-36 overflow-hidden cursor-default"
-              onMouseEnter={() => handleMouseEnter(i)}
-              onMouseLeave={handleMouseLeave}
+              className="relative border rounded-lg p-4 text-center h-36 overflow-hidden cursor-pointer shadow-md"
+              onClick={() => handleCardClick(i)}
             >
               {/* Front */}
               <div
-                className={`absolute inset-0 flex flex-col justify-center items-center transition-opacity duration-200 ${
-                  isActive ? "opacity-0" : "opacity-100"
+                className={`absolute inset-0 flex flex-col justify-center items-center transition-opacity duration-300 ${
+                  isFlipped ? "opacity-0" : "opacity-100"
                 }`}
               >
                 <p className="text-lg">{p.left}</p>
@@ -58,10 +47,10 @@ export default function ThisOrThat() {
               {/* Back */}
               <div
                 className={`absolute inset-0 flex flex-col justify-center items-center px-4 text-sm transition-opacity duration-300 ${
-                  isActive ? "opacity-100" : "opacity-0"
+                  isFlipped ? "opacity-100" : "opacity-0"
                 }`}
               >
-                <p className="font-semibold text-primary dark:text-primarydark text-xl">
+                <p className="font-semibold text-[var(--color-primary)] dark:text-[var(--color-primarydark)] text-xl">
                   {p.preferred === "left" ? p.left : p.right}
                 </p>
                 <p className="text-textaltlight dark:text-textaltdark text-lg italic">

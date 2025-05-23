@@ -43,21 +43,30 @@ export default function Header() {
         aria-label="Main navigation"
       >
         {/* Left: Logo */}
-        <Link
-          className={`pr-3 flex-1 font-logo font-bold text-2xl sm:text-2xl xl:text-4xl whitespace-nowrap hover:text-primary hover:dark:text-primarydark transition-colors duration-300
-        ${isActive(`/${locale}`) ? "text-primary dark:text-primarydark" : ""}`}
-          href={`/${locale}/`}
-        >
-          David Hasse
-        </Link>
-
+        <div className="pr-3 flex-1">
+          <Link
+            className={`flex-1 font-logo font-bold text-2xl sm:text-2xl xl:text-4xl whitespace-nowrap hover:text-[var(--color-primary)] hover:dark:text-[var(--color-primarydark)] transition-colors duration-300
+        ${
+          isActive(`/${locale}`)
+            ? "text-[var(--color-primary)] dark:text-[var(--color-primarydark)]"
+            : ""
+        }`}
+            href={`/${locale}/`}
+          >
+            David Hasse
+          </Link>
+        </div>
         {/* Center: Nav Links (desktop only) */}
         <div className="hidden sm:flex justify-center whitespace-nowrap transition-all duration-500 ease-in-out responsive-gap ">
           {navigation.map((item: NavigationType) => (
             <Link
               key={item.name}
-              className={`hover:text-primary hover:dark:text-primarydark transition-colors duration-300
-          ${isActive(item.href) ? "text-primary dark:text-primarydark" : ""}`}
+              className={`hover:text-[var(--color-primary)] hover:dark:text-[var(--color-primarydark)] transition-colors duration-300
+          ${
+            isActive(item.href)
+              ? "text-[var(--color-primary)] dark:text-[var(--color-primarydark)]"
+              : ""
+          }`}
               href={item.href}
             >
               {item.name}
@@ -105,10 +114,10 @@ export default function Header() {
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 className={`
-                  block px-4 py-2 hover:text-primary hover:dark:text-primarydark transition-colors duration-300
+                  block px-4 py-2 hover:text-[var(--color-primary)] hover:dark:text-[var(--color-primarydark)] transition-colors duration-300
                   ${
                     isActive(item.href)
-                      ? "text-primary dark:text-primarydark"
+                      ? "text-[var(--color-primary)] dark:text-[var(--color-primarydark)]"
                       : ""
                   }
                 `}

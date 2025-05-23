@@ -2,31 +2,33 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --color-bgdark: #212121;
-  --color-bglight: #fafafa;
+:root {
+  @theme inline {
+    --color-bgdark: #212121;
+    --color-bglight: #fafafa;
 
-  --color-bgaccentdark: #171717;
-  --color-bgaccentlight: #f9f9f9;
+    --color-bgaccentdark: #171717;
+    --color-bgaccentlight: #f9f9f9;
 
-  --color-bgselecteddark: #2f2f2f;
-  --color-bgselectedlight: #e3e3e3;
+    --color-bgselecteddark: #2f2f2f;
+    --color-bgselectedlight: #e3e3e3;
 
-  --color-textaltlight: #767676;
-  --color-textaltdark: #8a8a8a;
+    --color-textaltlight: #767676;
+    --color-textaltdark: #8a8a8a;
 
-  --color-textdark: #f8fafc;
-  --color-textlight: #111827;
+    --color-textdark: #f8fafc;
+    --color-textlight: #111827;
 
-  --color-primary: #10b981;
-  --color-primarydark: #34d399;
+    --color-primary: #10b981;
+    --color-primarydark: #34d399;
 
-  --color-secondary: #22c55e;
-  --color-secondarydark: #86efac;
+    --color-secondary: #22c55e;
+    --color-secondarydark: #86efac;
 
-  --font-main: var(--font-inter);
-  --font-logo: var(--font-doto);
-  --font-courier: var(--font-courier-prime);
+    --font-main: var(--font-inter);
+    --font-logo: var(--font-doto);
+    --font-courier: var(--font-courier-prime);
+  }
 }
 
 @keyframes breath {

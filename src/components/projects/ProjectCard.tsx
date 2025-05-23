@@ -42,7 +42,7 @@ const ProjectCard = ({ id, type, techStack, imageUrl }: ProjectCardProps) => {
           </div>
         )}
         <div className="p-4 md:w-2/3 text-textlight dark:text-textdark ">
-          <h3 className="text-xl font-semibold mb-1 group-hover:text-primary dark:group-hover:text-primarydark transition-colors duration-300">
+          <h3 className="text-xl font-semibold mb-1 group-hover:text-[var(--color-primary)] dark:group-hover:text-[var(--color-primarydark)] transition-colors duration-300">
             {title}
           </h3>
           <span

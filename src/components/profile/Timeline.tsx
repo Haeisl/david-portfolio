@@ -1,46 +1,122 @@
-interface Experience {
-  date: string;
+"use client";
+import React, { useMemo } from "react";
+import { GraduationCap, Briefcase } from "lucide-react";
+import { useTranslations } from "next-intl";
+import HeadingWithLines from "./HeadingWithLines";
+
+export type TimelineItem = {
+  id: string;
+  /** Displayed as the main heading */
+  title: string;
+  /** Optional sub‑heading such as school/company name */
+  subtitle?: string;
+  /** ISO date string – first day of period */
+  start: string;
+  /** ISO date string – last day of period; omit for ongoing roles */
+  end?: string;
+  /** Short free‑form description */
+  description?: string;
+  /** Determines colour/icon */
+  type: "education" | "work";
+};
+
+type TimelineProps = {
+  items: TimelineItem[];
+  /** "vertical" (default) | "horizontal" */
+  orientation?: "vertical" | "horizontal";
+};
+
+export const Timeline: React.FC<TimelineProps> = ({ items }) => {
+  const t = useTranslations("Timeline");
+
+  const sorted = useMemo(
+    () =>
+      [...items].sort(
+        (a, b) =>
+          new Date(b.end ?? b.start).getTime() -
+          new Date(a.end ?? a.start).getTime()
+      ),
+    [items]
+  );
+
+  return (
+    <HorizontalTimeline
+      items={sorted}
+      title={t("title")}
+      description={t("description")}
+    />
+  );
+};
+
+const HorizontalTimeline: React.FC<{
+  items: TimelineItem[];
   title: string;
   description: string;
-}
-const experiences: Experience[] = [
-  {
-    date: "May 2023 - Present",
-    title: "Software Engineer at XYZ",
-    description: "Building scalable web apps with Next.js",
-  },
-  {
-    date: "Jan 2021 - Apr 2023",
-    title: "Frontend Developer at ABC",
-    description: "Developed component library in React",
-  },
-  {
-    date: "Sep 2019 - Dec 2020",
-    title: "Intern at StartUp",
-    description: "Worked on MVP features and testing",
-  },
-];
-
-export default function Timeline() {
-  return (
-    <section className="py-12">
-      <h2 className="text-2xl font-semibold mb-6 text-center">Experience</h2>
-      <ul className="space-y-4 max-w-2xl mx-auto">
-        {experiences.map((e, i) => (
-          <li
-            key={i}
-            className="pl-4 border-l-4 border-primary dark:border-primarydark"
-          >
-            <span className="text-sm text-textaltlight dark:text-textaltdark">
-              {e.date}
-            </span>
-            <h3 className="text-xl font-medium">{e.title}</h3>
-            <p className="text-textaltlight dark:text-textaltdark">
-              {e.description}
-            </p>
-          </li>
+}> = ({ items, title, description }) => (
+  <>
+    <HeadingWithLines title={title} description={description} />
+    <div className="relative overflow-x-auto scroll-smooth pb-4">
+      {/* Extra padding on the left ensures the first item isn’t chopped on tiny screens */}
+      <div className="flex justify-center items-start space-x-12 px-86 md:px-2 py-2 snap-x snap-mandatory">
+        {items.map((item, idx) => (
+          <HorizontalItem
+            key={item.id}
+            item={item}
+            isLast={idx === items.length - 1}
+          />
         ))}
-      </ul>
-    </section>
+      </div>
+    </div>
+  </>
+);
+
+const HorizontalItem: React.FC<{ item: TimelineItem; isLast: boolean }> = ({
+  item,
+  isLast,
+}) => {
+  const Icon = item.type === "education" ? GraduationCap : Briefcase;
+
+  return (
+    <div className="relative flex min-w-[12rem] flex-col items-center snap-start">
+      {/* connector */}
+      {!isLast && (
+        <div
+          className="absolute right-[-7.7rem] top-6 h-px w-[12.5rem] bg-textlight dark:bg-textdark"
+          aria-hidden="true"
+        />
+      )}
+
+      {/* dot with icon */}
+      <span
+        className="flex h-9 w-9 items-center justify-center my-2 mx-24 rounded-full text-textlight bg-[var(--color-primary)] ring-4 ring-[var(--color-primary)]/20 dark:bg-[var(--color-primarydark)] dark:ring-[var(--color-primarydark)]/20"
+        aria-hidden="true"
+      >
+        <Icon className="h-5 w-5" />
+      </span>
+
+      {/* card */}
+      <div className="mt-4 w-48 shrink-0 rounded-lg border p-4 shadow-md">
+        <div className="flex items-center space-x-1">
+          <h3 className="font-medium">{item.title}</h3>
+        </div>
+        {item.subtitle && <p className="text-sm">{item.subtitle}</p>}
+        <p className="text-sm">
+          {fmtDate(item.start)}
+          {item.end ? ` – ${fmtDate(item.end)}` : " – Present"}
+        </p>
+        {item.description && <p className="mt-1 text-sm">{item.description}</p>}
+      </div>
+    </div>
   );
+};
+
+// Helper function to format date strings
+function fmtDate(input: string) {
+  // Accepts YYYY | YYYY-MM | full ISO – falls back to raw string if parse fails.
+  const date = new Date(input);
+  if (Number.isNaN(date.getTime())) return input;
+  return date.toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "short",
+  });
 }

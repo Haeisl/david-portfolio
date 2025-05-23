@@ -88,11 +88,11 @@ export default function ContactPage() {
               href={`mailto:contact@david-hasse.de?subject=${encodeURIComponent(
                 t("mailSubject")
               )}`}
-              className="group inline-flex items-center gap-2 rounded-2xl border hover:text-textdark dark:hover:text-textlight border-slate-400/50 bg-transparent px-8 py-4 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark focus-visible:ring-2 focus-visible:ring-slate-300"
+              className="group inline-flex items-center gap-2 rounded-2xl border hover:text-textdark dark:hover:text-textlight border-slate-400/50 bg-transparent px-8 py-4 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-[var(--color-primary)] dark:hover:bg-[var(--color-primarydark)] focus-visible:ring-2 focus-visible:ring-slate-300"
             >
               <Mail
                 size={30}
-                className="text-primary dark:text-primarydark group-hover:text-textdark group-hover:dark:text-textlight"
+                className="text-[var(--color-primary)] dark:text-[var(--color-primarydark)] group-hover:text-textdark group-hover:dark:text-textlight"
               />
               {t("cta")}
             </a>
@@ -106,23 +106,23 @@ export default function ContactPage() {
                 <a
                   href="/david-hasse.vcf"
                   download
-                  className="flex items-center mt-2 gap-2 hover:text-primary dark:hover:text-primarydark"
+                  className="flex items-center mt-2 gap-2 hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primarydark)]"
                 >
                   <FileText
                     size={24}
-                    className="text-primary dark:text-primarydark"
+                    className="text-[var(--color-primary)] dark:text-[var(--color-primarydark)]"
                   />
                   vCard
                 </a>
               </>
             ) : (
               <button
-                className="flex items-center gap-2 font-medium hover:text-primary dark:hover:text-primarydark hover:cursor-pointer"
+                className="flex items-center gap-2 font-medium hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primarydark)] hover:cursor-pointer"
                 onClick={handleQRClick}
               >
                 <QrCode
                   size={28}
-                  className="text-primary dark:text-primarydark"
+                  className="text-[var(--color-primary)] dark:text-[var(--color-primarydark)]"
                 />
                 {t("vcard")}
               </button>
@@ -182,7 +182,7 @@ function FactCard({
     <Tile
       className={`${className} flex flex-col justify-center text-center space-y-1`}
     >
-      <span className="flex justify-center text-primary dark:text-primarydark">
+      <span className="flex justify-center text-[var(--color-primary)] dark:text-[var(--color-primarydark)]">
         {icon}
       </span>
       <span className="text-md text-textaltlight dark:text-textaltdark">
@@ -212,12 +212,12 @@ function SocialLink({
       rel="noopener"
       className="group relative inline-flex items-center gap-3 rounded-2xl border border-slate-400/50 bg-transparent
       px-6 py-3 text-base font-semibold  outline-none transition duration-300
-      hover:scale-105 hover:border-slate-400 hover:bg-primary dark:hover:bg-primarydark hover:text-surface
+      hover:scale-105 hover:border-slate-400 hover:bg-[var(--color-primary)] dark:hover:bg-[var(--color-primarydark)] hover:text-surface
       hover:text-textdark dark:hover:text-textlight
       dark:hover:text-surface focus-visible:ring-2 focus-visible:ring-slate-300"
     >
       {/* icon — inherits currentColor by default, swaps to surface on hover */}
-      <span className="w-6 h-6 flex-shrink-0 transition-colors text-primary dark:text-primarydark group-hover:text-textdark dark:group-hover:text-textlight">
+      <span className="w-6 h-6 flex-shrink-0 transition-colors text-[var(--color-primary)] dark:text-[var(--color-primarydark)] group-hover:text-textdark dark:group-hover:text-textlight">
         {icon}
       </span>
       {label}
@@ -231,7 +231,7 @@ function SocialLink({
       download={download}
       target="_blank"
       rel="noopener"
-      className="flex items-center gap-3 text-lg text-textlight dark:text-textdark hover:text-primary dark:hover:text-primarydark transition-colors"
+      className="flex items-center gap-3 text-lg text-textlight dark:text-textdark hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primarydark)] transition-colors"
     >
       {icon}
       {label}

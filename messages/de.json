@@ -28,11 +28,16 @@
     "description": "Von Natur aus neugierig, motiviert durch Lernen und Problemlösen - ob durch Code, Design oder Zusammenarbeit."
   },
   "Skills": {
+    "title": "Kenntnisse",
     "description": "Eine grobe Selbsteinschätzung ausgewählter Technologien, mit denen ich gearbeitet habe."
+  },
+  "Timeline": {
+    "title": "Lebenslauf",
+    "description": "Ein kurzer Überblick über mein Studium und meine Arbeit."
   },
   "ThisOrThat": {
     "title": "Dies oder Das",
-    "description": "Ein kurzer Einblick in meine Vorlieben als Entwickler. Fahre mit der Maus über die Karten, um meine Wahl und den Grund zu sehen!",
+    "description": "Ein kurzer Einblick in meine Vorlieben als Entwickler. Klick mit der Maus auf die Karten, um meine Wahl und den Grund zu sehen!",
     "pairs": [
       {
         "left": "VS Code",
