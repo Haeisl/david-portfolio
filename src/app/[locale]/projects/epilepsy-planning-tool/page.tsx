@@ -1,17 +1,21 @@
 import ProjectLayout from "@/components/projects/ProjectLayout";
+import { ProjectType } from "@/data/projects";
 
 export default function EpilepsyPlanningTool() {
   return (
     <ProjectLayout
-      title="MyTodo — Cross-platform Task Manager"
-      category="Personal Project"
-      stack={["Next.js 15", "Tailwind v4", "Supabase", "Radix UI"]}
+      title="Epilepsy Planning Tool"
+      summary="ye this was based"
+      type={ProjectType.THESIS}
+      category="Bachelor's Thesis"
+      githubUrl="https://github.com/haeisl"
+      stack={["Unreal Engine 5", "Python", "Docker", "C++", "more"]}
       problem={
         <>
           <p>I wanted a task manager that&nbsp;…</p>
         </>
       }
-      solution={
+      approach={
         <>
           <p>I chose a serverless Supabase backend because&nbsp;…</p>
         </>
@@ -20,10 +24,6 @@ export default function EpilepsyPlanningTool() {
         { src: "/projects/todo/list.png", alt: "Main list view" },
         { src: "/projects/todo/stats.png", alt: "Productivity stats" },
       ]}
-    >
-      {/* Extra optional section */}
-      <h2>Results</h2>
-      <p>The app hit 1 000 MAU two months after launch.</p>
-    </ProjectLayout>
+    />
   );
 }

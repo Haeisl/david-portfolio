@@ -25,6 +25,7 @@
     }
   },
   "ProfileHeader": {
+    "pronouns": "er/ihm",
     "description": "Von Natur aus neugierig, motiviert durch Lernen und Problemlösen - ob durch Code, Design oder Zusammenarbeit."
   },
   "Profile": {
@@ -43,6 +44,10 @@
     "title": "Lebenslauf",
     "description": "Ein kurzer Überblick über mein Studium und meine Arbeit.",
     "present": "Heute"
+  },
+  "Resume": {
+    "title": "Lebenslauf",
+    "description": "Mein aktueller Lebenslauf, der Selbsteinschätzungen (wie oben) zu vier meiner meistbenutzten Technologien enthält."
   },
   "ThisOrThat": {
     "title": "Dies oder Das",

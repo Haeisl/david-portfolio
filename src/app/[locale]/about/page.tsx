@@ -4,6 +4,7 @@ import { Timeline, TimelineItem } from "@/components/profile/Timeline";
 import FadeInSection from "@/components/general/FadeInSection";
 import { Skill, SkillsSection } from "@/components/profile/SkillsSection";
 import { useTranslations } from "next-intl";
+import ResumeDownload from "@/components/profile/Resume";
 
 export default function ProfilePage() {
   const t = useTranslations("Profile");
@@ -118,6 +119,10 @@ export default function ProfilePage() {
 
       <FadeInSection>
         <ThisOrThat />
+      </FadeInSection>
+
+      <FadeInSection>
+        <ResumeDownload />
       </FadeInSection>
     </main>
   );

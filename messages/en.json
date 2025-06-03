@@ -25,6 +25,7 @@
     }
   },
   "ProfileHeader": {
+    "pronouns": "he/him",
     "description": "Curious by nature, driven by learning and problem-solving - whether through code, design, or collaboration."
   },
   "Profile": {
@@ -43,6 +44,10 @@
     "title": "Experience",
     "description": "A quick overview of my studies and work.",
     "present": "Present"
+  },
+  "Resume": {
+    "title": "Résumé",
+    "description": "My current résumé, which includes self-assessments (like above) of four of the technologies I use most."
   },
   "ThisOrThat": {
     "title": "This or That",

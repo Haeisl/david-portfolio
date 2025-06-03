@@ -13,23 +13,26 @@ interface ProjectCardProps {
   imageUrl?: string;
 }
 
-const typeToColorClass: Record<ProjectType, string> = {
-  [ProjectType.THESIS]: "bg-blue-100 text-blue-800",
-  [ProjectType.PRACTICAL]: "bg-green-100 text-green-800",
-  [ProjectType.PRIVATE]: "bg-purple-100 text-purple-800",
+/** tailwind v4: map each project type to a left-border colour */
+export const typeToBorderClass: Record<ProjectType, string> = {
+  [ProjectType.THESIS]: "border-l-4 border-blue-500",
+  [ProjectType.PRACTICAL]: "border-l-4 border-green-500",
+  [ProjectType.PRIVATE]: "border-l-4 border-purple-500",
 };
 
 const ProjectCard = ({ id, type, techStack, imageUrl }: ProjectCardProps) => {
   const t = useTranslations("Projects");
-  console.log(id);
-  const title = t(`${id}.title`);
-  const description = t(`${id}.description`);
   const locale = useLocale();
 
+  const title = t(`${id}.title`);
+  const description = t(`${id}.description`);
+
   return (
-    <Link href={`/${locale}/projects/${id}`} className="h-full block">
-      {/* <div className="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col md:flex-row-reverse"> */}
-      <div className="group bg-bgaccentlight dark:bg-bgaccentdark rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col md:flex-row-reverse h-full">
+    <Link href={`/${locale}/projects/${id}`} className="block h-full">
+      <div
+        className={`group bg-bgaccentlight dark:bg-bgaccentdark rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col md:flex-row-reverse h-full ${typeToBorderClass[type]}`}
+      >
+        {/* Thumbnail (optional) */}
         {imageUrl && (
           <div className="relative w-full md:w-1/3 h-48 md:h-auto">
             <Image
@@ -41,16 +44,18 @@ const ProjectCard = ({ id, type, techStack, imageUrl }: ProjectCardProps) => {
             />
           </div>
         )}
-        <div className="p-4 md:w-2/3 text-textlight dark:text-textdark ">
+
+        {/* Text block */}
+        <div className="p-4 md:w-2/3 text-textlight dark:text-textdark">
           <h3 className="text-xl font-semibold mb-1 group-hover:text-[var(--color-primary)] dark:group-hover:text-[var(--color-primarydark)] transition-colors duration-300">
             {title}
           </h3>
-          <span
-            className={`inline-block px-2 py-1 text-sm font-medium rounded mb-2 ${typeToColorClass[type]}`}
-          >
-            {t(`types.${type}`)}
-          </span>
+
+          {/* project-type pill removed */}
+
           <p className="line-clamp-3">{description}</p>
+
+          {/* Tech-stack chips */}
           <div className="mt-3 flex flex-wrap gap-2">
             {techStack.map((tech) => (
               <span
