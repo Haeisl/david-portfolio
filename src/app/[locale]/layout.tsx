@@ -6,6 +6,7 @@ import Footer from "../../components/general/Footer";
 import ThemeProvider from "@/theme/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import ThemeRestorer from "@/components/general/ThemeRestorer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const doto = Doto({
@@ -49,6 +50,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages} locale={locale}>
+            <ThemeRestorer />
             <div className="flex flex-col min-h-screen">
               <Header />
               <main className="flex-1">{children}</main>
