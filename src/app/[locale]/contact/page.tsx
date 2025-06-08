@@ -1,6 +1,7 @@
 "use client";
 
 import { nl2br } from "@/app/utils/nlToBr";
+import BasedButton from "@/components/general/BasedButton";
 import FadeInSection from "@/components/general/FadeInSection";
 import {
   Mail,
@@ -12,6 +13,7 @@ import {
   Earth,
   Languages,
   Briefcase,
+  Download,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
@@ -83,19 +85,14 @@ export default function ContactPage() {
             <p className="text-lg font-medium text-textaltlight dark:text-textaltdark">
               {t("tagline")}
             </p>
-
-            <a
+            <BasedButton
               href={`mailto:contact@david-hasse.de?subject=${encodeURIComponent(
                 t("mailSubject")
               )}`}
-              className="group inline-flex items-center gap-2 rounded-2xl border hover:text-textdark dark:hover:text-textlight border-slate-400/50 bg-transparent px-8 py-4 font-semibold transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-[var(--color-primary)] dark:hover:bg-[var(--color-primarydark)] focus-visible:ring-2 focus-visible:ring-slate-300"
-            >
-              <Mail
-                size={30}
-                className="text-[var(--color-primary)] dark:text-[var(--color-primarydark)] group-hover:text-textdark group-hover:dark:text-textlight"
-              />
-              {t("cta")}
-            </a>
+              icon={<Mail size={28} />}
+              label={t("cta")}
+              className="px-8 py-4"
+            />
           </Tile>
 
           {/* ── vCard / QR code ─────────────────────────── */}
@@ -129,19 +126,23 @@ export default function ContactPage() {
             )}
           </Tile>
 
-          {/* ── Social links + CV ───────────────────────── */}
           <Tile className="sm:col-span-6 lg:col-span-12 row-span-1 flex flex-wrap items-center justify-center gap-10">
-            <SocialLink
+            <BasedButton
+              href="/test.txt"
+              icon={<Download size={28} />}
+              label={t("resume")}
+              download
+            />
+            <BasedButton
               href="https://www.linkedin.com/in/david-hasse-ab0bb11a9"
               icon={<Linkedin size={28} />}
               label="LinkedIn"
             />
-            <SocialLink
+            <BasedButton
               href="https://github.com/haeisl"
               icon={<Github size={28} />}
               label="GitHub"
             />
-            {/* Add CV back in when ready */}
           </Tile>
         </section>
       </main>
@@ -149,7 +150,7 @@ export default function ContactPage() {
   );
 }
 
-/*──────── shared helpers ───────*/
+/*──────── helpers ───────*/
 
 function Tile({
   className = "",
@@ -192,48 +193,3 @@ function FactCard({
     </Tile>
   );
 }
-
-function SocialLink({
-  href,
-  icon,
-  label,
-  download,
-}: {
-  href: string;
-  icon: React.ReactNode;
-  label: string;
-  download?: boolean;
-}) {
-  return (
-    <a
-      href={href}
-      download={download}
-      target="_blank"
-      rel="noopener"
-      className="group relative inline-flex items-center gap-3 rounded-2xl border border-slate-400/50 bg-transparent
-      px-6 py-3 text-base font-semibold  outline-none transition duration-300
-      hover:scale-105 hover:border-slate-400 hover:bg-[var(--color-primary)] dark:hover:bg-[var(--color-primarydark)] hover:text-surface
-      hover:text-textdark dark:hover:text-textlight
-      dark:hover:text-surface focus-visible:ring-2 focus-visible:ring-slate-300"
-    >
-      {/* icon — inherits currentColor by default, swaps to surface on hover */}
-      <span className="w-6 h-6 flex-shrink-0 transition-colors text-[var(--color-primary)] dark:text-[var(--color-primarydark)] group-hover:text-textdark dark:group-hover:text-textlight">
-        {icon}
-      </span>
-      {label}
-    </a>
-  );
-}
-
-/*
-    <a
-      href={href}
-      download={download}
-      target="_blank"
-      rel="noopener"
-      className="flex items-center gap-3 text-lg text-textlight dark:text-textdark hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primarydark)] transition-colors"
-    >
-      {icon}
-      {label}
-    </a>
-*/

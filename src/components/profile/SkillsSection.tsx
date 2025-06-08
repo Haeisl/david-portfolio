@@ -47,12 +47,6 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({
   return (
     <section className="py-12">
       <HeadingWithLines title={t("title")} description={t("description")} />
-
-      {/*
-        ‑  `max‑w‑md` on mobile keeps content tight
-        ‑  bumps to larger caps as the viewport widens
-        Adjust or extend these breakpoints to taste (e.g. 2xl, 3xl …).
-      */}
       <div className="mx-auto w-full max-w-lg sm:max-w-2xl lg:max-w-4xl xl:max-w-5xl divide-y divide-textaltlight dark:divide-textaltdark">
         {categories.map((cat) => (
           <AccordionItem

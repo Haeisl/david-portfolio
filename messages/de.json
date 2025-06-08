@@ -34,7 +34,8 @@
     "jobsearchtitle": "Jobsuche",
     "jobsearchsubtitle": "Softwareentwickler",
     "schoolinternshiptitle": "Schulpraktikum",
-    "schoolinternshipsubtitle": "SAP"
+    "schoolinternshipsubtitle": "SAP",
+    "visualization": "Visualisierung"
   },
   "Skills": {
     "title": "Kenntnisse",
@@ -47,7 +48,8 @@
   },
   "Resume": {
     "title": "Lebenslauf",
-    "description": "Mein aktueller Lebenslauf, der Selbsteinschätzungen (wie oben) zu vier meiner meistbenutzten Technologien enthält."
+    "description": "Mein aktueller Lebenslauf, der Selbsteinschätzungen (wie oben) zu vier meiner meistbenutzten Technologien enthält.",
+    "downloadtitle": "Lebenslauf (PDF)"
   },
   "ThisOrThat": {
     "title": "Dies oder Das",

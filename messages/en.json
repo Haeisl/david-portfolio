@@ -34,7 +34,8 @@
     "jobsearchtitle": "Jobsearch",
     "jobsearchsubtitle": "Software Developer",
     "schoolinternshiptitle": "School internship",
-    "schoolinternshipsubtitle": "SAP"
+    "schoolinternshipsubtitle": "SAP",
+    "visualization": "Visualization"
   },
   "Skills": {
     "title": "Skills",
@@ -47,7 +48,8 @@
   },
   "Resume": {
     "title": "Résumé",
-    "description": "My current résumé, which includes self-assessments (like above) of four of the technologies I use most."
+    "description": "My current résumé, which includes self-assessments (like above) of four of the technologies I use most.",
+    "downloadtitle": "Résumé (PDF)"
   },
   "ThisOrThat": {
     "title": "This or That",

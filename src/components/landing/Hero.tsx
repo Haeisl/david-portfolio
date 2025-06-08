@@ -1,10 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import BasedButton from "../general/BasedButton";
 
 type Word = {
   title: string;
@@ -104,18 +103,16 @@ export function HeroTypewriter() {
         <span className="z-10 animate-caret">|</span>
       </p>
       <div className="z-10 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <Link
+        <BasedButton
           href={`/${locale}/projects`}
-          className="inline-flex items-center gap-2 hover:text-textdark dark:hover:text-textlight rounded-2xl border border-slate-400/50 bg-transparent px-6 py-3 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-[var(--color-primary)] dark:hover:bg-[var(--color-primarydark)] focus-visible:ring-2 focus-visible:ring-slate-300"
-        >
-          {t("links.projects")} <ArrowRight size={18} />
-        </Link>
-        <Link
+          label={t("links.projects")}
+          siteNavigation
+        />
+        <BasedButton
           href={`/${locale}/about`}
-          className="inline-flex items-center gap-2 hover:text-textdark dark:hover:text-textlight rounded-2xl border border-slate-400/50 bg-transparent px-6 py-3 text-base font-semibold outline-none transition duration-300 hover:scale-105 hover:border-slate-400 hover:bg-[var(--color-primary)] dark:hover:bg-[var(--color-primarydark)] focus-visible:ring-2 focus-visible:ring-slate-300"
-        >
-          {t("links.about")} <ArrowRight size={18} />
-        </Link>
+          label={t("links.about")}
+          siteNavigation
+        />
       </div>
     </section>
   );

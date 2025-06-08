@@ -70,10 +70,15 @@ export default function ProfilePage() {
       id: "unreal",
       name: "Unreal Engine",
       level: 70,
-      category: "Visualization",
+      category: t("visualization"),
     },
-    { id: "paraview", name: "ParaView", level: 65, category: "Visualization" },
-    { id: "opengl", name: "OpenGL", level: 60, category: "Visualization" },
+    {
+      id: "paraview",
+      name: "ParaView",
+      level: 65,
+      category: t("visualization"),
+    },
+    { id: "opengl", name: "OpenGL", level: 60, category: t("visualization") },
 
     // Scientific & Academic
     {
