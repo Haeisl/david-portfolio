@@ -69,7 +69,7 @@ export default function ThemeCycler() {
   };
 
   return (
-    <div className="text-center space-y-2 mb-1">
+    <div className="text-center space-y-2 mb-0.5">
       <button
         onClick={cycleTheme}
         className="text-sm text-[var(--color-primary)] dark:text-[var(--color-primarydark)] hover:underline"

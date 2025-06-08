@@ -26,12 +26,17 @@ export default function Footer() {
         >
           LinkedIn
         </a>
+      </div>
+      <div className="mt-0.5 space-x-4">
         <a className="hover:underline" href={`/${locale}/impressum`}>
           {t("impressum")}
         </a>
+        <a className="hover:underline" href={`/${locale}/privacy`}>
+          {t("privacy")}
+        </a>
       </div>
-      <div className="mt-1.5">
-        &copy; 2025 David Hasse. All rights reserved.
+      <div className="mt-0.5">
+        &copy; 2025 David Hasse. {t("rightsreserved")}
       </div>
     </footer>
   );
