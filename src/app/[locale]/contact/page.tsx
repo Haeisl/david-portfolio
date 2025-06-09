@@ -1,42 +1,27 @@
-"use client";
-
 import { nl2br } from "@/app/utils/nlToBr";
+import QRCard from "@/components/contact/QRCard";
 import BasedButton from "@/components/general/BasedButton";
 import FadeInSection from "@/components/general/FadeInSection";
 import {
   Mail,
   Linkedin,
   Github,
-  FileText,
-  QrCode,
   MapPinHouse,
   Earth,
   Languages,
   Briefcase,
   Download,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
-import dynamic from "next/dynamic";
-import { useState } from "react";
+import { getLocale, getTranslations } from "next-intl/server";
 
-const VCardQRCode = dynamic(() => import("@/components/contact/VCardQRCode"), {
-  loading: () => <p className="mt-4">Loading QR Code…</p>,
-  ssr: false,
-});
-
-export default function ContactPage() {
-  const t = useTranslations("ContactPage");
-  const [showQRCode, setShowQRCode] = useState(false);
-
-  const handleQRClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setShowQRCode(true);
-  };
+export default async function ContactPage() {
+  const locale = await getLocale();
+  const t = await getTranslations({ locale, namespace: "ContactPage" });
 
   return (
     <FadeInSection>
       <main className="mx-auto max-w-6xl px-4 py-14 min-h-[85vh]">
-        {/* ── Section header ───────────────────────────────────── */}
+        {/* Section header */}
         <div className="flex items-center gap-3 mb-6">
           <h2 className="text-3xl font-semibold tracking-wide uppercase text-textlight dark:text-textdark">
             {t("factsToContact")}
@@ -44,14 +29,8 @@ export default function ContactPage() {
           <div className="hidden sm:block flex-grow h-px bg-gradient-to-r from-textlight/40 dark:from-textdark/40 to-transparent" />
         </div>
 
-        <section
-          className="
-          grid auto-rows-[minmax(140px,auto)] gap-6
-          sm:grid-cols-6
-          lg:grid-cols-12
-        "
-        >
-          {/* ── Mini fact cards ─────────────────────────── */}
+        <section className="grid auto-rows-[minmax(140px,auto)] gap-6 sm:grid-cols-6 lg:grid-cols-12">
+          {/* Mini fact cards */}
           <FactCard
             className="sm:col-span-3 lg:col-span-3"
             label={t("facts.location")}
@@ -77,7 +56,7 @@ export default function ContactPage() {
             icon={<Languages size={22} />}
           />
 
-          {/* ── Hero + CTA ───────────────────────────────── */}
+          {/* Hero + CTA */}
           <Tile className="sm:col-span-6 lg:col-span-8 row-span-2 flex flex-col items-center justify-center text-center space-y-6">
             <h1 className="text-5xl font-semibold tracking-tight">
               {t("title")}
@@ -95,37 +74,10 @@ export default function ContactPage() {
             />
           </Tile>
 
-          {/* ── vCard / QR code ─────────────────────────── */}
-          <Tile className="sm:col-span-6 lg:col-span-4 row-span-2 flex flex-col items-center justify-center space-y-4">
-            {showQRCode ? (
-              <>
-                <VCardQRCode />
-                <a
-                  href="/david-hasse.vcf"
-                  download
-                  className="flex items-center mt-2 gap-2 hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primarydark)]"
-                >
-                  <FileText
-                    size={24}
-                    className="text-[var(--color-primary)] dark:text-[var(--color-primarydark)]"
-                  />
-                  vCard
-                </a>
-              </>
-            ) : (
-              <button
-                className="flex items-center gap-2 font-medium hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primarydark)] hover:cursor-pointer"
-                onClick={handleQRClick}
-              >
-                <QrCode
-                  size={28}
-                  className="text-[var(--color-primary)] dark:text-[var(--color-primarydark)]"
-                />
-                {t("vcard")}
-              </button>
-            )}
-          </Tile>
+          {/* vCard / QR code */}
+          <QRCard vcardLabel={t("vcard")} />
 
+          {/* Social links */}
           <Tile className="sm:col-span-6 lg:col-span-12 row-span-1 flex flex-wrap items-center justify-center gap-10">
             <BasedButton
               href="/test.txt"

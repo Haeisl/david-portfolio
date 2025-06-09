@@ -6,21 +6,24 @@ export default function BasedButton({
   label,
   download,
   siteNavigation = false,
+  onClick,
   className,
 }: {
-  href: string;
+  href?: string;
   icon?: React.ReactNode;
   label: string;
   download?: boolean;
   siteNavigation?: boolean;
   className?: string;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }) {
   return (
     <div className="flex justify-center items-center">
       <a
         href={href}
+        onClick={onClick}
         download={download}
-        target="_blank"
+        target={href && !href.startsWith("/") ? "_blank" : undefined}
         className={`group relative inline-flex items-center gap-3 rounded-2xl border border-slate-400/50 bg-transparent
       px-6 py-3 text-base font-semibold  outline-none transition duration-300
       hover:scale-105 hover:border-slate-400 hover:bg-[var(--color-primary)] dark:hover:bg-[var(--color-primarydark)]

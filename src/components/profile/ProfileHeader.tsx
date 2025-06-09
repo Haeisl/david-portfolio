@@ -6,7 +6,7 @@ export default function ProfileHeader() {
   return (
     <section className="text-center">
       <Image
-        src="/images/selfie.jpg"
+        src="https://github.com/Haeisl/david-portfolio/blob/master/public/images/selfie.jpg?raw=true"
         alt="Profile photo"
         width={200}
         height={200}

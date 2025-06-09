@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
         hostname: "fakeimg.pl",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "github.com",
+        pathname: "/Haeisl/david-portfolio/blob/master/public/images/**",
+        //https://github.com/Haeisl/david-portfolio/blob/master/public/images/selfie.jpg?raw=true
+      },
     ],
   },
 };

@@ -1,12 +1,11 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 import HeadingWithLines from "./HeadingWithLines";
 import { Download } from "lucide-react";
 import BasedButton from "../general/BasedButton";
 
-export default function Resume() {
-  const t = useTranslations("Resume");
+export default async function Resume() {
+  const locale = await getLocale();
+  const t = await getTranslations({ locale, namespace: "Resume" });
   return (
     <section className="py-12">
       <HeadingWithLines title={t("title")} description={t("description")} />

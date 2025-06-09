@@ -1,10 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
 import { ProjectType } from "@/data/projects";
-import { useLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { getLocale } from "next-intl/server";
 
 interface ProjectCardProps {
   id: string;
@@ -20,9 +18,14 @@ export const typeToBorderClass: Record<ProjectType, string> = {
   [ProjectType.PRIVATE]: "border-l-4 border-purple-500",
 };
 
-const ProjectCard = ({ id, type, techStack, imageUrl }: ProjectCardProps) => {
-  const t = useTranslations("Projects");
-  const locale = useLocale();
+export default async function ProjectCard({
+  id,
+  type,
+  techStack,
+  imageUrl,
+}: ProjectCardProps) {
+  const locale = await getLocale();
+  const t = await getTranslations({ locale, namespace: "Projects" });
 
   const title = t(`${id}.title`);
   const description = t(`${id}.description`);
@@ -30,7 +33,7 @@ const ProjectCard = ({ id, type, techStack, imageUrl }: ProjectCardProps) => {
   return (
     <Link href={`/${locale}/projects/${id}`} className="block h-full">
       <div
-        className={`group bg-bgaccentlight dark:bg-bgaccentdark rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col md:flex-row-reverse h-full ${typeToBorderClass[type]}`}
+        className={`group bg-bgaccentlight dark:bg-bgaccentdark rounded-md shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col md:flex-row-reverse h-full ${typeToBorderClass[type]}`}
       >
         {/* Thumbnail (optional) */}
         {imageUrl && (
@@ -70,6 +73,4 @@ const ProjectCard = ({ id, type, techStack, imageUrl }: ProjectCardProps) => {
       </div>
     </Link>
   );
-};
-
-export default ProjectCard;
+}

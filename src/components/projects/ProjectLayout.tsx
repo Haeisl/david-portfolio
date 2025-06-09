@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -33,13 +31,10 @@ const typeToTagClass: Record<ProjectType, string> = {
     "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100",
 };
 
-/* ———————————————————————————————————————————————————
- *  Component
- * ——————————————————————————————————————————————————— */
 export default function ProjectLayout({
   title,
   summary,
-  type, //   ◄─ NEW (ProjectType)
+  type,
   category,
   stack = [],
   githubUrl,
@@ -97,10 +92,8 @@ export default function ProjectLayout({
           </ul>
         )}
       </header>
-
       {/* Summary */}
       <section className="mb-10 max-w-none">{summary}</section>
-
       {/* Problem */}
       <section className="mb-8 max-w-none">
         <h2 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-100">
@@ -108,7 +101,6 @@ export default function ProjectLayout({
         </h2>
         {problem}
       </section>
-
       {/* Approach */}
       <section className="mb-12 max-w-none">
         <h2 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-100">
@@ -116,7 +108,6 @@ export default function ProjectLayout({
         </h2>
         {approach}
       </section>
-
       {/* Gallery */}
       {images.length > 0 && (
         <section className="space-y-6">

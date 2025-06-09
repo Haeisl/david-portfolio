@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -82,6 +82,16 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   defaultOpen = false,
 }) => {
   const [open, setOpen] = useState(defaultOpen);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState<number | "auto">(0);
+
+  useEffect(() => {
+    if (open && contentRef.current) {
+      setHeight(contentRef.current.scrollHeight);
+    } else {
+      setHeight(0);
+    }
+  }, [open]);
 
   return (
     <div className="py-3">
@@ -92,20 +102,22 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       >
         {title}
         <ChevronDown
-          className={`h-4 w-4 transition-transform ${
+          className={`h-4 w-4 transition-transform duration-300 ${
             open ? "rotate-180" : "rotate-0"
           }`}
         />
       </button>
 
-      {/* Collapse */}
+      {/* Collapse Animation */}
       <motion.div
+        animate={{ height }}
         initial={false}
-        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
-        transition={{ duration: 0.25, ease: "easeInOut" }}
+        transition={{ duration: 0.3, ease: "easeInOut" }} // 👈 longer, smooth transition
         className="overflow-hidden"
       >
-        {open && <div className="pt-4">{children}</div>}
+        <div ref={contentRef} className="pt-4">
+          {children}
+        </div>
       </motion.div>
     </div>
   );

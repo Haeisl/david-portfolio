@@ -159,7 +159,7 @@
     }
   },
   "Imprint": {
-    "title": "Legal notice (Imprint)",
+    "title": "Imprint",
     "intro": "Information pursuant to Section 5 German Digital Services Act (DDG)",
     "name": "David Hasse",
     "address": "Pleikartsförsterstraße 1\n69124 Heidelberg\nGermany",
@@ -213,8 +213,8 @@
       "dataProtectionText3": "We would like to point out that data transmission on the internet (e.g. communication by e-mail) can have security gaps. Complete protection of data against access by third parties is not possible.",
       "controllerHeading": "Notice Concerning the Controller",
       "controllerText1": "The controller responsible for data processing on this website is:",
-      "controllerAddress": "Example Company\nSample Street 10\n90210 Sample City",
-      "controllerContact": "Phone: +49 (0) 123 44 55 66\nE-mail: info@example.com",
+      "controllerAddress": "David Hasse\nPleikartsförsterstraße 1\n69124 Heidelberg",
+      "controllerContact": "Telefon: +49 (0) 1575 3357790\nE-Mail: contact@david-hasse.de",
       "controllerText2": "The controller is the natural or legal person who, alone or jointly with others, decides on the purposes and means of processing personal data (e.g. names, e-mail addresses, etc.).",
       "storageHeading": "Storage Period",
       "storageText": "Unless a more specific storage period has been stated within this privacy policy, your personal data will remain with us until the purpose for the data processing no longer applies. If you make a legitimate deletion request or revoke consent, your data will be deleted unless we have other legally permissible reasons for storing your personal data (e.g. tax or commercial law retention periods); in the latter case, the data will be deleted after these reasons cease to apply.",

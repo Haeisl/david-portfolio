@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { GraduationCap, Briefcase } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import HeadingWithLines from "./HeadingWithLines";

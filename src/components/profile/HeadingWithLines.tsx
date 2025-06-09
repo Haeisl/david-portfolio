@@ -1,5 +1,3 @@
-import React from "react";
-
 interface HeadingWithLinesProps {
   title: string;
   description?: string;
