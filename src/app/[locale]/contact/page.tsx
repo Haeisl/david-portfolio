@@ -80,7 +80,16 @@ export default async function ContactPage() {
           {/* Social links */}
           <Tile className="sm:col-span-6 lg:col-span-12 row-span-1 flex flex-wrap items-center justify-center gap-10">
             <BasedButton
-              href="/test.txt"
+              href={
+                locale === "de"
+                  ? "/CV-DavidHasse-de.pdf"
+                  : locale === "en"
+                  ? "/CV-DavidHasse-en.pdf"
+                  : (console.error(
+                      `Locale mismatch - No CV matches locale: ${locale}`
+                    ),
+                    undefined)
+              }
               icon={<Download size={28} />}
               label={t("resume")}
               download
