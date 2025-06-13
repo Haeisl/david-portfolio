@@ -114,29 +114,84 @@
     ]
   },
   "ProjectsPage": {
-    "title": "Projekte"
+    "title": "Projekte",
+    "legend": "Legende",
+    "thesis": "Bachelorarbeit",
+    "practical": "Studentisches Softwarepraktikum",
+    "private": "Privates Projekt"
   },
   "Projects": {
-    "epilepsy-planning-tool": {
+    "epilepsy": {
       "title": "Epilepsie-Planungstool",
-      "description": "Optimierung eines interaktiven Simulationswerkzeugs zur Planung epileptischer Therapien; erhöhte Plattformunabhängigkeit, verbesserte Datenvisualisierung und deutlich gesteigerte Stabilität FEM-basierter elektrischer Feldsimulationen."
+      "description": "Optimierung eines interaktiven Simulationswerkzeugs zur Planung epileptischer Therapien; erhöhte Plattformunabhängigkeit, verbesserte Datenvisualisierung und deutlich gesteigerte Stabilität FEM-basierter elektrischer Feldsimulationen.",
+      "category": "Bachelorarbeit",
+      "summary": "",
+      "problem": "",
+      "approach": "",
+      "images": {
+        "0": {
+          "alt": "",
+          "caption": ""
+        },
+        "1": {
+          "alt": "",
+          "caption": ""
+        }
+      }
     },
-    "portfolio-website": {
+    "portfolio": {
       "title": "Portfolio Webseite",
-      "description": "Eine persönliche Portfolio-Webseite, gebaut mit NextJS und TailwindCSS, um Projekte und Erfahrungen zu präsentieren."
+      "description": "Eine persönliche Portfolio-Webseite, gebaut mit NextJS und TailwindCSS, um Projekte und Erfahrungen zu präsentieren.",
+      "category": "Private Project",
+      "summary": "",
+      "problem": "",
+      "approach": "",
+      "images": {
+        "0": {
+          "alt": "",
+          "caption": ""
+        },
+        "1": {
+          "alt": "",
+          "caption": ""
+        }
+      }
     },
-    "virtual-patient-cohorts": {
-      "title": "Virtuelle Patientenkohorten",
-      "description": "Entwicklung einer Python-Anwendung zur Anpassung mathematischer Modelle an medizinische Echtdaten; ermöglicht effiziente Analyse von Therapieeffekten und Generierung virtueller Patientendaten für simulationsbasierte Forschung."
-    },
-    "field-consistent-glyphs": {
+    "glyphs": {
       "title": "Feldkonsistente Glyphen",
-      "description": "Implementierung eines ParaView-Plugins zur feldkonsistenten Visualisierung von Vektor- und Tensorfeldern; verbessert die Aussagekraft wissenschaftlicher Visualisierungen durch korrekte Darstellung lokaler Feldverläufe in komplexen Datenstrukturen."
+      "description": "Implementierung eines ParaView-Plugins zur feldkonsistenten Visualisierung von Vektor- und Tensorfeldern; verbessert die Aussagekraft wissenschaftlicher Visualisierungen durch korrekte Darstellung lokaler Feldverläufe in komplexen Datenstrukturen.",
+      "category": "Student Software Practical",
+      "summary": "",
+      "problem": "",
+      "approach": "",
+      "images": {
+        "0": {
+          "alt": "",
+          "caption": ""
+        },
+        "1": {
+          "alt": "",
+          "caption": ""
+        }
+      }
     },
-    "types": {
-      "thesis": "Bachelorarbeit",
-      "practical": "Studentisches Softwarepraktikum",
-      "private": "Persönliches Projekt"
+    "cohorts": {
+      "title": "Virtuelle Patientenkohorten",
+      "description": "Entwicklung einer Python-Anwendung zur Anpassung mathematischer Modelle an medizinische Echtdaten; ermöglicht effiziente Analyse von Therapieeffekten und Generierung virtueller Patientendaten für simulationsbasierte Forschung.",
+      "category": "Student Software Practical",
+      "summary": "",
+      "problem": "",
+      "approach": "",
+      "images": {
+        "0": {
+          "alt": "",
+          "caption": ""
+        },
+        "1": {
+          "alt": "",
+          "caption": ""
+        }
+      }
     }
   },
   "ContactPage": {

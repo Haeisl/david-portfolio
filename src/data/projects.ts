@@ -7,32 +7,114 @@ export enum ProjectType {
 
 const projects = [
   {
-    id: "epilepsy-planning-tool",
+    id: "epilepsy",
     type: ProjectType.THESIS,
-    techStack: ["Python", "Unreal Engine", "Docker", "Visualization"],
-    // imageUrl: "/images/epilepsy-tool.png",
-    imageUrl: "https://fakeimg.pl/600x400?text=placeholder",
+    techStack: ["Python", "C++", "Unreal Engine 5", "Docker", "Visualization"],
+    imagePreview: "https://fakeimg.pl/600x400?text=placeholder",
+    githubUrl: "",
+    // translation keys
+    titleKey: "epilepsy.title",
+    summaryKey: "epilepsy.summary",
+    categoryKey: "epilepsy.category",
+    problemKey: "epilepsy.problem",
+    approachKey: "epilepsy.approach",
+
+    // images
+    images: [
+      {
+        src: "",
+        altKey: "epilepsy.images.0.alt",
+        captionKey: "epilepsy.images.0.caption",
+      },
+      {
+        src: "",
+        altKey: "epilepsy.images.1.alt",
+        captionKey: "epilepsy.images.1.caption",
+      },
+    ],
   },
   {
-    id: "portfolio-website",
+    id: "portfolio",
     type: ProjectType.PRIVATE,
-    techStack: ["NextJS", "TailwindCSS", "TypeScript"],
-    // imageUrl: "/images/portfolio.png",
-    imageUrl: "https://fakeimg.pl/600x400?text=placeholder",
+    techStack: ["NextJS", "React", "TypeScript", "TailwindCSS"],
+    imagePreview: "https://fakeimg.pl/600x400?text=placeholder",
+
+    // translation keys
+    titleKey: "portfolio.title",
+    summaryKey: "portfolio.summary",
+    categoryKey: "portfolio.category",
+    problemKey: "portfolio.problem",
+    approachKey: "portfolio.approach",
+
+    // images
+    images: [
+      {
+        src: "",
+        altKey: "portfolio.images.0.alt",
+        captionKey: "portfolio.images.0.caption",
+      },
+      {
+        src: "",
+        altKey: "portfolio.images.1.alt",
+        captionKey: "portfolio.images.1.caption",
+      },
+    ],
   },
   {
-    id: "field-consistent-glyphs",
+    id: "glyphs",
+    title: "Field Consistent Glyphs",
     type: ProjectType.PRACTICAL,
-    techStack: ["ParaView", "Python", "Visualization"],
-    // imageUrl: "/images/field-glyphs.png",
-    imageUrl: "https://fakeimg.pl/600x400?text=placeholder",
+    techStack: ["ParaView", "Python", "C++", "Linux", "Visualization"],
+    imagePreview: "https://fakeimg.pl/600x400?text=placeholder",
+
+    // translation keys
+    titleKey: "glyphs.title",
+    summaryKey: "glyphs.summary",
+    categoryKey: "glyphs.category",
+    problemKey: "glyphs.problem",
+    approachKey: "glyphs.approach",
+
+    // images
+    images: [
+      {
+        src: "",
+        altKey: "glyphs.images.0.alt",
+        captionKey: "glyphs.images.0.caption",
+      },
+      {
+        src: "",
+        altKey: "glyphs.images.1.alt",
+        captionKey: "glyphs.images.1.caption",
+      },
+    ],
   },
   {
-    id: "virtual-patient-cohorts",
+    id: "cohorts",
+    title: "Virtual Patient Cohorts",
     type: ProjectType.PRACTICAL,
-    techStack: ["Python", "NumPy", "SciPy", "TkInter"],
-    // imageUrl: "/images/virtual-patients.png",
-    imageUrl: "https://fakeimg.pl/600x400?text=placeholder",
+    techStack: ["Python", "NumPy", "SciPy", "SymPy", "TkInter"],
+    imagePreview: "https://fakeimg.pl/600x400?text=placeholder",
+
+    // translation keys
+    titleKey: "cohorts.title",
+    summaryKey: "cohorts.summary",
+    categoryKey: "cohorts.category",
+    problemKey: "cohorts.problem",
+    approachKey: "cohorts.approach",
+
+    // images
+    images: [
+      {
+        src: "",
+        altKey: "cohorts.images.0.alt",
+        captionKey: "cohorts.images.0.caption",
+      },
+      {
+        src: "",
+        altKey: "cohorts.images.1.alt",
+        captionKey: "cohorts.images.1.caption",
+      },
+    ],
   },
 ];
 

@@ -11,7 +11,7 @@ export type ProjectImage = {
 };
 
 interface ProjectLayoutProps {
-  title: string;
+  title?: string;
   summary: ReactNode;
   type?: ProjectType;
   category?: string;
@@ -72,10 +72,8 @@ export default function ProjectLayout({
 
         {category && (
           <span
-            className={`inline-block rounded-full px-3 py-1 text-sm font-medium ${categoryClasses}`}
-          >
-            {category}
-          </span>
+            className={`inline-block rounded-full h-2 w-sm sm:w-xl ${categoryClasses}`}
+          />
         )}
 
         {/* tech stack pills (unchanged, still icon-free) */}

@@ -10,7 +10,16 @@ export default async function Resume() {
     <section className="py-12">
       <HeadingWithLines title={t("title")} description={t("description")} />
       <BasedButton
-        href="/test.txt"
+        href={
+          locale === "de"
+            ? "/CV-DavidHasse-de.pdf"
+            : locale === "en"
+            ? "/CV-DavidHasse-en.pdf"
+            : (console.error(
+                `Locale mismatch - No CV matches locale: ${locale}`
+              ),
+              undefined)
+        }
         icon={<Download size={24} />}
         label={t("downloadtitle")}
         download
