@@ -49,10 +49,8 @@ export default async function ProjectCard({
         )}
 
         {/* Text block */}
-        <div className="p-4 md:w-2/3 text-textlight dark:text-textdark">
-          <h3 className="text-xl font-semibold mb-1 group-hover:text-[var(--color-primary)] dark:group-hover:text-[var(--color-primarydark)] transition-colors duration-300">
-            {title}
-          </h3>
+        <div className="group p-4 md:w-2/3 text-textlight dark:text-textdark group-hover:text-[var(--color-primary)] dark:group-hover:text-[var(--color-primarydark)] transition-colors duration-300">
+          <h3 className="text-xl font-semibold mb-1">{title}</h3>
 
           {/* project-type pill removed */}
 
@@ -63,7 +61,7 @@ export default async function ProjectCard({
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="inline-block bg-gray-200 dark:bg-gray-800 rounded px-2 py-1 text-sm text-gray-800 dark:text-gray-200"
+                className="inline-block bg-gray-200 dark:bg-gray-800 rounded-md px-2 py-1 text-sm text-gray-800 dark:text-gray-200 group-hover:text-[var(--color-primary)] dark:group-hover:text-[var(--color-primarydark)] transition-colors duration-300"
               >
                 {tech}
               </span>
