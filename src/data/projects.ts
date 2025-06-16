@@ -10,7 +10,8 @@ const projects = [
     id: "epilepsy",
     type: ProjectType.THESIS,
     techStack: ["Python", "C++", "Unreal Engine 5", "Docker", "Visualization"],
-    imagePreview: "https://placehold.co/600x400.png",
+    imagePreview:
+      "https://github.com/Haeisl/david-portfolio/blob/master/public/gh-content/epilepsy.png?raw=true",
     githubUrl: "",
     // translation keys
     titleKey: "epilepsy.title",
@@ -38,7 +39,7 @@ const projects = [
     type: ProjectType.PRIVATE,
     techStack: ["NextJS", "React", "TypeScript", "TailwindCSS"],
     imagePreview:
-      "https://github.com/Haeisl/david-portfolio/blob/master/public/gh-content/portfolio-preview-alt.png?raw=true",
+      "https://github.com/Haeisl/david-portfolio/blob/master/public/gh-content/portfolio.png?raw=true",
 
     // translation keys
     titleKey: "portfolio.title",
@@ -66,7 +67,8 @@ const projects = [
     title: "Field Consistent Glyphs",
     type: ProjectType.PRACTICAL,
     techStack: ["ParaView", "Python", "C++", "Linux", "Visualization"],
-    imagePreview: "https://placehold.co/600x400.png",
+    imagePreview:
+      "https://github.com/Haeisl/david-portfolio/blob/master/public/gh-content/glyphs.png?raw=true",
 
     // translation keys
     titleKey: "glyphs.title",
@@ -94,7 +96,8 @@ const projects = [
     title: "Virtual Patient Cohorts",
     type: ProjectType.PRACTICAL,
     techStack: ["Python", "NumPy", "SciPy", "SymPy", "TkInter"],
-    imagePreview: "https://placehold.co/600x400.png",
+    imagePreview:
+      "https://github.com/Haeisl/david-portfolio/blob/master/public/gh-content/cohorts.png?raw=true",
 
     // translation keys
     titleKey: "cohorts.title",
