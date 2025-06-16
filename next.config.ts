@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "placehold.co",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "github.com",
         pathname: "/Haeisl/david-portfolio/blob/master/public/gh-content/**",
         //https://github.com/Haeisl/david-portfolio/blob/master/public/images/selfie.jpg?raw=true

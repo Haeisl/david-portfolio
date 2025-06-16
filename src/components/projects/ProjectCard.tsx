@@ -52,8 +52,6 @@ export default async function ProjectCard({
         <div className="group p-4 md:w-2/3 text-textlight dark:text-textdark group-hover:text-[var(--color-primary)] dark:group-hover:text-[var(--color-primarydark)] transition-colors duration-300">
           <h3 className="text-xl font-semibold mb-1">{title}</h3>
 
-          {/* project-type pill removed */}
-
           <p className="line-clamp-3">{description}</p>
 
           {/* Tech-stack chips */}
