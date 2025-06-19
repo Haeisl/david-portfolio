@@ -155,27 +155,27 @@
       "images": {
         "0": {
           "alt": "",
-          "caption": "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test "
+          "caption": "Ansicht des „Konfiguration“ Bildschirms im Unreal Engine Frontend, bevor Daten aus dem Backend geladen werden."
         },
         "1": {
           "alt": "",
-          "caption": "Test2"
+          "caption": "Der „Interpolationsmanager“ zeigt die aktuelle Elektrodenposition an und hebt hervor, welche drei realen Elektroden für die Interpolation verwendet würden."
         },
         "2": {
           "alt": "",
-          "caption": "Test2"
+          "caption": "Die bewegliche region of interest (ROI) in rot im Kopf-Mesh des Patienten."
         },
         "3": {
           "alt": "",
-          "caption": "Test2"
+          "caption": "Die simulierten Daten des elektrischen Feldes für eine Elektrode in white und gray matter des Patienten."
         },
         "4": {
           "alt": "",
-          "caption": "Test2"
+          "caption": "Der farbkodierte Betrag der elektrischen Feldstärke einer Interpolationselektrode für die Voxel des Patienten-Meshes innerhalb der definierten ROI."
         },
         "5": {
           "alt": "",
-          "caption": "Test2"
+          "caption": "Ein Histogramm der Häufigkeiten der elektrischen Feldstärken innerhalb der ROI für die Interpolationselektrode."
         }
       }
     },

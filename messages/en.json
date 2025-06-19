@@ -155,27 +155,27 @@
       "images": {
         "0": {
           "alt": "",
-          "caption": ""
+          "caption": "View of the 'Configuration' screen in the Unreal Engine frontend, before any data is loaded from the backend."
         },
         "1": {
           "alt": "",
-          "caption": ""
+          "caption": "The 'Interpolation Manager' displaying the current electrode position and highlighting which three real electrodes would be used for interpolation."
         },
         "2": {
           "alt": "",
-          "caption": ""
+          "caption": "The movable region of interest (ROI) in red inside of the patient's head-mesh."
         },
         "3": {
           "alt": "",
-          "caption": ""
+          "caption": "The simulated electrical field data for one electrode in the patient's white and gray matter."
         },
         "4": {
           "alt": "",
-          "caption": ""
+          "caption": "The color-coded magnitude of the electrical field strength for the interpolated electrode on the patient's mesh's voxel data inside of the ROI."
         },
         "5": {
           "alt": "",
-          "caption": ""
+          "caption": "A histogram of the magnitudes of the electrical field strengths inside of the ROI for one interpolated electrode."
         }
       }
     },

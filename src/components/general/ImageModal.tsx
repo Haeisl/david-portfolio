@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export default function ImageModal({
@@ -15,18 +15,22 @@ export default function ImageModal({
   thumbnailWidth?: number;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const imageRef = useRef<HTMLImageElement | null>(null);
+  const [imageWidth, setImageWidth] = useState<number | null>(null);
 
-  // Lock scroll when modal is open
+  /* ──────────────────────────────────────────
+     Lock page scroll when the modal is open
+     ────────────────────────────────────────── */
   useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
+    if (isOpen) document.body.classList.add("overflow-hidden");
+    else document.body.classList.remove("overflow-hidden");
+
     return () => document.body.classList.remove("overflow-hidden");
   }, [isOpen]);
 
-  // Handle mobile viewport units properly
+  /* ──────────────────────────────────────────
+     Fix 100 vh on mobile browsers
+     ────────────────────────────────────────── */
   useEffect(() => {
     const setVh = () => {
       const vh = window.innerHeight * 0.01;
@@ -38,9 +42,30 @@ export default function ImageModal({
     return () => window.removeEventListener("resize", setVh);
   }, []);
 
+  /* ──────────────────────────────────────────
+     Keep `imageWidth` in sync with the actual
+     rendered width of the <Image> element
+     ────────────────────────────────────────── */
+  useEffect(() => {
+    if (!isOpen || !imageRef.current) return;
+
+    // Initial measurement (covers very fast loads)
+    setImageWidth(imageRef.current.offsetWidth);
+
+    // React to any later resizes (viewport changes, zoom, etc.)
+    const ro = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setImageWidth(entry.contentRect.width);
+      }
+    });
+    ro.observe(imageRef.current);
+
+    return () => ro.disconnect();
+  }, [isOpen]);
+
   return (
     <>
-      {/* Thumbnail */}
+      {/* ───────────── Thumbnail ───────────── */}
       <div
         className="inline-block text-center cursor-pointer"
         onClick={() => setIsOpen(true)}
@@ -54,40 +79,57 @@ export default function ImageModal({
         />
       </div>
 
-      {/* Modal */}
+      {/* ───────────── Modal ───────────── */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm
+                     flex items-center justify-center p-4"
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="relative text-center"
-            // onClick={(e) => e.stopPropagation()} was macht das?
+            className="relative text-center w-fit"
+            onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
+            {/* Close button */}
             <button
-              className="absolute top-[-50px] right-0 text-white text-5xl font-bold z-10 hover:text-red-300 transition"
+              className="absolute top-[-50px] right-0
+                         text-textdark text-5xl font-bold z-10
+                         hover:text-[var(--color-primary)]
+                         dark:hover:text-[var(--color-primarydark)]
+                         transition"
               onClick={() => setIsOpen(false)}
-              aria-label="Close"
+              aria-label="Close modal"
             >
               &times;
             </button>
 
-            {/* Large Image with responsive sizing */}
+            {/* Large image */}
             <Image
+              ref={imageRef}
               src={src}
               alt={alt}
               width={0}
               height={0}
               sizes="100vw"
               className="rounded-lg shadow-lg mx-auto
-                         w-[300px] sm:w-[400px] md:w-[600px] lg:w-[800px] 2xl:w-[1200px]
-                         h-auto"
+                         min-w-[25vw] min-h-[25vh]
+                         max-w-[90vw] max-h-[90vh]
+                         w-auto h-auto object-contain"
+              onLoadingComplete={(img) => setImageWidth(img.width)}
             />
 
             {/* Caption */}
             {caption && (
-              <div className="mt-4 bg-bgselectedlight dark:bg-bgselecteddark rounded-lg p-2 text-textlight dark:text-textdark text-sm md:text-base px-4">
+              <div
+                className="mt-4 inline-block
+                           bg-bgselectedlight dark:bg-bgselecteddark
+                           rounded-lg p-2 text-textlight dark:text-textdark
+                           text-sm md:text-base text-center"
+                style={{
+                  width: "fit-content", // shrink-wrap text
+                  maxWidth: imageWidth ? `${imageWidth}px` : "100%", // cap at image width
+                }}
+              >
                 {caption}
               </div>
             )}
