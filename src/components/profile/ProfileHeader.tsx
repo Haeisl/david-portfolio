@@ -1,8 +1,9 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-export default function ProfileHeader() {
-  const t = useTranslations("ProfileHeader");
+export default async function ProfileHeader() {
+  const t = await getTranslations("ProfileHeader");
+
   return (
     <section className="text-center">
       <Image

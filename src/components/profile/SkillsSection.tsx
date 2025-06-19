@@ -5,29 +5,17 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import HeadingWithLines from "./HeadingWithLines";
+import {
+  Skill,
+  SkillsSectionProps,
+  AccordionItemProps,
+  SkillBarProps,
+} from "@/types";
 
-export type Skill = {
-  id: string;
-  name: string;
-  level: number; // 0 – 100
-  category: string; // e.g. "Frontend", "Backend", "DevOps" …
-};
-
-export type SkillsSectionProps = {
-  skills: Skill[];
-  /** Category accordion will default‑open the first entry */
-  defaultOpen?: string;
-};
-
-/**
- * A responsive skills section that groups self‑assessed competencies by
- * category inside a small, dependency‑free accordion. It scales painlessly to
- * dozens of technologies without overwhelming the reader.
- */
-export const SkillsSection: React.FC<SkillsSectionProps> = ({
+export default function SkillsSection({
   skills,
   defaultOpen,
-}) => {
+}: SkillsSectionProps) {
   const t = useTranslations("Skills");
   // Group skills by category → { category: Skill[] }
   const grouped = useMemo(() => {
@@ -64,23 +52,16 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({
       </div>
     </section>
   );
-};
+}
 
 /* -------------------------------------------------------------------------- */
 /*                             Local Accordion Item                            */
 /* -------------------------------------------------------------------------- */
-
-interface AccordionItemProps {
-  title: string;
-  children: React.ReactNode;
-  defaultOpen?: boolean;
-}
-
-const AccordionItem: React.FC<AccordionItemProps> = ({
+function AccordionItem({
   title,
   children,
   defaultOpen = false,
-}) => {
+}: AccordionItemProps) {
   const [open, setOpen] = useState(defaultOpen);
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number | "auto">(0);
@@ -121,16 +102,11 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       </motion.div>
     </div>
   );
-};
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                   SkillBar                                 */
 /* -------------------------------------------------------------------------- */
-
-interface SkillBarProps {
-  skill: string;
-  level: number; // 0 to 100
-}
 
 function SkillBar({ skill, level }: SkillBarProps) {
   return (

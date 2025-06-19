@@ -1,13 +1,10 @@
 import projects from "@/data/projects";
 import ProjectLayout from "@/components/projects/ProjectLayout";
 import { notFound } from "next/navigation";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
+import { ProjectPageProps } from "@/types";
 
-interface PageProps {
-  params: Promise<{ id: string }>;
-}
-
-export default async function ProjectPage(props: PageProps) {
+export default async function ProjectPage(props: ProjectPageProps) {
   const params = await props.params;
 
   const project = projects.find((proj) => proj.id === params.id);
@@ -15,8 +12,10 @@ export default async function ProjectPage(props: PageProps) {
   if (!project) {
     notFound();
   }
-  const locale = await getLocale();
-  const t = await getTranslations({ locale, namespace: "Projects" });
+  const t = await getTranslations("Projects");
+
+  const problem: string[] = t.raw(project.problemKey) as string[];
+  const approach: string[] = t.raw(project.approachKey) as string[];
 
   let images = undefined;
   if (project.images) {
@@ -36,11 +35,11 @@ export default async function ProjectPage(props: PageProps) {
       githubUrl={project.githubUrl}
       githubNames={project.githubNames}
       stack={project.techStack}
-      problem={t(project.problemKey)}
       problemTitle={t("problemtitle")}
+      problem={problem}
       approachTitle={t("approachtitle")}
+      approach={approach}
       galleryTitle={t("gallerytitle")}
-      approach={t(project.approachKey)}
       images={images}
     />
   );

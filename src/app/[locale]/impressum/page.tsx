@@ -1,11 +1,11 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { nl2br } from "@/app/utils/nlToBr";
 
 export const metadata: Metadata = { title: "Impressum / Legal notice" };
 
-export default function ImprintPage() {
-  const t = useTranslations("Imprint");
+export default async function ImprintPage() {
+  const t = await getTranslations("Imprint");
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10 space-y-6 text-md text-textlight dark:text-textdark">

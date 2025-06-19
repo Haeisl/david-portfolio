@@ -7,11 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { useLocale } from "next-intl";
 import { Menu, X } from "lucide-react";
-
-type NavigationType = {
-  name: string;
-  href: string;
-};
+import { NavigationType } from "@/types";
 
 export default function Header() {
   const t = useTranslations("NavbarLinks");

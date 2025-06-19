@@ -1,11 +1,11 @@
 import FadeInSection from "@/components/general/FadeInSection";
 import ProjectCard from "@/components/projects/ProjectCard";
 import projects from "@/data/projects";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 export default async function Projects() {
-  const locale = await getLocale();
-  const t = await getTranslations({ locale, namespace: "ProjectsPage" });
+  const t = await getTranslations("ProjectsPage");
+
   return (
     <div className="container mx-auto py-10 space-y-6 px-2">
       <div className="space-y-2">

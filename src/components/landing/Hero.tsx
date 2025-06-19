@@ -4,15 +4,8 @@ import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import BasedButton from "../general/BasedButton";
+import { Word } from "@/types";
 
-type Word = {
-  title: string;
-};
-
-/**
- * Cycles through `words` with a type‑writer effect.
- * Returns the currently typed string (without the blinking caret).
- */
 export function useTypewriter(
   words: Word[],
   {

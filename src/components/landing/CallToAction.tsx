@@ -1,6 +1,5 @@
 import BasedButton from "../general/BasedButton";
-import { getTranslations } from "next-intl/server";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 export default async function CallToAction() {
   const locale = await getLocale();

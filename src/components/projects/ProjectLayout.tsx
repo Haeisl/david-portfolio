@@ -1,30 +1,9 @@
 import Link from "next/link";
-import { ReactNode } from "react";
 import { Github } from "lucide-react";
-import { ProjectType } from "@/data/projects";
+import { ProjectType } from "@/types";
 import ImageModal from "../general/ImageModal";
-
-type ProjectImage = {
-  src: string;
-  alt: string;
-  caption?: string;
-};
-
-type ProjectLayoutProps = {
-  title?: string;
-  summary: ReactNode;
-  type?: ProjectType;
-  category?: string;
-  stack?: string[];
-  githubUrl?: string[];
-  githubNames?: string[];
-  problem: ReactNode;
-  approach: ReactNode;
-  problemTitle: string;
-  approachTitle: string;
-  galleryTitle: string;
-  images?: ProjectImage[];
-};
+import { nl2br } from "@/app/utils/nlToBr";
+import { ProjectLayoutProps } from "@/types";
 
 const typeToTagClass: Record<ProjectType, string> = {
   [ProjectType.THESIS]:
@@ -127,14 +106,22 @@ export default function ProjectLayout({
         <h2 className="mb-2 text-xl font-semibold text-textlight dark:text-textdark">
           {problemTitle}
         </h2>
-        {problem}
+        {problem.map((para, idx) => (
+          <p key={idx} className="mb-2">
+            {nl2br(para)}
+          </p>
+        ))}
       </section>
       {/* Approach */}
       <section className="mb-12 max-w-none">
         <h2 className="mb-2 text-xl font-semibold text-textlight dark:text-textdark">
           {approachTitle}
         </h2>
-        {approach}
+        {approach.map((para, idx) => (
+          <p key={idx} className="mb-2">
+            {nl2br(para)}
+          </p>
+        ))}
       </section>
       {/* Gallery */}
       {images?.length > 0 && (

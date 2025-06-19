@@ -1,12 +1,9 @@
-interface HeadingWithLinesProps {
-  title: string;
-  description?: string;
-}
+import { HeadingWithLinesProps } from "@/types";
 
-const HeadingWithLines: React.FC<HeadingWithLinesProps> = ({
+export default function HeadingWithLines({
   title,
   description,
-}) => {
+}: HeadingWithLinesProps) {
   return (
     <div className="my-6 mt-10">
       <div className="flex items-center mb-2">
@@ -29,6 +26,4 @@ const HeadingWithLines: React.FC<HeadingWithLinesProps> = ({
       )}
     </div>
   );
-};
-
-export default HeadingWithLines;
+}

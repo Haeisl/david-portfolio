@@ -1,21 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ProjectType } from "@/data/projects";
-import { getTranslations } from "next-intl/server";
-import { getLocale } from "next-intl/server";
+import { ProjectType } from "@/types";
+import { getLocale, getTranslations } from "next-intl/server";
+import { ProjectCardProps } from "@/types";
 
-interface ProjectCardProps {
-  id: string;
-  type: "thesis" | "practical" | "private";
-  techStack: string[];
-  imageUrl?: string;
-}
-
-/** tailwind v4: map each project type to a left-border colour */
+/** map each project type to a left-border colour */
 export const typeToBorderClass: Record<ProjectType, string> = {
-  [ProjectType.THESIS]: "border-l-4 border-blue-500",
-  [ProjectType.PRACTICAL]: "border-l-4 border-green-500",
-  [ProjectType.PRIVATE]: "border-l-4 border-purple-500",
+  [ProjectType.THESIS]: "border-blue-500",
+  [ProjectType.PRACTICAL]: "border-green-500",
+  [ProjectType.PRIVATE]: "border-purple-500",
 };
 
 export default async function ProjectCard({
@@ -33,7 +26,7 @@ export default async function ProjectCard({
   return (
     <Link href={`/${locale}/projects/${id}`} className="block h-full">
       <div
-        className={`group bg-bgaccentlight dark:bg-bgaccentdark rounded-md shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col md:flex-row-reverse h-full ${typeToBorderClass[type]}`}
+        className={`group bg-bgaccentlight dark:bg-bgaccentdark rounded-md shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col md:flex-row-reverse h-full border-l-4 ${typeToBorderClass[type]}`}
       >
         {/* Thumbnail (optional) */}
         {imageUrl && (

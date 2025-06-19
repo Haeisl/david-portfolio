@@ -6,6 +6,7 @@ import BasedButton from "../general/BasedButton";
 export default async function Resume() {
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "Resume" });
+
   return (
     <section className="py-12">
       <HeadingWithLines title={t("title")} description={t("description")} />

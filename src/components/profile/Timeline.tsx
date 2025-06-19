@@ -1,89 +1,50 @@
-"use client";
-import { useMemo } from "react";
 import { GraduationCap, Briefcase } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 import HeadingWithLines from "./HeadingWithLines";
+import { TimelineProps, TimelineItem } from "@/types";
 
-export type TimelineItem = {
-  id: string;
-  /** Displayed as the main heading */
-  title: string;
-  /** Optional sub‑heading such as school/company name */
-  subtitle?: string;
-  /** ISO date string – first day of period */
-  start: string;
-  /** ISO date string – last day of period; omit for ongoing roles */
-  end?: string;
-  /** Short free‑form description */
-  description?: string;
-  /** Determines colour/icon */
-  type: "education" | "work";
+const localeMap: Record<string, string> = {
+  en: "en-US",
+  de: "de-DE",
 };
 
-type TimelineProps = {
-  items: TimelineItem[];
-  /** "vertical" (default) | "horizontal" */
-  orientation?: "vertical" | "horizontal";
-};
+function fmtDate(input: string, locale: string) {
+  const date = new Date(input);
+  return Number.isNaN(date.getTime())
+    ? input
+    : date.toLocaleDateString(locale, { year: "numeric", month: "short" });
+}
 
-export const Timeline: React.FC<TimelineProps> = ({ items }) => {
-  const t = useTranslations("Timeline");
+export default async function Timeline({ items }: TimelineProps) {
+  const t = await getTranslations("Timeline");
 
-  const sorted = useMemo(
-    () =>
-      [...items].sort(
-        (a, b) =>
-          new Date(b.end ?? b.start).getTime() -
-          new Date(a.end ?? a.start).getTime()
-      ),
-    [items]
+  const sortedItems = [...items].sort(
+    (a, b) =>
+      new Date(b.end ?? b.start).getTime() -
+      new Date(a.end ?? a.start).getTime()
   );
 
   return (
-    <HorizontalTimeline
-      items={sorted}
-      title={t("title")}
-      description={t("description")}
-    />
-  );
-};
-
-const HorizontalTimeline: React.FC<{
-  items: TimelineItem[];
-  title: string;
-  description: string;
-}> = ({ items, title, description }) => (
-  <>
-    <HeadingWithLines title={title} description={description} />
-    <div className="relative overflow-x-auto scroll-smooth pb-4">
-      {/* Extra padding on the left ensures the first item isn’t chopped on tiny screens */}
-      <div className="flex justify-center items-start space-x-12 px-128 md:px-2 py-2 snap-x snap-mandatory">
-        {items.map((item, idx) => (
-          <HorizontalItem
-            key={item.id}
-            item={item}
-            isLast={idx === items.length - 1}
-          />
-        ))}
+    <>
+      <HeadingWithLines title={t("title")} description={t("description")} />
+      <div className="relative overflow-x-auto scroll-smooth pb-4">
+        {/* Extra padding on the left ensures the first item isn’t chopped on tiny screens */}
+        <div className="flex justify-center items-start space-x-12 px-160 md:px-2 py-2 snap-x snap-mandatory">
+          {sortedItems.map((item, idx) => (
+            <Item key={item.id} item={item} isLast={idx === items.length - 1} />
+          ))}
+        </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+}
 
-const HorizontalItem: React.FC<{ item: TimelineItem; isLast: boolean }> = ({
-  item,
-  isLast,
-}) => {
-  const t = useTranslations("Timeline");
-  const locale = useLocale();
+async function Item({ item, isLast }: { item: TimelineItem; isLast: boolean }) {
+  const locale = await getLocale();
+  const t = await getTranslations({ locale, namespace: "Timeline" });
   const Icon = item.type === "education" ? GraduationCap : Briefcase;
 
-  const localeMap: Record<string, string> = {
-    en: "en-US",
-    de: "de-DE",
-  };
-
-  const formattedLocale = localeMap[locale] ?? "en-US";
+  const formattedLocale = localeMap[locale] ?? "de-DE";
 
   return (
     <div className="relative flex min-w-[12rem] flex-col items-center snap-start">
@@ -119,16 +80,4 @@ const HorizontalItem: React.FC<{ item: TimelineItem; isLast: boolean }> = ({
       </div>
     </div>
   );
-};
-
-// Helper function to format date strings
-function fmtDate(input: string, locale: string = "en-US") {
-  // Accepts YYYY | YYYY-MM | full ISO – falls back to raw string if parse fails.
-  const date = new Date(input);
-  if (Number.isNaN(date.getTime())) return input;
-
-  return date.toLocaleDateString(locale, {
-    year: "numeric",
-    month: "short",
-  });
 }

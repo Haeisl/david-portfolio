@@ -133,9 +133,25 @@
       "title": "Epilepsy Planning Tool",
       "category": "Bachelor's Thesis",
       "description": "Optimization of an interactive simulation tool for planning epilepsy therapies; enhanced platform independence, improved data visualization, and significantly increased stability of FEM-based electrical field simulations.",
-      "summary": "For my bachelor's thesis, I enhanced and optimized an existing interactive tool used to simulate and interpolate electrode positions for non-invasive epilepsy treatment. The project focused on improving the tool's visualization capabilities, platform independence, and reliability of electric field simulations. I refactored large portions of the codebase, resolved major simulation and compatibility issues, and introduced new user-friendly features, laying the foundation for its potential use in medical practice.",
-      "problem": "",
-      "approach": "",
+      "summary": "My bachelor's thesis optimizes an interactive simulation and visualization tool that plans the positioning of EASEE electrodes for epilepsy therapy. The initial version suffered from instability, incorrect color coding, platform dependency and missing documentation. Through extensive refactoring, a Docker-based, platform-independent architecture and a switch to a robust direct solver, the success rate of the FEM simulations rose from ~80% to around 94%. At the same time, perceptual-uniform colormaps, histograms and convenient server controls were added to the Unreal front end. The result is a stable, documented tool that paves the way for researchers and clinicians to put it into practical use.",
+      "problem": [
+        "At the start of the project there was a feature-rich prototype, but it would only run on the developer’s machine. Its main issues were a ≥ 20% failure rate of the SimNIBS simulations, which was not reproducible and rose to 100% after the project hand-over, incorrect Jet color mapping, hard-coded system paths, calculations that had to be triggered manually and virtually no documentation.",
+        "The core task was to systematically analyze these weaknesses and create a resilient, portable overall system. Seven functional goals were defined for this purpose: (1) locate sources of error and drive the success rate toward 100%, (2) remove absolute paths and introduce containerization, (3) correct the color representation, (4) integrate new visualization means—especially histograms, (5) start simulations directly from the front end, (6) optimize runtimes and (7) provide comprehensive developer and user documentation.",
+        "In addition, non-functional requirements such as parallelization, clean logging, maintainability and scalability had to be met. The overarching goal was to lay a reliable foundation for further research and possible clinical use."
+      ],
+      "approach": [
+        "Backend & Simulation:\nExtensive refactoring replaced hard-coded Windows paths with pathlib and moved constants to config.ini.",
+        "Docker images with a defined Conda environment now ensure reproducible builds and parallel container runs.",
+        "Mesh operations were migrated from external Gmsh processes to the high-performance Python API, including removal of self-intersecting surfaces and automatic ROI checks via Delaunay triangulation.",
+        "The unstable PETSc iterative solver was replaced by the MKL-PARDISO direct solver; together with the mesh improvements this increased the success rate to ~94%.",
+
+        "\nFront end (Unreal Engine 5):\nA new server-management screen allows entry of arbitrary IP/port combinations and live-checks the accessibility of the REST back end.",
+        "A Run button starts simulations directly from the configuration view, and pressing Esc navigates users back to the main menu at any time.",
+        "The Jet colormap was replaced with Plasma and grayscale LUTs; incorrectly scaled barycentric weights were fixed, and a Python-based histogram dialog complements data exploration.",
+
+        "\nDocumentation & Dev-Ops:\nSphinx docs for the Python back end and Doxygen for the C++ classes generate searchable HTML references; detailed README guides make it easy to get started.",
+        "A centralized logging set-up writes runtime and error messages to log files in chronological order, simplifying debugging and maintenance."
+      ],
       "images": {
         "0": {
           "alt": "",
@@ -167,9 +183,16 @@
       "title": "Portfolio Website",
       "description": "A personal portfolio website built with NextJS and TailwindCSS to showcase projects and experiences.",
       "category": "Private Project",
-      "summary": "",
-      "problem": "",
-      "approach": "",
+      "summary": "This portfolio website is my personal playground where I combine curiosity with career orientation. With little prior experience in the web stack, I wanted to see how far I could get with modern tools such as Next JS 15, React, TypeScript and Tailwind CSS v4 – and at the same time build a site that lets visitors understand in just a few clicks who I am, what I’m working on and what I want to learn next. In addition to classic content like project descriptions, skill diagrams and a graphical résumé, the site offers small gimmicks: a language switch toggles seamlessly between German and English, the theme toggle adapts to light or dark preferences, a color cycler offers six accent colors and a vCard can be transferred directly to a smartphone via QR code.",
+      "problem": [
+        "After my computer-science bachelor’s degree, I wanted, on the one hand, to create an authentic point of contact for applications without already committing myself to a specific role – frontend, backend or something in between. On the other hand, I was attracted by the challenge of proving to myself with a tangible project that I can quickly grasp new technologies and see them through to a finished product. The website therefore had to unite several needs. It had to reflect my personality, so it needed room for small details such as a “this-or-that” component. It had to be bilingual so that international contacts are not excluded, and it had to meet legal requirements such as imprint and data protection. For the application process I also needed a way to present my résumé attractively: PDF versions set in LaTeX in German and English should be downloadable depending on the selected language. Finally, I wanted to make contacting me as easy as possible – via mailto links with predefined subject, via LinkedIn or GitHub profile and via QR-code vCard that can be scanned or downloaded without typing."
+      ],
+      "approach": [
+        "The foundation is Next JS 15 with the new App Router. All page building blocks – from skill bar charts and project cards to the résumé – are designed as reusable React components and styled with Tailwind CSS v4 utility classes. Two complete color palettes for light and dark mode are available, while a cycler with six accent tones makes the color scheme flexibly adjustable. For internationalization, next-intl is used: all texts reside in de.json and en.json, so a language switch is possible without reloading and new translations require only a single JSON entry.",
+        "The data for the project portfolio is stored centrally in a projects.ts array. Each new entry automatically generates a card on the overview page and a dynamic detail route under /projects/[id], so the content can grow without code changes. Interactive elements give the site personality: the “this-or-that” component reveals my preferences on click, skill bars display competencies and a graphical résumé presents stages in chronological order.",
+        "On the contact page, a server-side function generates a QR code for my vCard after the button click, so visitors can transfer my contact details directly to their phone. Additionally, mailto links with a pre-filled subject ease the initial contact, and LinkedIn and GitHub buttons point to my profiles. For recruiters, the résumé is available as a PDF; a small hook detects the current page language and automatically provides the correct German or English version.",
+        "The whole thing is hosted on the free Vercel tier. Every Git push triggers a CI pipeline; the custom domain runs via adjusted DNS entries with an automatically issued TLS certificate. I paid special attention to the design – for example the color scheme in both dark and light mode and the placement of elements (not least thanks to feedback from friends, including a friend who works in UI/UX design) – and solved performance issues by balancing server-side rendering and static generation. The result is a low-maintenance, personal platform that shows I enjoy diving into new technologies and have fun working ideas through to a visible product."
+      ],
       "images": {
         "0": {
           "alt": "",
@@ -185,9 +208,23 @@
       "title": "Field-Consistent Glyphs",
       "description": "Implementation of a ParaView plugin for field-consistent visualization of vector and tensor fields; improves the expressiveness of scientific visualizations by correctly representing local field patterns in complex data structures.",
       "category": "Student Software Practical",
-      "summary": "In this project, I developed a custom ParaView filter for generating 'field-consistent' glyphs that more accurately reflect local vector and tensor field behavior. Unlike traditional arrow glyphs that represent direction only at a single point, my approach integrates parallel and orthogonal streamlines to construct curved glyphs that follow the underlying data. This improves interpretability in complex or curved fields, offering clearer visualization at the cost of increased computation.",
-      "problem": "",
-      "approach": "",
+      "summary": "The internship project developed a ParaView filter for “Field-Consistent Glyphs” that visualizes vector and tensor fields not with straight arrows but with curved, streamline-based shapes. Each glyph is created by integrating parallel and orthogonal streamlines, so its geometry follows the local field everywhere and reduces misinterpretation in strongly curved regions. On radial, rotational and saddle fields the approach shows the flow more clearly than standard arrows with significantly fewer glyphs but requires noticeably more computation time per glyph. Initial experiments with 3D tensor glyphs confirm the concept’s transferability and open perspectives for spatial, temporal and uncertainty extensions.",
+      "problem": [
+        "Conventional arrow glyphs encode vectors exactly only at their origin; along the shaft, direction and magnitude can be misleading in curved or swirling fields. The central task of this internship was therefore:",
+        "Requirements analysis:\nIdentify where and why arrow glyphs fail and define criteria for a field-faithful representation.",
+        "Design of a field-consistent glyph scheme:\nDevelop a concept that incorporates both parallel and orthogonal information of the field yet can still be recognized as an “arrow”.",
+        "Implementation as a ParaView filter:\nRealization in Python with a parameterizable interface (seed grid, step size, integration method, glyph variants) and a runnable Docker/VM environment.",
+        "Evaluation & comparison:\nTesting on synthetic test fields, comparison with standard glyphs, measurement of clarity, glyph density and computation time.",
+        "Formulate outlook:\nSketch extensions in 3D, topology-driven placement, time dependence and uncertainty depiction",
+        "The goal was a practical prototype that gives researchers a more precise tool for exploring complex field data."
+      ],
+      "approach": [
+        "Development environment:\n",
+        "ParaView ran in an Ubuntu VM; a Python plug-in implemented the filter. The research group’s PRTL plug-in provided the PRTL “Python Model” source and supplied analytic test fields on regular grids",
+        "Algorithm & pipeline:\n1. Seed placement: grid or user-defined points.\n2. Main streamline: forward and backward integration along the field direction (Euler or RK4, optionally normalized) forms the curved “backbone” of the glyph.\n3. Shaft width: orthogonal integration from the backbone start generates symmetrical side lines.\n4. Arrow head: three variants – weighted combination (smooth), alternating “staircase” steps or Bézier interpolation – close the tip depending on data curvature and performance needs.\n5. Parameter control: number of steps, step size, normalization, scale factor and head variant are interactively adjustable; sliders give live feedback in ParaView.",
+        "Results & analysis:\nOn radial, saddle and vortex fields each glyph reconstructed the local flow visibly more faithfully than straight arrows; at the same time a lower seed density was sufficient, making the picture appear decluttered. The price is an orders-of-magnitude higher integration effort, but this can prospectively be managed through adaptive seeding or parallelization.",
+        "Through these steps a modular, documented filter emerged that enables field-consistent glyphs for 2D vector fields and lays the foundation for 3D, time-dependent or uncertainty-laden extensions."
+      ],
       "images": {
         "0": {
           "alt": "",
@@ -203,9 +240,22 @@
       "title": "Virtual Patient Cohorts",
       "description": "Development of a Python application for adapting mathematical models to real medical data; enables efficient analysis of therapy effects and generation of virtual patient data for simulation-based research.",
       "category": "Student Software Practical",
-      "summary": "This project involved developing a user-friendly software application for fitting mathematical models to real patient data, with the goal of simulating virtual patient cohorts. Using a custom graphical interface built in Python, the tool supports various function types, including ordinary differential equations, and allows users to input models and data for parameter estimation. The system offers detailed feedback, graphical output, and data export options to enhance usability and transparency. While the final product focuses on model fitting, it lays a modular foundation for future extensions toward full virtual patient generation.",
-      "problem": "",
-      "approach": "",
+      "summary": "This project was carried out by a two-person team as part of a software internship, with most of the work done in pair programming. The goal was to develop a user-friendly Python application for fitting mathematical models to patient data – as a foundation for simulating virtual patient cohorts. The graphical interface allows users to enter models and datasets, perform parameter fitting, and output the results visually and as a file. The program offers extensive validation, comprehensible error messages, and clear modularity for future extensions.",
+      "problem": [
+        "In everyday clinical practice, access to complete, continuous patient data is often severely limited. Especially for rare disease courses or specific therapies there are often insufficient case numbers or continuously recorded data over the entire course of the disease. These gaps make it difficult to draw reliable conclusions about the success of medical interventions – particularly in evidence-based studies that rely on meaningful comparison groups.",
+        "The starting point of the project was therefore the idea of developing a flexible framework for generating so-called virtual patients. Virtual patients serve as simulated models of real disease courses and make it possible to test medical hypotheses even when real data are fragmented or insufficient.",
+        "The plan was to generate, from fragmented datasets – whether real or synthetically generated – a parametric model that captures the temporal evolution of relevant clinical variables. This model was to support different model types (e.g., functions or differential equations), perform parameter fitting automatically, and allow predictions for arbitrary time points. In addition, a method was envisioned to quantify the uncertainty of the estimated model parameters.",
+        "In the course of the project the focus ultimately shifted to developing a modular fitting app with a graphical user interface that implements key components of the original goal – in particular with regard to model adjustment, extensibility and user friendliness. This created a solid foundation on which future extensions – such as the simulation of virtual patient data – can build."
+      ],
+      "approach": [
+        "The technical realization of our project essentially consisted of developing an interactive and user-friendly application with which arbitrary mathematical models can be fitted to real or synthetic data. The focus was on a modular architecture and a clearly structured graphical interface that should enable even users without deeper programming knowledge to perform model adjustments.",
+        "At the beginning of the project we faced fundamental questions such as: How can a mathematical function entered by the user be processed as executable code? To enable this, we relied on the SymPy library, which allows symbolic expressions to be converted into executable Python functions. These functions were then fitted to the provided data using SciPy. Pandas was used for data processing, and the graphical interface was implemented with customTkinter.",
+        "A particular challenge was the validation and interpretation of user inputs: our program automatically checks whether the entries are sensible and complete before a computation is started. More complex errors, such as incomplete data formats or unsuitable model variables, are also caught and communicated with understandable error messages. The goal was to enable robust behavior – our program therefore does not crash but provides comprehensible guidance.",
+        "Another key feature was visualization: the quality of the fit is displayed graphically via residuals, giving the user an intuitive assessment of model quality.",
+        "One aspect we are proud of is the well-thought-out logging architecture. We implemented custom handlers and formatters that allow systematic logging of information at all relevant points in the program flow. These logs are stored in structured form and can optionally be viewed directly via the command line in debug mode. In case of an error this makes it quick to trace where the process failed – an enormous help for later maintenance or extension.",
+        "Even though we did not achieve our originally formulated goal – the complete generation of virtual patient cohorts – the tool we developed provides a strong foundation for it. It enables flexible fitting of mathematical models to data and can be extended with components for data synthesis and simulation with comparatively little effort.",
+        "Our particular focus on modularity, user friendliness, and both extensibility and maintainability makes the project not only functionally convincing but also sustainable in the long term for more complex medical applications."
+      ],
       "images": {
         "0": {
           "alt": "",

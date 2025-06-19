@@ -1,9 +1,4 @@
-// data/projects.ts
-export enum ProjectType {
-  THESIS = "thesis",
-  PRACTICAL = "practical",
-  PRIVATE = "private",
-}
+import { ProjectType } from "@/types";
 
 const projects = [
   {

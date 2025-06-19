@@ -1,7 +1,4 @@
-interface SkillBarProps {
-  skill: string;
-  level: number; // 0 to 100
-}
+import { SkillBarProps } from "@/types";
 
 export default function SkillBar({ skill, level }: SkillBarProps) {
   return (

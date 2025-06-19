@@ -3,19 +3,13 @@
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import HeadingWithLines from "./HeadingWithLines";
-
-type Pair = {
-  left: string;
-  right: string;
-  preferred: "left" | "right";
-  explanation: string;
-};
+import { ThisOrThatPair } from "@/types";
 
 export default function ThisOrThat() {
   const t = useTranslations("ThisOrThat");
   const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
 
-  const pairs = t.raw("pairs") as Pair[];
+  const pairs = t.raw("pairs") as ThisOrThatPair[];
 
   const handleCardClick = (index: number) => {
     setFlippedIndex((prev) => (prev === index ? null : index));

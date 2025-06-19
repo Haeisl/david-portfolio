@@ -62,7 +62,7 @@ export default function ImageModal({
         >
           <div
             className="relative text-center"
-            onClick={(e) => e.stopPropagation()}
+            // onClick={(e) => e.stopPropagation()} was macht das?
           >
             {/* Close Button */}
             <button
