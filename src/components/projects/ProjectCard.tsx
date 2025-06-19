@@ -59,7 +59,7 @@ export default async function ProjectCard({
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="inline-block bg-gray-200 dark:bg-gray-800 rounded-md px-2 py-1 text-sm text-gray-800 dark:text-gray-200 group-hover:text-[var(--color-primary)] dark:group-hover:text-[var(--color-primarydark)] transition-colors duration-300"
+                className="inline-block bg-tag dark:bg-tagdark rounded-md px-2 py-1 text-sm text-textlight dark:text-textdark group-hover:text-[var(--color-primary)] dark:group-hover:text-[var(--color-primarydark)] transition-colors duration-300"
               >
                 {tech}
               </span>

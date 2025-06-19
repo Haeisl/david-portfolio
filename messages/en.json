@@ -21,20 +21,25 @@
       "about": "More about Me"
     },
     "cta": {
-      "title": "Let's Build Something Together",
-      "subtitle": "I'm currently open to junior developer roles, internships or freelance gigs. If you like what you see, feel free to reach out!",
+      "title": "Let's Work Together",
+      "subtitle": "I'm open to junior roles, internships, or freelance work – whatever helps me grow and contribute. Let's talk if you think we'd be a good fit.",
       "contact": "Get in Touch"
     }
   },
   "ProfileHeader": {
     "pronouns": "he/him",
-    "description": "Curious by nature, driven by learning and problem-solving - whether through code, design, or collaboration."
+    "description": "I'm naturally curious and enjoy figuring things out – whether it's through coding, designing, or working with others."
   },
   "Profile": {
     "abiturdescription": "High school focused on science.",
+    "bscdescription": "Bachelor's Thesis Grade: 1.0 Overall Grade: 2.0",
+    "unititle": "Heidelberg University",
     "bsctitle": "B.Sc. Computer Science",
+    "waitingtitle": "Waiting for Diploma",
+    "waitingdescription": "Meanwhile, independent self-study and construction of this website",
     "jobsearchtitle": "Jobsearch",
     "jobsearchsubtitle": "Software Developer",
+    "jobsearchdescription": "",
     "schoolinternshiptitle": "School internship",
     "schoolinternshipsubtitle": "SAP",
     "visualization": "Visualization"
@@ -50,7 +55,7 @@
   },
   "Resume": {
     "title": "Résumé",
-    "description": "My current résumé, which includes self-assessments (like above) of four of the technologies I use most.",
+    "description": "My current résumé, which includes self-assessments (like above) of four of the technologies I use most. The CV is provided in the current language of the website.",
     "downloadtitle": "Download PDF"
   },
   "ThisOrThat": {
@@ -121,11 +126,14 @@
     "private": "Private Project"
   },
   "Projects": {
+    "problemtitle": "Task",
+    "approachtitle": "Approach",
+    "gallerytitle": "Gallery",
     "epilepsy": {
       "title": "Epilepsy Planning Tool",
       "category": "Bachelor's Thesis",
       "description": "Optimization of an interactive simulation tool for planning epilepsy therapies; enhanced platform independence, improved data visualization, and significantly increased stability of FEM-based electrical field simulations.",
-      "summary": "",
+      "summary": "For my bachelor's thesis, I enhanced and optimized an existing interactive tool used to simulate and interpolate electrode positions for non-invasive epilepsy treatment. The project focused on improving the tool's visualization capabilities, platform independence, and reliability of electric field simulations. I refactored large portions of the codebase, resolved major simulation and compatibility issues, and introduced new user-friendly features, laying the foundation for its potential use in medical practice.",
       "problem": "",
       "approach": "",
       "images": {
@@ -134,6 +142,22 @@
           "caption": ""
         },
         "1": {
+          "alt": "",
+          "caption": ""
+        },
+        "2": {
+          "alt": "",
+          "caption": ""
+        },
+        "3": {
+          "alt": "",
+          "caption": ""
+        },
+        "4": {
+          "alt": "",
+          "caption": ""
+        },
+        "5": {
           "alt": "",
           "caption": ""
         }
@@ -161,7 +185,7 @@
       "title": "Field-Consistent Glyphs",
       "description": "Implementation of a ParaView plugin for field-consistent visualization of vector and tensor fields; improves the expressiveness of scientific visualizations by correctly representing local field patterns in complex data structures.",
       "category": "Student Software Practical",
-      "summary": "",
+      "summary": "In this project, I developed a custom ParaView filter for generating 'field-consistent' glyphs that more accurately reflect local vector and tensor field behavior. Unlike traditional arrow glyphs that represent direction only at a single point, my approach integrates parallel and orthogonal streamlines to construct curved glyphs that follow the underlying data. This improves interpretability in complex or curved fields, offering clearer visualization at the cost of increased computation.",
       "problem": "",
       "approach": "",
       "images": {
@@ -179,7 +203,7 @@
       "title": "Virtual Patient Cohorts",
       "description": "Development of a Python application for adapting mathematical models to real medical data; enables efficient analysis of therapy effects and generation of virtual patient data for simulation-based research.",
       "category": "Student Software Practical",
-      "summary": "",
+      "summary": "This project involved developing a user-friendly software application for fitting mathematical models to real patient data, with the goal of simulating virtual patient cohorts. Using a custom graphical interface built in Python, the tool supports various function types, including ordinary differential equations, and allows users to input models and data for parameter estimation. The system offers detailed feedback, graphical output, and data export options to enhance usability and transparency. While the final product focuses on model fitting, it lays a modular foundation for future extensions toward full virtual patient generation.",
       "problem": "",
       "approach": "",
       "images": {

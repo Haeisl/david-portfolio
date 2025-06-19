@@ -1,26 +1,30 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { Github } from "lucide-react";
 import { ProjectType } from "@/data/projects";
+import ImageModal from "../general/ImageModal";
 
-export type ProjectImage = {
+type ProjectImage = {
   src: string;
   alt: string;
   caption?: string;
 };
 
-interface ProjectLayoutProps {
+type ProjectLayoutProps = {
   title?: string;
   summary: ReactNode;
   type?: ProjectType;
   category?: string;
   stack?: string[];
-  githubUrl?: string;
+  githubUrl?: string[];
+  githubNames?: string[];
   problem: ReactNode;
   approach: ReactNode;
+  problemTitle: string;
+  approachTitle: string;
+  galleryTitle: string;
   images?: ProjectImage[];
-}
+};
 
 const typeToTagClass: Record<ProjectType, string> = {
   [ProjectType.THESIS]:
@@ -38,12 +42,14 @@ export default function ProjectLayout({
   category,
   stack = [],
   githubUrl,
+  githubNames,
   problem,
   approach,
+  problemTitle,
+  approachTitle,
+  galleryTitle,
   images = [],
 }: ProjectLayoutProps) {
-  /* pick the right colour set for the pill,
-     falling back to a neutral accent when no type present */
   const categoryClasses = type
     ? typeToTagClass[type]
     : "bg-accent/10 text-accent";
@@ -53,36 +59,60 @@ export default function ProjectLayout({
       {/* header */}
       <header className="mb-12 space-y-4">
         <div className="flex items-center gap-3">
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
+          <h1 className="text-[25px] sm:text-4xl font-extrabold tracking-tight text-textlight dark:text-textdark">
             {title}
           </h1>
 
-          {githubUrl && (
-            <Link
-              href={githubUrl}
-              aria-label="View source on GitHub"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 transition hover:text-gray-900 dark:hover:text-gray-100"
-            >
-              <Github size={28} />
-            </Link>
-          )}
+          {githubUrl &&
+            (githubUrl.length == 1 ? (
+              <Link
+                href={githubUrl[0]}
+                aria-label="View source on GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 transition hover:text-gray-900 dark:hover:text-gray-100"
+              >
+                <Github size={28} />
+              </Link>
+            ) : githubUrl.length > 1 && githubNames ? (
+              githubUrl.map((url, ind) => {
+                return (
+                  <Link
+                    key={url}
+                    href={url}
+                    aria-label="View source on GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex text-gray-500 transition"
+                  >
+                    <Github
+                      size={28}
+                      className="group-hover:text-gray-900 dark:group-hover:text-gray-100"
+                    />
+                    <span className="text-gray-500 mt-1 group-hover:text-gray-900 dark:group-hover:text-gray-100 hidden sm:block">
+                      {githubNames[ind]}
+                    </span>
+                  </Link>
+                );
+              })
+            ) : (
+              <></>
+            ))}
         </div>
 
         {category && (
           <span
-            className={`inline-block rounded-full h-2 w-sm sm:w-xl ${categoryClasses}`}
+            className={`inline-block rounded-full h-2 w-sm sm:w-xl md:w-2xl ${categoryClasses}`}
           />
         )}
 
-        {/* tech stack pills (unchanged, still icon-free) */}
+        {/* tech stack pills */}
         {stack.length > 0 && (
           <ul className="flex flex-wrap gap-2 pt-2">
             {stack.map((tech) => (
               <li
                 key={tech}
-                className="rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300"
+                className="rounded-md bg-tag px-2 py-1 text-xs font-medium text-textlight dark:bg-tagdark dark:text-textdark"
               >
                 {tech}
               </li>
@@ -94,40 +124,27 @@ export default function ProjectLayout({
       <section className="mb-10 max-w-none">{summary}</section>
       {/* Problem */}
       <section className="mb-8 max-w-none">
-        <h2 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-100">
-          Problem
+        <h2 className="mb-2 text-xl font-semibold text-textlight dark:text-textdark">
+          {problemTitle}
         </h2>
         {problem}
       </section>
       {/* Approach */}
       <section className="mb-12 max-w-none">
-        <h2 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-100">
-          Approach
+        <h2 className="mb-2 text-xl font-semibold text-textlight dark:text-textdark">
+          {approachTitle}
         </h2>
         {approach}
       </section>
       {/* Gallery */}
-      {images.length > 0 && (
+      {images?.length > 0 && (
         <section className="space-y-6">
           <h2 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-100">
-            Gallery
+            {galleryTitle}
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-6 place-items-center sm:grid-cols-3">
             {images.map(({ src, alt, caption }) => (
-              <figure key={src} className="overflow-hidden rounded-2xl shadow">
-                <Image
-                  src={src}
-                  alt={alt}
-                  width={1200}
-                  height={800}
-                  className="h-auto w-full object-cover transition duration-300 hover:scale-105"
-                />
-                {caption && (
-                  <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                    {caption}
-                  </figcaption>
-                )}
-              </figure>
+              <ImageModal key={src} src={src} alt={alt} caption={caption} />
             ))}
           </div>
         </section>

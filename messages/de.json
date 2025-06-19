@@ -21,20 +21,25 @@
       "about": "Mehr über mich"
     },
     "cta": {
-      "title": "Lass uns gemeinsam etwas aufbauen",
-      "subtitle": "Ich bin derzeit offen für Junior-Entwicklerstellen, Praktika oder freiberufliche Projekte. Wenn dir gefällt, was du siehst, zögere nicht, dich bei mir zu melden!",
+      "title": "Lass uns Zusammenarbeiten",
+      "subtitle": "Ich bin offen für Junior-Positionen, Praktika oder freiberufliche Tätigkeiten – alles, was mir hilft, mich weiterzuentwickeln. Lassen Sie uns reden, wenn Sie glauben, dass wir gut zusammenpassen.",
       "contact": "Kontakt aufnehmen"
     }
   },
   "ProfileHeader": {
     "pronouns": "er/ihm",
-    "description": "Von Natur aus neugierig, motiviert durch Lernen und Problemlösen - ob durch Code, Design oder Zusammenarbeit."
+    "description": "Ich bin von Natur aus neugierig und habe Spaß daran, Dinge herauszufinden – sei es durch Code, Design oder die Zusammenarbeit mit anderen."
   },
   "Profile": {
     "abiturdescription": "Gymnasium mit Schwerpunkt auf Naturwissenschaften.",
+    "bscdescription": "Note Bachelorarbeit: 1,0 Gesamtnote: 2,0",
+    "unititle": "Uni Heidelberg",
     "bsctitle": "B.Sc. Informatik",
+    "waitingtitle": "Warten auf Zeugnis",
+    "waitingdescription": "Währenddessen eigenverantwortliche Weiterbildung und Bauen dieser Webseite",
     "jobsearchtitle": "Jobsuche",
     "jobsearchsubtitle": "Softwareentwickler",
+    "jobsearchdescription": "",
     "schoolinternshiptitle": "Schulpraktikum",
     "schoolinternshipsubtitle": "SAP",
     "visualization": "Visualisierung"
@@ -50,7 +55,7 @@
   },
   "Resume": {
     "title": "Lebenslauf",
-    "description": "Mein aktueller Lebenslauf, der Selbsteinschätzungen (wie oben) zu vier meiner meistbenutzten Technologien enthält.",
+    "description": "Mein aktueller Lebenslauf, der Selbsteinschätzungen (wie oben) zu vier meiner meistbenutzten Technologien enthält. Der Lebenslauf wird in der aktuellen Sprache der Webseite bereitgestellt.",
     "downloadtitle": "PDF herunterladen"
   },
   "ThisOrThat": {
@@ -121,21 +126,40 @@
     "private": "Privates Projekt"
   },
   "Projects": {
+    "problemtitle": "Aufgabe",
+    "approachtitle": "Herangehensweise",
+    "gallerytitle": "Gallerie",
     "epilepsy": {
       "title": "Epilepsie-Planungstool",
       "description": "Optimierung eines interaktiven Simulationswerkzeugs zur Planung epileptischer Therapien; erhöhte Plattformunabhängigkeit, verbesserte Datenvisualisierung und deutlich gesteigerte Stabilität FEM-basierter elektrischer Feldsimulationen.",
       "category": "Bachelorarbeit",
-      "summary": "",
+      "summary": "Für meine Bachelorarbeit habe ich ein bestehendes interaktives Tool zur Simulation und Interpolation von Elektrodenpositionen für die nicht-invasive Epilepsiebehandlung verbessert und optimiert. Der Schwerpunkt des Projekts lag auf der Verbesserung der Visualisierungsfunktionen, der Plattformunabhängigkeit und der Zuverlässigkeit der elektrischen Feldsimulationen des Tools. Ich habe große Teile des Codes überarbeitet, wichtige Simulations- und Kompatibilitätsprobleme gelöst und neue benutzerfreundliche Funktionen eingeführt, wodurch ich die Grundlage für den potenziellen Einsatz des Tools in der medizinischen Praxis geschaffen habe.",
       "problem": "",
       "approach": "",
       "images": {
         "0": {
           "alt": "",
-          "caption": ""
+          "caption": "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test "
         },
         "1": {
           "alt": "",
-          "caption": ""
+          "caption": "Test2"
+        },
+        "2": {
+          "alt": "",
+          "caption": "Test2"
+        },
+        "3": {
+          "alt": "",
+          "caption": "Test2"
+        },
+        "4": {
+          "alt": "",
+          "caption": "Test2"
+        },
+        "5": {
+          "alt": "",
+          "caption": "Test2"
         }
       }
     },
@@ -161,7 +185,7 @@
       "title": "Feldkonsistente Glyphen",
       "description": "Implementierung eines ParaView-Plugins zur feldkonsistenten Visualisierung von Vektor- und Tensorfeldern; verbessert die Aussagekraft wissenschaftlicher Visualisierungen durch korrekte Darstellung lokaler Feldverläufe in komplexen Datenstrukturen.",
       "category": "Student Software Practical",
-      "summary": "",
+      "summary": "In diesem Projekt habe ich einen benutzerdefinierten ParaView-Filter entwickelt, um 'feldkonsistente' Glyphen zu generieren, die das lokale Verhalten von Vektor- und Tensorfeldern genauer widerspiegeln. Im Gegensatz zu herkömmlichen Pfeilglyphen, die nur die Richtung an einem einzigen Punkt darstellen, integriert mein Ansatz parallele und orthogonale Stromlinien, um gekrümmte Glyphen zu konstruieren, die den zugrunde liegenden Daten folgen. Dies verbessert die Interpretierbarkeit in komplexen oder gekrümmten Feldern und bietet eine klarere Visualisierung auf Kosten eines erhöhten Rechenaufwands.",
       "problem": "",
       "approach": "",
       "images": {
@@ -179,7 +203,7 @@
       "title": "Virtuelle Patientenkohorten",
       "description": "Entwicklung einer Python-Anwendung zur Anpassung mathematischer Modelle an medizinische Echtdaten; ermöglicht effiziente Analyse von Therapieeffekten und Generierung virtueller Patientendaten für simulationsbasierte Forschung.",
       "category": "Student Software Practical",
-      "summary": "",
+      "summary": "Dieses Projekt umfasste die Entwicklung einer benutzerfreundlichen Softwareanwendung zur Anpassung mathematischer Modelle an reale Patientendaten mit dem Ziel, virtuelle Patientenkohorten zu simulieren. Mithilfe einer benutzerdefinierten grafischen Oberfläche, die in Python erstellt wurde, unterstützt das Tool verschiedene Funktionstypen, darunter gewöhnliche Differentialgleichungen, und ermöglicht es Benutzern, Modelle und Daten für die Parameterschätzung einzugeben. Das System bietet detailliertes Feedback, grafische Ausgaben und Datenexportoptionen, um die Benutzerfreundlichkeit und Transparenz zu verbessern. Das Endprodukt konzentriert sich zwar auf die Modellanpassung, bildet jedoch eine modulare Grundlage für zukünftige Erweiterungen hin zur vollständigen Generierung virtueller Patienten.",
       "problem": "",
       "approach": "",
       "images": {

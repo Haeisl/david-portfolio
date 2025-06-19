@@ -8,15 +8,15 @@ import ResumeDownload from "@/components/profile/Resume";
 
 export default function ProfilePage() {
   const t = useTranslations("Profile");
-  const sample: TimelineItem[] = [
+  const timeline: TimelineItem[] = [
     {
       id: "bsc",
       type: "education",
       title: t("bsctitle"),
-      subtitle: "Uni Heidelberg",
+      subtitle: t("unititle"),
       start: "2018-10",
       end: "2025-03",
-      description: "Graduated with distinction.",
+      description: t("bscdescription"),
     },
     {
       id: "abi",
@@ -36,11 +36,21 @@ export default function ProfilePage() {
       end: "2015-07",
     },
     {
+      id: "waitge",
+      type: "education",
+      title: t("waitingtitle"),
+      subtitle: t("unititle"),
+      start: "2025-03",
+      end: "2025-05",
+      description: t("waitingdescription"),
+    },
+    {
       id: "jobsearch",
       type: "work",
       title: t("jobsearchtitle"),
       subtitle: t("jobsearchsubtitle"),
-      start: "2025-04",
+      start: "2025-06",
+      description: t("jobsearchdescription"),
     },
   ];
 
@@ -119,7 +129,7 @@ export default function ProfilePage() {
       </FadeInSection>
 
       <FadeInSection>
-        <Timeline items={sample} orientation="horizontal" />
+        <Timeline items={timeline} orientation="horizontal" />
       </FadeInSection>
 
       <FadeInSection>

@@ -22,13 +22,21 @@
     --color-primary: #10b981;
     --color-primarydark: #34d399;
 
-    --color-secondary: #22c55e;
-    --color-secondarydark: #86efac;
+    --color-tag: #f3f4f6;
+    --color-tagdark: #1e2939;
 
     --font-main: var(--font-inter);
     --font-logo: var(--font-doto);
     --font-courier: var(--font-courier-prime);
   }
+}
+
+:root {
+  --vh: 1vh;
+}
+
+.full-screen-mobile {
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 @keyframes breath {
