@@ -47,7 +47,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
       url: "https://david-hasse.de",
       images: [
         {
-          url: "/og_image.png",
+          url: "https://www.david-hasse.de/og_image.png",
           width: 1200,
           height: 630,
           alt: "David Hasse Portfolio Preview",
