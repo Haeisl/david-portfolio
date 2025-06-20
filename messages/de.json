@@ -87,58 +87,58 @@
     "description": "Ein kurzer Einblick in meine Vorlieben als Entwickler. Klick mit der Maus auf die Karten, um meine Wahl und den Grund zu sehen!",
     "pairs": [
       {
-        "left": "VS Code",
-        "right": "Vim",
-        "preferred": "left",
-        "explanation": "Mächtig, erweiterbar und trotzdem einsteigerfreundlich - was will man mehr?"
+        "left": "Tests zuerst",
+        "right": "Bauen → Refaktor",
+        "preferred": "Bauen → Refaktor",
+        "explanation": "Erst liefern, dann polieren – echtes Nutzer-Feedback schlägt jede Glaskugel."
       },
       {
-        "left": "Heller Modus",
-        "right": "Dunkler Modus",
-        "preferred": "right",
-        "explanation": "Schonender für die Augen - und einfach cooler, sind wir ehrlich."
+        "left": "Helles Theme",
+        "right": "Dunkles Theme",
+        "preferred": "Dunkles Theme",
+        "explanation": "Schonender für die Augen – und, ganz ehrlich, einfach stylischer."
       },
       {
-        "left": "Tabs",
-        "right": "Leerzeichen",
-        "preferred": "right",
-        "explanation": "Stell deinen Tab-Key auf Leerzeichen um - wie ein normaler Mensch."
+        "left": "Sonnenaufgang-Sprints",
+        "right": "Mitternacht-Sessions",
+        "preferred": "Mitternacht-Sessions",
+        "explanation": "Wenn draußen Ruhe herrscht, wird's im Kopf laut. Die besten Commits landen nach 22 Uhr."
       },
       {
-        "left": "Morgens Coden",
-        "right": "Nachteulen-Dev",
-        "preferred": "right",
-        "explanation": "Ich bin am produktivsten, wenn es draußen ruhig und dunkel ist."
+        "left": "Kaffee ☕",
+        "right": "Tee 🍵",
+        "preferred": "Kaffee ☕",
+        "explanation": "Ein doppelter Espresso ist der Compile-Button für mein Gehirn."
       },
       {
-        "left": "Kaffee",
-        "right": "Tee",
-        "preferred": "left",
-        "explanation": "Der Treibstoff, der Gedanken in Code verwandelt."
+        "left": "Kopfhörer an",
+        "right": "Ruhe, Bitte",
+        "preferred": "Kopfhörer an",
+        "explanation": "Die richtige Playlist lässt mich einfach konzentrieren."
       },
       {
-        "left": "Musik beim Coden",
-        "right": "Ruhe, bitte",
-        "preferred": "left",
-        "explanation": "Die richtige Playlist bringt mich in den Flow."
+        "left": "Rezept nach Buch",
+        "right": "Freestyle-Kochen",
+        "preferred": "Freestyle-Kochen",
+        "explanation": "Ich würze wie ich code – probieren, tweaken, bis es passt."
       },
       {
-        "left": "Terminal",
-        "right": "GUI",
-        "preferred": "right",
-        "explanation": "Ich liebe Visualisierungen - Daten durch Design verständlich machen fasziniert mich."
+        "left": "CLI-Ninja",
+        "right": "GUI-Entdecker",
+        "preferred": "GUI-Entdecker",
+        "explanation": "Ich liebe gut umgesetzte CLI Apps – aber mein Herz ist bei visualisierten Daten."
       },
       {
-        "left": "Kapuzenpullover",
-        "right": "Hemd",
-        "preferred": "left",
-        "explanation": "Ich mag's, mich schick zu machen - aber Hoodies sind mein Zuhause."
+        "left": "Gaming 🎮",
+        "right": "Filmabend 🎬",
+        "preferred": "Gaming 🎮",
+        "explanation": "Interaktive Welten schulen mein Systemdenken – und halten die Neugier frisch."
       },
       {
-        "left": "Spiele",
-        "right": "Filme",
-        "preferred": "left",
-        "explanation": "Ein Hobby fürs Leben - und eine große Inspiration für mein Denken."
+        "left": "Lehr-Modus",
+        "right": "Lern-Modus",
+        "preferred": "Beides",
+        "explanation": "Wissen wächst beim Weitergeben. Teile gern, lerne gern."
       }
     ]
   },

@@ -29,7 +29,7 @@ export default async function Timeline({ items }: TimelineProps) {
       <HeadingWithLines title={t("title")} description={t("description")} />
       <div className="relative overflow-x-auto scroll-smooth pb-4">
         {/* Extra padding on the left ensures the first item isn’t chopped on tiny screens */}
-        <div className="flex justify-center items-start space-x-12 px-160 md:px-2 py-2 snap-x snap-mandatory">
+        <div className="flex justify-center items-start space-x-12 px-160 xl:px-2 py-2 snap-x snap-mandatory">
           {sortedItems.map((item, idx) => (
             <Item key={item.id} item={item} isLast={idx === items.length - 1} />
           ))}

@@ -45,7 +45,7 @@ export default function ThisOrThat() {
                 }`}
               >
                 <p className="font-semibold text-[var(--color-primary)] dark:text-[var(--color-primarydark)] text-xl">
-                  {p.preferred === "left" ? p.left : p.right}
+                  {p.preferred}
                 </p>
                 <p className="text-textaltlight dark:text-textaltdark text-lg italic">
                   {p.explanation}
