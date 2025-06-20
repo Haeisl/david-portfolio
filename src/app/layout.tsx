@@ -25,6 +25,12 @@ export const generateMetadata = async (): Promise<Metadata> => {
   // Global site info
   return {
     title: t("title"),
+    alternates: {
+      languages: {
+        de: "https://david-hasse.de/de",
+        en: "https://david-hasse.de/en",
+      },
+    },
     description: t("description"),
     keywords: [
       "David Hasse",

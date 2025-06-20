@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://david-hasse.de
+
+# Sitemaps
+Sitemap: https://david-hasse.de/sitemap.xml
