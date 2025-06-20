@@ -7,6 +7,25 @@ import SkillsSection from "@/components/profile/SkillsSection";
 import ResumeDownload from "@/components/profile/Resume";
 import { getSkillsData } from "@/data/skills";
 import { getTimelineData } from "@/data/timeline";
+import { Metadata } from "next";
+
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations("Meta.about");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: "https://david-hasse.de/en/about",
+    },
+    twitter: {
+      title: t("title"),
+      description: t("description"),
+    },
+  };
+};
 
 export default async function ProfilePage() {
   const t = await getTranslations("Profile");

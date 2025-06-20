@@ -1,4 +1,28 @@
 {
+  "Meta": {
+    "title": "David Hasse | Software Developer",
+    "description": "Welcome to the personal portfolio of David Hasse – software developer focused on building modern, responsive websites and interactive applications.",
+    "about": {
+      "title": "About Me | David Hasse – Software Developer",
+      "description": "Learn more about David Hasse, a software developer with a passion for clean code, thoughtful design, and learning new things."
+    },
+    "projects": {
+      "title": "Projects | David Hasse – Software Developer",
+      "description": "Explore a selection of software projects by David Hasse, including his bachelor's thesis, tools, and personal experiments."
+    },
+    "projectspecific": {
+      "description": "Details and insights about this software project by David Hasse, including goals, technologies used, and lessons learned."
+    },
+    "contact": {
+      "title": "Contact | David Hasse – Software Developer",
+      "description": "Want to work together or have a question? Simply contact David Hasse through the email directly."
+    }
+  },
+  "NotFound": {
+    "title": "404 - Page Not Found",
+    "description": "The page you're looking for doesn't exist.",
+    "homeLink": "Go back home"
+  },
   "NavbarLinks": {
     "about": "About me",
     "projects": "Projects",

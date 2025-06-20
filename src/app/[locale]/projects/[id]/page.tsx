@@ -3,11 +3,48 @@ import ProjectLayout from "@/components/projects/ProjectLayout";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { ProjectPageProps } from "@/types";
+// import { getProjectBySlug } from "@/lib/data"; // your data function
+import { Metadata } from "next";
+
+function getProjectById(id: string) {
+  return projects.find((project) => project.id === id);
+}
+
+export async function generateMetadata(params: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params.params;
+
+  const project = getProjectById(id);
+  const t = await getTranslations(); // or pass a locale if you use it
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+      description: "This project could not be found.",
+    };
+  }
+
+  return {
+    title: `${t("Projects." + project.titleKey)} | David Hasse`,
+    description: t("Meta.projectspecific.description"),
+    openGraph: {
+      title: t("Projects." + project.titleKey),
+      description: t("Meta.projectspecific.description"),
+      url: `https://david-hasse.de/projects/${id}`,
+    },
+    twitter: {
+      title: t("Projects." + project.titleKey),
+      description: t("Meta.projectspecific.description"),
+    },
+  };
+}
 
 export default async function ProjectPage(props: ProjectPageProps) {
   const params = await props.params;
 
-  const project = projects.find((proj) => proj.id === params.id);
+  // const project = projects.find((proj) => proj.id === params.id);
+  const project = getProjectById(params.id);
 
   if (!project) {
     notFound();

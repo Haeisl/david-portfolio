@@ -2,7 +2,25 @@ import FadeInSection from "@/components/general/FadeInSection";
 import ProjectCard from "@/components/projects/ProjectCard";
 import projects from "@/data/projects";
 import { getTranslations } from "next-intl/server";
+import { Metadata } from "next";
 
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations("Meta.projects");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: "https://david-hasse.de/en/projects",
+    },
+    twitter: {
+      title: t("title"),
+      description: t("description"),
+    },
+  };
+};
 export default async function Projects() {
   const t = await getTranslations("ProjectsPage");
 

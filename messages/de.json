@@ -1,4 +1,28 @@
 {
+  "Meta": {
+    "title": "David Hasse | Portfolio Softwareentwickler",
+    "description": "Willkommen im persönlichen Portfolio von David Hasse – Softwareentwickler mit Fokus auf moderne, responsive Websites und interaktive Anwendungen.",
+    "about": {
+      "title": "Über Mich | David Hasse – Softwareentwickler",
+      "description": "Erfahren Sie mehr über David Hasse – ein Softwareentwickler mit Leidenschaft für sauberen Code, durchdachtes Design und Lernen von Neuem."
+    },
+    "projects": {
+      "title": "Projekte | David Hasse – Softwareentwickler",
+      "description": "Entdecken Sie eine Auswahl an Softwareprojekten von David Hasse – darunter seine Bachelorarbeit, Tools und persönliche Experimente."
+    },
+    "projectspecific": {
+      "description": "Einblicke und Details zu diesem Softwareprojekt von David Hasse – einschließlich Ziele, verwendete Technologien und gewonnene Erkenntnisse."
+    },
+    "contact": {
+      "title": "Kontakt | David Hasse – Softwareentwickler",
+      "description": "Sie möchten zusammenarbeiten oder haben eine Frage? Kontaktieren Sie David Hasse gerne und einfach per E-Mail."
+    }
+  },
+  "NotFound": {
+    "title": "404 - Seite nicht gefunden",
+    "description": "Diese Seite existiert nicht.",
+    "homeLink": "Zurück nach Hause"
+  },
   "NavbarLinks": {
     "about": "Über mich",
     "projects": "Projekte",

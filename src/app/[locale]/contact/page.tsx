@@ -13,10 +13,34 @@ import {
   Download,
 } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
+import { Metadata } from "next";
+
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations("Meta.contact");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: "https://david-hasse.de/en/contact",
+    },
+    twitter: {
+      title: t("title"),
+      description: t("description"),
+    },
+  };
+};
 
 export default async function ContactPage() {
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "ContactPage" });
+
+  const encodedEmail = "Y29udGFjdEBkYXZpZC1oYXNzZS5kZQ=="; // base64 of "contact@david-hasse.de"
+  const decodedEmail = atob(encodedEmail);
+  const subject = encodeURIComponent(t("mailSubject"));
+  const mailHref = `mailto:${decodedEmail}?subject=${subject}`;
 
   return (
     <FadeInSection>
@@ -65,9 +89,7 @@ export default async function ContactPage() {
               {t("tagline")}
             </p>
             <BasedButton
-              href={`mailto:contact@david-hasse.de?subject=${encodeURIComponent(
-                t("mailSubject")
-              )}`}
+              href={mailHref}
               icon={<Mail size={28} />}
               label={t("cta")}
               className="px-8 py-4"
