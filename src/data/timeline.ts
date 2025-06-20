@@ -25,8 +25,8 @@ export function getTimelineData(t: TFunction): TimelineItem[] {
       type: "work",
       title: t("schoolinternshiptitle"),
       subtitle: t("schoolinternshipsubtitle"),
-      start: "2015-06",
-      end: "2015-07",
+      start: "2015-03",
+      end: "2015-03",
     },
     {
       id: "waitge",

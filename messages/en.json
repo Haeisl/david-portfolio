@@ -55,7 +55,7 @@
     "description": "I'm naturally curious and enjoy figuring things out – whether it's through coding, designing, or working with others."
   },
   "Profile": {
-    "abiturdescription": "High school focused on science.",
+    "abiturdescription": "High school focused on science",
     "bscdescription": "Bachelor's Thesis Grade: 1.0 Overall Grade: 2.0",
     "unititle": "Heidelberg University",
     "bsctitle": "B.Sc. Computer Science",
@@ -145,9 +145,18 @@
   "ProjectsPage": {
     "title": "Projects",
     "legend": "Legend",
-    "thesis": "Bachelor's Thesis",
-    "practical": "Student Software Practical",
-    "private": "Private Project"
+    "thesis": {
+      "small": "Thesis",
+      "large": "Bachelor's Thesis"
+    },
+    "practical": {
+      "small": "Uni Practical",
+      "large": "Student Software Practical"
+    },
+    "private": {
+      "small": "Private",
+      "large": "Private Project"
+    }
   },
   "Projects": {
     "problemtitle": "Task",

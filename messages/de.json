@@ -46,7 +46,7 @@
     },
     "cta": {
       "title": "Lass uns Zusammenarbeiten",
-      "subtitle": "Ich bin offen für Junior-Positionen, Praktika oder freiberufliche Tätigkeiten – alles, was mir hilft, mich weiterzuentwickeln. Lassen Sie uns reden, wenn Sie glauben, dass wir gut zusammenpassen.",
+      "subtitle": "Ich bin offen für Junior-Positionen, Praktika oder freiberufliche Tätigkeiten – alles, was mir hilft, mich weiterzuentwickeln. Lass uns reden, wenn wir gut zusammenpassen könnten.",
       "contact": "Kontakt aufnehmen"
     }
   },
@@ -55,7 +55,7 @@
     "description": "Ich bin von Natur aus neugierig und habe Spaß daran, Dinge herauszufinden – sei es durch Code, Design oder die Zusammenarbeit mit anderen."
   },
   "Profile": {
-    "abiturdescription": "Gymnasium mit Schwerpunkt auf Naturwissenschaften.",
+    "abiturdescription": "Gymnasium mit Schwerpunkt auf Naturwissenschaften",
     "bscdescription": "Note Bachelorarbeit: 1,0 Gesamtnote: 2,0",
     "unititle": "Uni Heidelberg",
     "bsctitle": "B.Sc. Informatik",
@@ -112,9 +112,9 @@
       },
       {
         "left": "Kopfhörer an",
-        "right": "Ruhe, Bitte",
+        "right": "Ruhe, bitte",
         "preferred": "Kopfhörer an",
-        "explanation": "Die richtige Playlist lässt mich einfach konzentrieren."
+        "explanation": "Die richtige Playlist lässt mich mich einfach konzentrieren."
       },
       {
         "left": "Rezept nach Buch",
@@ -145,9 +145,18 @@
   "ProjectsPage": {
     "title": "Projekte",
     "legend": "Legende",
-    "thesis": "Bachelorarbeit",
-    "practical": "Studentisches Softwarepraktikum",
-    "private": "Privates Projekt"
+    "thesis": {
+      "small": "Bachelorarbeit",
+      "large": "Bachelorarbeit"
+    },
+    "practical": {
+      "small": "Uni Praktikum",
+      "large": "Studentisches Softwarepraktikum"
+    },
+    "private": {
+      "small": "Privates",
+      "large": "Privates Projekt"
+    }
   },
   "Projects": {
     "problemtitle": "Aufgabe",
@@ -159,9 +168,9 @@
       "category": "Bachelorarbeit",
       "summary": "Meine Bachelorarbeit optimiert ein interaktives Simulations- und Visualisierungstool, das die Positionierung von EASEE-Elektroden zur Epilepsietherapie plant. Die Ausgangsversion litt unter Instabilitäten, fehlerhafter Farbcodierung, Plattformabhängigkeit und fehlender Dokumentation. Durch tiefgreifendes Refactoring, eine Docker-basierte, plattformunabhängige Architektur und den Wechsel auf einen robusten Direktsolver stieg die Erfolgsquote der FEM-Simulationen von ~80% auf rund 94%. Gleichzeitig wurden perceptual-uniforme Colormaps, Histogramme und eine komfortable Server-Steuerung im Unreal-Frontend ergänzt. Das Ergebnis ist ein stabiles, dokumentiertes Werkzeug, das Forschenden und Kliniker:innen den Weg in die praktische Anwendung ebnet.",
       "problem": [
-        "Zu Beginn der Arbeit stand ein zwar funktionsreicher, aber nur auf dem Entwicklerrechner lauffähiger Prototyp. Seine Hauptprobleme waren eine ≥ 20 %-ige Fehlerrate der SimNIBS-Simulationen, die jedoch nicht reproduzierbar war und die Fehlerrate nach Übergabe des Projekts bei 100% lag, falsche Jet-Farbzuordnung, harte Systempfade, manuell anzustoßende Berechnungen und kaum vorhandene Dokumentation .",
-        "Die Kernaufgabe bestand darin, diese Schwachstellen systematisch zu analysieren und ein resilientes, portables Gesamtsystem zu schaffen. Dazu wurden sieben funktionale Ziele definiert: (1) Fehlerquellen aufspüren und die Erfolgsrate gegen 100 % treiben, (2) absolute Pfade entfernen und Containerisierung einführen, (3) die Farbdarstellung korrigieren, (4) neue Visualisierungsmittel – insbesondere Histogramme – integrieren, (5) Simulationen direkt aus dem Frontend starten, (6) Laufzeiten optimieren und (7) eine ausführliche Entwickler- und Nutzerdokumentation bereitstellen .",
-        "Darüber hinaus galt es, nicht-funktionale Anforderungen wie Parallelisierung, sauberes Logging, Wartbarkeit und Skalierbarkeit zu erfüllen . Das übergeordnete Ziel war, eine verlässliche Grundlage für weitere Forschung und eine mögliche klinische Nutzung zu legen."
+        "Zu Beginn der Arbeit stand ein zwar funktionsreicher, aber nur auf dem Entwicklerrechner lauffähiger Prototyp. Seine Hauptprobleme waren eine ≥ 20 %-ige Fehlerrate der SimNIBS-Simulationen, die jedoch nicht reproduzierbar war und die Fehlerrate nach Übergabe des Projekts bei 100% lag, falsche Jet-Farbzuordnung, harte Systempfade, manuell anzustoßende Berechnungen und kaum vorhandene Dokumentation.",
+        "Die Kernaufgabe bestand darin, diese Schwachstellen systematisch zu analysieren und ein resilientes, portables Gesamtsystem zu schaffen. Dazu wurden sieben funktionale Ziele definiert: (1) Fehlerquellen aufspüren und die Erfolgsrate gegen 100 % treiben, (2) absolute Pfade entfernen und Containerisierung einführen, (3) die Farbdarstellung korrigieren, (4) neue Visualisierungsmittel – insbesondere Histogramme – integrieren, (5) Simulationen direkt aus dem Frontend starten, (6) Laufzeiten optimieren und (7) eine ausführliche Entwickler- und Nutzerdokumentation bereitstellen.",
+        "Darüber hinaus galt es, nicht-funktionale Anforderungen wie Parallelisierung, sauberes Logging, Wartbarkeit und Skalierbarkeit zu erfüllen. Das übergeordnete Ziel war, eine verlässliche Grundlage für weitere Forschung und eine mögliche klinische Nutzung zu legen."
       ],
       "approach": [
         "Backend & Simulation:\nUmfassendes Refactoring ersetzte hard-codierte Windows-Pfade durch pathlib und lagerte Konstanten in config.ini aus.",
@@ -171,7 +180,7 @@
 
         "\nFrontend (Unreal Engine 5):\nNeue Server-Management-Maske erlaubt die Eingabe beliebiger IP/Port-Kombinationen und prüft die Erreichbarkeit des REST-Backends live.",
         "Ein Run-Button startet Simulationen direkt aus der Konfigurationsansicht, Navigation (Esc) bringt Nutzer:innen jederzeit zurück ins Hauptmenü.",
-        "Die Jet-Colormap wurde durch Plasma- und Graustufen-LUTs ersetzt; falsch skalierte baryzentrische Gewichte wurden korrigiert, und ein Python-basierter Histogramm-Dialog ergänzt die Datenexploration .",
+        "Die Jet-Colormap wurde durch Plasma- und Graustufen-LUTs ersetzt, falsch skalierte baryzentrische Gewichte wurden korrigiert, und ein Python-basierter Histogramm-Dialog ergänzt die Datenexploration.",
 
         "\nDokumentation & Dev-Ops:\nSphinx-Docs für das Python-Backend und Doxygen für die C++-Klassen erzeugen durchsuchbare HTML-Nachschlagewerke; ausführliche README-Leitfäden erleichtern den Einstieg.",
         "Ein zentralisiertes Logging-Setup schreibt Laufzeit- und Fehlermeldungen chronologisch konsistent in Log-Dateien, was Debugging und Wartung vereinfacht."
@@ -207,15 +216,15 @@
       "title": "Portfolio Webseite",
       "description": "Eine persönliche Portfolio-Webseite, gebaut mit NextJS und TailwindCSS, um Projekte und Erfahrungen zu präsentieren.",
       "category": "Private Project",
-      "summary": "Diese Portfolio-Website ist mein persönliches Spielfeld, auf dem ich Neugier und berufliche Orientierung miteinander verbinde. Ohne große Vorerfahrung im Web-Stack wollte ich herausfinden, wie weit ich mit modernen Tools wie Next JS 15, React, TypeScript und Tailwind CSS v4 komme – und zugleich eine Seite bauen, die Besucherinnen in wenigen Klicks verstehen lässt, wer ich bin, woran ich arbeite und was ich als Nächstes lernen möchte. Neben klassischen Inhalten wie Projektbeschreibungen, Skill-Diagrammen und grafischem Lebenslauf bietet die Seite kleine Spielereien: Ein Sprachschalter wechselt nahtlos zwischen Deutsch und Englisch, der Theme-Toggle passt sich an helle oder dunkle Vorlieben an, ein Farbcycler stellt sechs Akzentfarben zur Wahl und eine vCard lässt sich per QR-Code direkt auf das Smartphone übernehmen.",
+      "summary": "Diese Portfolio-Website ist mein persönliches Spielfeld, auf dem ich Neugier und berufliche Orientierung miteinander verbinde. Ohne große Vorerfahrung im Web-Stack wollte ich herausfinden, wie weit ich mit modernen Tools wie Next JS 15, React, TypeScript und Tailwind CSS v4 komme – und zugleich eine Seite bauen, die Besucher:innen in wenigen Klicks verstehen lässt, wer ich bin, woran ich arbeite und was ich als Nächstes lernen möchte. Neben klassischen Inhalten wie Projektbeschreibungen, Skill-Diagrammen und grafischem Lebenslauf bietet die Seite kleine Spielereien: Ein Sprachschalter wechselt nahtlos zwischen Deutsch und Englisch, der Theme-Toggle passt sich an helle oder dunkle Vorlieben an, ein Farbcycler stellt sechs Akzentfarben zur Wahl und eine vCard lässt sich per QR-Code direkt auf das Smartphone übernehmen.",
       "problem": [
         "Nach dem Informatik-Bachelor wollte ich einerseits einen authentischen Anlaufpunkt für Bewerbungen schaffen, ohne mich schon auf eine konkrete Rolle – Frontend, Backend oder etwas dazwischen – festzulegen. Andererseits reizte mich die Aufgabe, mir mit einem greifbaren Projekt selbst zu beweisen, dass ich neue Technologien schnell verstehe und bis zum fertigen Produkt durchziehen kann. Die Website sollte deshalb mehrere Bedürfnisse vereinen. Sie musste meine Persönlichkeit wiederspiegeln, also Platz für kleine Details wie eine „Dies-oder-Das“-Komponente bieten. Sie sollte zweisprachig sein, damit internationale Kontakte nicht ausgeschlossen sind, und sie sollte rechtliche Anforderungen wie Impressum und Datenschutz erfüllen. Für den Bewerbungsprozess brauchte ich außerdem einen Weg, meinen Lebenslauf ansprechend zu präsentieren: Einmal in LaTeX gesetzte PDF-Versionen auf Deutsch und Englisch sollten sich abhängig von der eingestellten Sprache herunterladen lassen. Schließlich wollte ich den Kontakt so einfach wie möglich machen – per Mailto-Links mit vordefiniertem Betreff, per LinkedIn- oder GitHub-Profil und per QR-Code-vCard, die sich ohne Tippen einscannen oder runterladen lässt."
       ],
       "approach": [
         "Das Fundament bildet Next JS 15 mit dem neuen App Router. Alle Seitenbausteine – von Skill-Balkendiagrammen über Projektkarten bis zum Lebenslauf – sind als wiederverwendbare React-Komponenten konzipiert und werden von Tailwind CSS v4 per Utility-Klassen gestylt. Zwei komplette Farbpaletten für Light- und Dark-Mode stehen bereit, während ein Cycler mit sechs Akzenttönen das Farbschema flexibel anpassbar macht. Für die Internationalisierung kommt next-intl zum Einsatz: Sämtliche Texte befinden sich in de.json und en.json, sodass ein Sprachwechsel ohne Neuladen möglich ist und neue Übersetzungen nur einen JSON-Eintrag erfordern.",
         "Daten für das Projekt-Portfolio liegen zentral in einem projects.ts-Array. Jede neue Eintragung erzeugt automatisch eine Karte auf der Übersichtsseite und eine dynamische Detailroute unter /projects/[id], sodass Inhalte ohne Codeänderung wachsen können. Interaktive Elemente verleihen der Seite Persönlichkeit: Die „Dies-oder-Das“-Komponente deckt auf Klick meine Vorlieben auf, Skill-Bars zeigen Kenntnisse und ein grafischer Lebenslauf stellt Stationen chronologisch dar.",
-        "Auf der Kontaktseite generiert eine serverseitige Funktion nach dem Button-Klick einen QR-Code für meine vCard, sodass Besuchende meine Kontaktdaten direkt aufs Telefon übernehmen können. Ergänzend erleichtern Mailto-Links mit vorbefülltem Betreff den Erstkontakt, außerdem verweisen LinkedIn- und GitHub-Buttons auf meine Profile. Für Recruiterinnen steht der Lebenslauf als PDF bereit; ein kleiner Hook erkennt die aktuelle Seitensprache und liefert automatisch die korrekte deutsche oder englische Version.",
-        "Gehostet wird das Ganze auf dem kostenlosen Vercel-Tier. Jeder Git-Push stößt eine CI-Pipeline an; die eigene Domain läuft über angepasste DNS-Einträge mit automatisch ausgestelltem TLS-Zertifikat. Besondere Aufmerksamkeit habe ich dem Design gewidmet, etwa Farbgebung in sowohl Dark- als auch Lightmode oder Platzierung von Elementen (nicht zuletzt dank Feedback von Freunden, darunter einer Freundin die im UI/UX Design arbeitet), und Performance-Fragen durch Abwägung von Server-Side Rendering und Static Generation gelöst. Das Ergebnis ist eine wartungsarme, persönliche Plattform, die zeigt, dass ich mich gern in neue Technologien einarbeite und Spaß daran habe, Ideen bis zum sichtbaren Produkt auszuarbeiten."
+        "Auf der Kontaktseite generiert eine serverseitige Funktion nach dem Button-Klick einen QR-Code für meine vCard, sodass Besuchende meine Kontaktdaten direkt aufs Telefon übernehmen können. Ergänzend erleichtern Mailto-Links mit vorbefülltem Betreff den Erstkontakt, außerdem verweisen LinkedIn- und GitHub-Buttons auf meine Profile. Für Recruiter:innen steht der Lebenslauf als PDF bereit; ein kleiner Hook erkennt die aktuelle Seitensprache und liefert automatisch die korrekte deutsche oder englische Version.",
+        "Gehostet wird das Ganze auf dem kostenlosen Vercel-Tier. Jeder Git-Push stößt eine CI-Pipeline an; die eigene Domain läuft über angepasste DNS-Einträge mit automatisch ausgestelltem TLS-Zertifikat. Besondere Aufmerksamkeit habe ich dem Design gewidmet, etwa Farbgebung in sowohl Dark- als auch Lightmode oder Platzierung von Elementen (nicht zuletzt dank Feedback von Freunden, darunter einer Freundin, die im UI/UX Design arbeitet), und Performance-Fragen durch Abwägung von Server-Side Rendering und Static Generation gelöst. Das Ergebnis ist eine wartungsarme, persönliche Plattform, die zeigt, dass ich mich gern in neue Technologien einarbeite und Spaß daran habe, Ideen bis zum sichtbaren Produkt auszuarbeiten."
       ],
       "images": {
         "0": {
@@ -232,21 +241,21 @@
       "title": "Feldkonsistente Glyphen",
       "description": "Implementierung eines ParaView-Plugins zur feldkonsistenten Visualisierung von Vektor- und Tensorfeldern; verbessert die Aussagekraft wissenschaftlicher Visualisierungen durch korrekte Darstellung lokaler Feldverläufe in komplexen Datenstrukturen.",
       "category": "Student Software Practical",
-      "summary": "Das Praktikumsprojekt entwickelte einen ParaView-Filter für „Field-Consistent Glyphs“, der Vektor- und Tensorfelder nicht mehr mit geraden Pfeilen, sondern mit gekrümmten, stromlinienbasierten Formen visualisiert. Jede Glyphe entsteht durch das Integrieren paralleler und orthogonaler Stromlinien, sodass ihre Geometrie dem lokalen Feld überall folgt und Interpretationsfehler in stark gekrümmten Regionen verringert werden. Auf radialen, Rotations- und Sattelfeldern zeigt der Ansatz die Strömung mit deutlich weniger Glyphen klarer als Standardpfeile, erfordert jedoch spürbar mehr Rechenzeit pro Glyphe . Erste Experimente mit 3D-Tensorglyphen bestätigen die Übertragbarkeit des Konzepts und eröffnen Perspektiven für Raum-, Zeit- und Unsicherheitserweiterungen.",
+      "summary": "Das Praktikumsprojekt entwickelte einen ParaView-Filter für „Field-Consistent Glyphs“, der Vektor- und Tensorfelder nicht mehr mit geraden Pfeilen, sondern mit gekrümmten, stromlinienbasierten Formen visualisiert. Jede Glyphe entsteht durch das Integrieren paralleler und orthogonaler Stromlinien, sodass ihre Geometrie dem lokalen Feld überall folgt und Interpretationsfehler in stark gekrümmten Regionen verringert werden. Auf radialen, Rotations- und Sattelfeldern zeigt der Ansatz die Strömung mit deutlich weniger Glyphen klarer als Standardpfeile, erfordert jedoch spürbar mehr Rechenzeit pro Glyphe. Erste Experimente mit 3D-Tensorglyphen bestätigen die Übertragbarkeit des Konzepts und eröffnen Perspektiven für Raum-, Zeit- und Unsicherheitserweiterungen.",
       "problem": [
         "Konventionelle Pfeilglyphen codieren Vektoren nur exakt an ihrem Ursprung; entlang des Schafts können Richtung und Betrag in gekrümmten oder wirbelnden Feldern irreführend sein. Die zentrale Aufgabe dieses Praktikums war daher:",
         "Anforderungsanalyse:\nHerausarbeiten, wo und warum Pfeilglyphen versagen, und Kriterien für eine feldtreue Darstellung definieren.",
         "Entwurf eines Feld-konsistenten Glyphschemas:\nEntwickeln eines Konzepts, das sowohl Parallel- als auch Orthogonalinformation des Feldes einbezieht, sich aber weiterhin als „Pfeil“ erkennen lässt.",
         "Implementierung als ParaView-Filter:\nRealisierung in Python mitsamt parametrisierbarer Oberfläche (Seed-Raster, Schrittweite, Integrationsverfahren, Glyphvarianten) und lauffähiger Docker-/VM-Umgebung.",
         "Evaluation & Vergleich:\nTest auf synthetischen Testfeldern, Gegenüberstellung zu Standardglyphen, Messung von Klarheit, Glyphdichte und Rechenzeit.",
-        "Ausblick formulieren:\nSkizzieren von Erweiterungen in 3D, topologisch gesteuerter Platzierung, Zeitabhängigkeit und Unsicherheitsdarstellung",
+        "Ausblick formulieren:\nSkizzieren von Erweiterungen in 3D, topologisch gesteuerter Platzierung, Zeitabhängigkeit und Unsicherheitsdarstellung.",
         "Ziel war ein praktischer Prototyp, der Forschenden ein präziseres Werkzeug für die Exploration komplexer Felddaten an die Hand gibt."
       ],
       "approach": [
         "Entwicklungsumgebung:\n",
         "ParaView lief in einer Ubuntu-VM; ein Python-Plugin realisierte den Filter. Das PRTL-Plugin der Forschungsgruppe bot die PRTL-„Python Model“-Source und lieferte analytische Testfelder auf regulären Gittern",
         "Algorithmik & Pipeline:\n1. Seed-Platzierung: Raster- oder benutzerdefinierte Punkte.\n2. Hauptstromlinie: Vor- und Rückwärtsintegration entlang der Feldrichtung (Euler oder RK4, wahlweise Normalisierung) bildet den gekrümmten „Rücken“ der Glyphe.\n3. Schaftbreite: Orthogonale Integration ab dem Rückenanfang erzeugt symmetrische Seitenlinien.\n4. Pfeilspitze: Drei Varianten – gewichtete Kombination (smooth), abwechselnde „Staircase“-Schritte oder Bezier-Interpolation – schließen die Spitze je nach Datenkrümmung und Performancebedarf.\n5. Parametersteuerung: Schrittzahl, Schrittweite, Normalisierung, Skalierungsfaktor und Kopfvariante sind interaktiv justierbar; Slider erlauben Live-Feedback in ParaView.",
-        "Ergebnisse & Analyse:\nAuf radialen, Sattel- und Wirbelfeldern rekonstruierte jede Glyphe den lokalen Verlauf sichtbar getreuer als gerade Pfeile; gleichzeitig genügte eine geringere Seed-Dichte, wodurch das Bild entkluttert wirkte . Der Preis ist ein um Größenordnungen höherer Integrationsaufwand, der aber durch adaptives Seeding oder Parallelisierung perspektivisch beherrschbar ist.",
+        "Ergebnisse & Analyse:\nAuf radialen, Sattel- und Wirbelfeldern rekonstruierte jede Glyphe den lokalen Verlauf sichtbar getreuer als gerade Pfeile; gleichzeitig genügte eine geringere Seed-Dichte, wodurch das Bild entkluttert wirkte. Der Preis ist ein um Größenordnungen höherer Integrationsaufwand, der aber durch adaptives Seeding oder Parallelisierung perspektivisch beherrschbar ist.",
         "Durch diese Schritte entstand ein modularer, dokumentierter Filter, der Feld-konsistente Glyphen für 2D-Vektorfelder ermöglicht und das Fundament für 3D-, zeitabhängige oder unsicherheitsbehaftete Erweiterungen legt."
       ],
       "images": {
