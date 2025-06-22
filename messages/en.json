@@ -35,10 +35,12 @@
     "title": "Hi, I'm ",
     "subtitle": "I am a",
     "personaldescriptions": [
-      { "title": "software developer" },
-      { "title": "problem solver" },
-      { "title": "Bachelor of Science" },
-      { "title": "Coffee Lover" }
+      { "title": "Software Developer" },
+      { "title": "Problem Solver" },
+      { "title": "Hobby Chef" },
+      { "title": "B.Sc. Computer Science" },
+      { "title": "Coffee Lover" },
+      { "title": "Gamer" }
     ],
     "links": {
       "projects": "View Projects",

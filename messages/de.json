@@ -37,8 +37,10 @@
     "personaldescriptions": [
       { "title": "Softwareentwickler" },
       { "title": "Problemlöser" },
-      { "title": "Bachelor of Science" },
-      { "title": "Kaffeeliebhaber" }
+      { "title": "Hobbykoch" },
+      { "title": "B.Sc. Informatik" },
+      { "title": "Kaffeeliebhaber" },
+      { "title": "Gamer" }
     ],
     "links": {
       "projects": "Projekte anschauen",
