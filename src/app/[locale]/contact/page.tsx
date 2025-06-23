@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Metadata } from "next";
+import XingIcon from "@/components/contact/XingIcon";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations("Meta.contact");
@@ -120,6 +121,11 @@ export default async function ContactPage() {
               href="https://www.linkedin.com/in/david-hasse-ab0bb11a9"
               icon={<Linkedin size={28} />}
               label="LinkedIn"
+            />
+            <BasedButton
+              href="https://www.xing.com/profile/David_Hasse09866"
+              icon={<XingIcon />}
+              label="XING"
             />
             <BasedButton
               href="https://github.com/haeisl"
